@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2017-03-16 19:57:43.701,=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2017-03-16 19:57:44.095,=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2017-03-16 19:58:00.622,D:\Git_repositories\gamepirates\Unit1.fmx=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
-    <Transaction>2017-03-16 19:58:00.622,D:\Git_repositories\gamepirates\Unit1.cpp=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2017-03-16 19:58:00.622,D:\Git_repositories\gamepirates\Unit1.h=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
-    <Transaction>2017-03-16 19:58:01.504,D:\Git_repositories\gamepirates\Project1PCH1.h=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2017-03-16 19:58:02.403,D:\Git_repositories\gamepirates\Project1.cbproj=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>2017-03-16 21:36:49.877,=D:\Git_repositories\gamepirates\Unit2.cpp</Transaction>
-    <Transaction>2017-03-16 21:37:18.713,=D:\Git_repositories\gamepirates\Unit3.cpp</Transaction>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.403,C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\Git_repositories\gamepirates\Project1.cbproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.713,=D:\Git_repositories\gamepirates\Unit3.cpp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.622,C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.cpp=D:\Git_repositories\gamepirates\Unit1.cpp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.701,=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.877,=D:\Git_repositories\gamepirates\Unit2.cpp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.504,C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\Git_repositories\gamepirates\Project1PCH1.h</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.095,=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.622,C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.fmx=D:\Git_repositories\gamepirates\Unit1.fmx</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.622,C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.h=D:\Git_repositories\gamepirates\Unit1.h</Transaction>
+    <Transaction>2017-03-17 21:21:50.200,=D:\Git_repositories\gamepirates\Unit2.cpp</Transaction>
+    <Transaction>2017-03-17 21:28:56.341,D:\Git_repositories\gamepirates\gameLib.cpp=D:\Git_repositories\gamepirates\Unit2.cpp</Transaction>
+    <Transaction>2017-03-17 21:28:56.341,D:\Git_repositories\gamepirates\gameLib.h=D:\Git_repositories\gamepirates\Unit2.h</Transaction>
   </Transactions>
 </BorlandProject>
