@@ -1,0 +1,6 @@
+#include "gameLib.h"
+
+void Player::setName(string _name)
+{
+    name = _name;
+}

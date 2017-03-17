@@ -20,7 +20,7 @@ class Player
 	TImage *playerImagePtr;
 
 	public:
-	Player();
+	Player(string _name, int _ownedMoney, TImage *playerImagePtr);
 	void setName(string _name);
 	string getName();
     void movePlayer(int fieldNr);

@@ -10,7 +10,7 @@
 #pragma resource "*.fmx"
 TForm1 *Form1;
 Player *player;
-Player *player1;
+
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -18,3 +18,9 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::Image1Click(TObject *Sender)
+{
+    player->setName("Adrian");
+}
+//---------------------------------------------------------------------------
+

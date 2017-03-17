@@ -1,0 +1,12 @@
+#include "gameLib.h"
+
+Player::Player()
+{
+	name = "noName";
+    currentPositionOnMap = 1;
+}
+
+void Player::setName(string _name)
+{
+    name = _name;
+}
