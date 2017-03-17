@@ -1,9 +1,9 @@
 #include "gameLib.h"
 
-Player::Player()
+Player::Player(string _name, int _ownedMoney, TImage *playerImagePtr)
 {
 	name = "noName";
-    currentPositionOnMap = 1;
+	ownedMoney = _ownedMoney;
 }
 
 void Player::setName(string _name)
