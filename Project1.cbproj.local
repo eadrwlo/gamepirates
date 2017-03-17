@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2017-03-16 19:57:43.701,=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2017-03-16 19:57:44.095,=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2017-03-16 19:58:00.622,D:\Git_repositories\gamepirates\Unit1.fmx=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2017-03-16 19:58:00.622,D:\Git_repositories\gamepirates\Unit1.cpp=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2017-03-16 19:58:00.622,D:\Git_repositories\gamepirates\Unit1.h=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2017-03-16 19:58:01.504,D:\Git_repositories\gamepirates\Project1PCH1.h=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2017-03-16 19:58:02.403,D:\Git_repositories\gamepirates\Project1.cbproj=C:\Users\Ja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2017-03-16 21:36:49.877,=D:\Git_repositories\gamepirates\Unit2.cpp</Transaction>
+    <Transaction>2017-03-16 21:37:18.713,=D:\Git_repositories\gamepirates\Unit3.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

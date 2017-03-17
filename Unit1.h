@@ -8,11 +8,16 @@
 #include <FMX.Forms.hpp>
 #include <FMX.Objects.hpp>
 #include <FMX.Types.hpp>
+#include <FMX.ActnList.hpp>
+#include <FMX.Controls.Presentation.hpp>
+#include <FMX.Menus.hpp>
+#include <FMX.StdCtrls.hpp>
+#include <System.Actions.hpp>
+#include "gameLib.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-	TImage *Image1;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
