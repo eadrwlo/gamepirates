@@ -108,10 +108,9 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="gameLib.cpp">
-            <DependentOn>gameLib.h</DependentOn>
+        <None Include="gameLib.h">
             <BuildOrder>3</BuildOrder>
-        </CppCompile>
+        </None>
         <CppCompile Include="Project1.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
