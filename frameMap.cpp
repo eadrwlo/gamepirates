@@ -2,26 +2,15 @@
 
 #include <fmx.h>
 #pragma hdrstop
-#include "Unit1.h"
-#include "gameLib.h"
-#include <iostream>
+
+#include "frameMap.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
-#pragma link "frameMap"
 #pragma resource "*.fmx"
-TForm1 *Form1;
-Player *player;
-
-
+Tframe1Map *frame1Map;
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner)
-	: TForm(Owner)
+__fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
+	: TFrame(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::Image1Click(TObject *Sender)
-{
-    player->setName("Adrian");
-}
-//---------------------------------------------------------------------------
-

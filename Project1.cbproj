@@ -108,6 +108,13 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="frameMap.cpp">
+            <Form>frame1Map</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>frameMap.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
         <CppCompile Include="gameLib.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
@@ -128,6 +135,7 @@
             <BuildOrder>1</BuildOrder>
         </CppCompile>
         <FormResources Include="Unit1.fmx"/>
+        <FormResources Include="frameMap.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -13,11 +13,12 @@
 #include <FMX.Menus.hpp>
 #include <FMX.StdCtrls.hpp>
 #include <System.Actions.hpp>
+#include "frameMap.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-	TImage *Image1;
+	Tframe1Map *frame1Map1;
 	void __fastcall Image1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
