@@ -8,6 +8,10 @@
 #include <FMX.Forms.hpp>
 #include <FMX.Objects.hpp>
 #include <FMX.Types.hpp>
+#include <FMX.Controls.Presentation.hpp>
+#include <FMX.StdCtrls.hpp>
+#include <FMX.ImgList.hpp>
+#include <System.ImageList.hpp>
 //---------------------------------------------------------------------------
 class Tframe1Map : public TFrame
 {
@@ -48,9 +52,20 @@ __published:	// IDE-managed Components
 	TImage *Image3;
 	TImage *Image2;
 	TImage *Image1;
+	TLabel *Label1;
+	TButton *startStopThrowing;
+	TTimer *timerForDice;
+	TImageList *diceWalls;
+	TGlyph *dice;
+	TRectangle *background;
+	TImage *startStopThrowing2;
+	TTimer *timerForThrowImagePulsing;
+	void __fastcall startStopThrowingClick(TObject *Sender);
+	void __fastcall timerForDiceTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall Tframe1Map(TComponent* Owner);
+    friend void throwDice();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE Tframe1Map *frame1Map;
