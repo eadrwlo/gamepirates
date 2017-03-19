@@ -121,6 +121,20 @@
         <None Include="gameLib.h">
             <BuildOrder>3</BuildOrder>
         </None>
+        <CppCompile Include="Mainmenu.cpp">
+            <Form>Mainmenu_frame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>Mainmenu.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Optionsmenu.cpp">
+            <Form>Options_frame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>Optionsmenu.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Project1.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
@@ -136,6 +150,8 @@
         </CppCompile>
         <FormResources Include="Unit1.fmx"/>
         <FormResources Include="frameMap.fmx"/>
+        <FormResources Include="Mainmenu.fmx"/>
+        <FormResources Include="Optionsmenu.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

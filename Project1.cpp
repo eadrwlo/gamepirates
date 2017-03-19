@@ -8,6 +8,8 @@
 #include <System.StartUpCopy.hpp>
 //---------------------------------------------------------------------------
 USEFORM("Unit1.cpp", Form1);
+USEFORM("Mainmenu.cpp", Mainmenu_frame); /* TFrame: File Type */
+USEFORM("Optionsmenu.cpp", Options_frame); /* TFrame: File Type */
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {
