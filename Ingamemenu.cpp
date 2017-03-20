@@ -7,10 +7,11 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
-TFrame2 *Frame2;
+TIngamemenu_frame *Ingamemenu_frame;
 //---------------------------------------------------------------------------
-__fastcall TFrame2::TFrame2(TComponent* Owner)
+__fastcall TIngamemenu_frame::TIngamemenu_frame(TComponent* Owner)
 	: TFrame(Owner)
 {
 }
 //---------------------------------------------------------------------------
+

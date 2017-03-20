@@ -9,7 +9,7 @@
 #include <FMX.Objects.hpp>
 #include <FMX.Types.hpp>
 //---------------------------------------------------------------------------
-class TFrame2 : public TFrame
+class TIngamemenu_frame : public TFrame
 {
 __published:	// IDE-managed Components
 	TImage *Options_button;
@@ -18,9 +18,9 @@ __published:	// IDE-managed Components
 	TImage *Image2;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TFrame2(TComponent* Owner);
+	__fastcall TIngamemenu_frame(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TFrame2 *Frame2;
+extern PACKAGE TIngamemenu_frame *Ingamemenu_frame;
 //---------------------------------------------------------------------------
 #endif

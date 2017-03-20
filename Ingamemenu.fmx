@@ -1,4 +1,5 @@
-object Frame2: TFrame2
+object Ingamemenu_frame: TIngamemenu_frame
+  Align = Center
   Size.Width = 300.000000000000000000
   Size.Height = 400.000000000000000000
   Size.PlatformDefault = False
