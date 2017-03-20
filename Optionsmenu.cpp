@@ -26,13 +26,15 @@ void __fastcall TOptions_frame::checkon_gra_w_oknieClick(TObject *Sender)
 {
 	 checkon_gra_w_oknie->Visible = false;
 	 checkoff_gra_w_oknie->Visible = true;
-     Form1->BorderStyle = 2;
+	 Form1->BorderStyle = 0;
+	 Form1->WindowState = 2;
 }
 //---------------------------------------------------------------------------
 void __fastcall TOptions_frame::checkoff_gra_w_oknieClick(TObject *Sender)
 {
 	checkon_gra_w_oknie->Visible = true;
 	checkoff_gra_w_oknie->Visible = false;
-    Form1->BorderStyle = 0;
+	Form1->BorderStyle = 2;
+	Form1->WindowState = 0;
 }
 //---------------------------------------------------------------------------

@@ -47,12 +47,22 @@ void TForm1::MainMenu()
 
 void TForm1::OptionsMenu()
 {
-		Options_frame = new TOptions_frame(this);
-		Options_frame->Parent=this;
-		Options_frame->Height = 400;
-		Options_frame->Width = 300;
-		Options_frame->Visible = false;
-		Options_frame->Parent = this;
+	Options_frame = new TOptions_frame(this);
+	Options_frame->Parent=this;
+	Options_frame->Height = 400;
+	Options_frame->Width = 300;
+	Options_frame->Visible = false;
+	Options_frame->Parent = this;
+	if (Form1->BorderStyle == 2 && Form1->WindowState == 0)
+	{
+		Options_frame->checkon_gra_w_oknie->Visible = true;
+		Options_frame->checkoff_gra_w_oknie->Visible = false;
+	}
+	if (Form1->BorderStyle == 0 && Form1->WindowState == 2)
+	{
+		Options_frame->checkon_gra_w_oknie->Visible = false;
+		Options_frame->checkoff_gra_w_oknie->Visible = true;
+	}
 }
 
 
@@ -63,9 +73,18 @@ void TForm1::Game()
 	frame1Map->Visible = false;
 }
 
+void TForm1::FormSettings()
+{
+	Form1->Height=1080;
+	Form1->Width=1920;
+	Form1->BorderStyle == 2;
+	Form1->WindowState == 0;
+}
+
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
+    FormSettings();
 	MainMenu();
 	OptionsMenu();
     Game();
