@@ -16,6 +16,10 @@ __published:	// IDE-managed Components
 	TImage *Endgame_button;
 	TImage *Image1;
 	TImage *Image2;
+	void __fastcall Options_buttonClick(TObject *Sender);
+	void __fastcall Endgame_buttonClick(TObject *Sender);
+	void __fastcall Image1Click(TObject *Sender);
+	void __fastcall Image2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TIngamemenu_frame(TComponent* Owner);

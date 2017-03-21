@@ -96,18 +96,33 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	FormSettings();
 	MainMenu();
-	OptionsMenu();
 	Game();
+	OptionsMenu();
 	InGameMenu();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key, System::WideChar &KeyChar,
           TShiftState Shift)
 {
-	if (Key==VK_ESCAPE && frame1Map->Visible==true)
+	if (Key==VK_ESCAPE && frame1Map->Visible==true && Ingamemenu_frame->Visible == false
+	&& Options_frame->Visible == false)
 	{
 		Ingamemenu_frame->Visible = true;
-    }
+	}
+	else if (Key==VK_ESCAPE && frame1Map->Visible==true && Ingamemenu_frame->Visible == true)
+	{
+		Ingamemenu_frame->Visible = false;
+	}
+	else if (Key==VK_ESCAPE && frame1Map->Visible==true && Ingamemenu_frame->Visible == false
+	&& Options_frame->Visible == true)
+	{
+		Options_frame->wrocClick(Ingamemenu_frame);
+	}
+	else if (Key==VK_ESCAPE && frame1Map->Visible==false && Ingamemenu_frame->Visible == false
+	&& Options_frame->Visible == true)
+	{
+		Options_frame->wrocClick(Mainmenu_frame);
+	}
 }
 //---------------------------------------------------------------------------
 

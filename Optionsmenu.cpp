@@ -2,10 +2,10 @@
 
 #include <fmx.h>
 #pragma hdrstop
-
 #include "Optionsmenu.h"
 #include "Unit1.h"
 #include "frameMap.h"
+#include "Ingamemenu.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -18,8 +18,17 @@ __fastcall TOptions_frame::TOptions_frame(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TOptions_frame::wrocClick(TObject *Sender)
 {
-	Mainmenu_frame->Visible=true;
-	Options_frame->Visible=false;
+	if(frame1Map->Visible == true)
+	{
+		Ingamemenu_frame->Visible=true;
+		Options_frame->Visible=false;
+	}
+	else
+	{
+		Mainmenu_frame->Visible=true;
+		Options_frame->Visible=false;
+    }
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TOptions_frame::checkon_gra_w_oknieClick(TObject *Sender)
