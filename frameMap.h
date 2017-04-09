@@ -12,6 +12,7 @@
 #include <FMX.StdCtrls.hpp>
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
+#include <FMX.Ani.hpp>
 //---------------------------------------------------------------------------
 class Tframe1Map : public TFrame
 {
@@ -60,8 +61,16 @@ __published:	// IDE-managed Components
 	TRectangle *background;
 	TImage *startStopThrowing2;
 	TTimer *timerForThrowImagePulsing;
+	TImage *player1;
+	TButton *przesun;
+	TFloatAnimation *moveInXAxis;
+	TFloatAnimation *moveInYAxis;
+	TImage *Image38;
+	TFloatAnimation *FloatAnimation1;
+	TFloatAnimation *FloatAnimation2;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
+	void __fastcall przesunClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall Tframe1Map(TComponent* Owner);

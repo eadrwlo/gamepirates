@@ -40,3 +40,17 @@ void __fastcall Tframe1Map::timerForDiceTimer(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+void __fastcall Tframe1Map::przesunClick(TObject *Sender)
+{
+//	player1->Position->X -= 88;
+//	player1->Position->Y += 50;
+	moveInXAxis->StopValue = player1->Position->X - 88;
+	moveInYAxis->StopValue = player1->Position->Y + 50;
+	moveInXAxis->Start();
+	moveInYAxis->Start();
+    //rotatePlayer->Start();
+}
+//---------------------------------------------------------------------------
+
+
+
