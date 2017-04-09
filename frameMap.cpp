@@ -9,7 +9,7 @@
 #pragma resource "*.fmx"
 Tframe1Map *frame1Map;
 int number = 1;
-
+bool move = false;
 //---------------------------------------------------------------------------
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
@@ -53,4 +53,20 @@ void __fastcall Tframe1Map::przesunClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall Tframe1Map::Timer1Timer(TObject *Sender)
+{
+	if( move == false)
+	{
+		background->Position->X +=3;
+		move = true;
+	}
+	else
+	{
+		background->Position->X -=3;
+		move = false;
+	}
+
+}
+//---------------------------------------------------------------------------
 

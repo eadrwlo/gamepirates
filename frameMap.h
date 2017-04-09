@@ -58,7 +58,6 @@ __published:	// IDE-managed Components
 	TTimer *timerForDice;
 	TImageList *diceWalls;
 	TGlyph *dice;
-	TRectangle *background;
 	TImage *startStopThrowing2;
 	TTimer *timerForThrowImagePulsing;
 	TImage *player1;
@@ -68,9 +67,13 @@ __published:	// IDE-managed Components
 	TImage *Image38;
 	TFloatAnimation *FloatAnimation1;
 	TFloatAnimation *FloatAnimation2;
+	TImage *Image37;
+	TImage *background;
+	TTimer *Timer1;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall przesunClick(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall Tframe1Map(TComponent* Owner);
