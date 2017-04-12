@@ -8,24 +8,17 @@
 #include "Optionsmenu.h"
 #include "frameMap.h"
 #include "Ingamemenu.h"
-#include "MediaPlayer.h"
 #include <iostream>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "frameMap"
 #pragma resource "*.fmx"
 TForm1 *Form1;
-Player *player;
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::Image1Click(TObject *Sender)
-{
-	player->setName("Adrian");
 }
 //---------------------------------------------------------------------------
 void TForm1::mainMenuMusic()

@@ -4,16 +4,20 @@
 #pragma hdrstop
 #include <ctime>
 #include "frameMap.h"
+#include "gameLib.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
+
 Tframe1Map *frame1Map;
+Player *player1_1;
 int number = 1;
-bool move = false;
+bool moves = false;
 //---------------------------------------------------------------------------
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
+	  player1_1 = new Player("Adrian", 100, player1, moveInXAxis, moveInYAxis );
 }
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
@@ -44,10 +48,11 @@ void __fastcall Tframe1Map::przesunClick(TObject *Sender)
 {
 //	player1->Position->X -= 88;
 //	player1->Position->Y += 50;
-	moveInXAxis->StopValue = player1->Position->X - 88;
-	moveInYAxis->StopValue = player1->Position->Y + 50;
-	moveInXAxis->Start();
-	moveInYAxis->Start();
+	player1_1->movePlayer(3);
+	//moveInXAxis->StopValue = player1->Position->X - 88;
+	//moveInYAxis->StopValue = player1->Position->Y + 50;
+	//moveInXAxis->Start();
+	//moveInYAxis->Start();
     //rotatePlayer->Start();
 }
 //---------------------------------------------------------------------------
@@ -56,17 +61,21 @@ void __fastcall Tframe1Map::przesunClick(TObject *Sender)
 
 void __fastcall Tframe1Map::Timer1Timer(TObject *Sender)
 {
-	if( move == false)
+	if( moves == false)
 	{
 		background->Position->X +=3;
-		move = true;
+		moves = true;
 	}
 	else
 	{
 		background->Position->X -=3;
-		move = false;
+		moves = false;
 	}
 
 }
 //---------------------------------------------------------------------------
+
+
+
+
 

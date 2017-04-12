@@ -157,8 +157,8 @@
         </CppCompile>
         <FormResources Include="Optionsmenu.fmx"/>
         <FormResources Include="Unit1.fmx"/>
-        <FormResources Include="frameMap.fmx"/>
         <FormResources Include="Mainmenu.fmx"/>
+        <FormResources Include="frameMap.fmx"/>
         <FormResources Include="Ingamemenu.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

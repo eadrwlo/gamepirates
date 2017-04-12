@@ -22,7 +22,6 @@
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-	void __fastcall Image1Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall FormKeyDown(TObject *Sender, WORD &Key, System::WideChar &KeyChar,
           TShiftState Shift);

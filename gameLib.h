@@ -18,12 +18,14 @@ class Player
 	positionOnMap currentPositionOnMap;
 	int ownedMoney;
 	TImage *playerImagePtr;
+	TFloatAnimation *playerFlowAnimationX;
+	TFloatAnimation *playerFlowAnimationY;
 
 	public:
-	Player(string _name, int _ownedMoney, TImage *playerImagePtr);
+	Player(string _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis);
 	void setName(string _name);
 	string getName();
-    void movePlayer(int fieldNr);
+    void movePlayer(int fieldToMove);
 
 };
 
