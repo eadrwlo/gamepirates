@@ -17,6 +17,7 @@
 #include <FMX.Controls3D.hpp>
 #include <FMX.Objects3D.hpp>
 #include <System.Math.Vectors.hpp>
+#include <FMX.Media.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -29,6 +30,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
+    void mainMenuMusic();
 	void FormSettings();
 	void MainMenu();
 	void OptionsMenu();

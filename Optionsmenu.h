@@ -24,6 +24,8 @@ __published:	// IDE-managed Components
 	void __fastcall wrocClick(TObject *Sender);
 	void __fastcall checkon_gra_w_oknieClick(TObject *Sender);
 	void __fastcall checkoff_gra_w_oknieClick(TObject *Sender);
+	void __fastcall checkoff_muzykaClick(TObject *Sender);
+	void __fastcall checkon_muzykaClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TOptions_frame(TComponent* Owner);

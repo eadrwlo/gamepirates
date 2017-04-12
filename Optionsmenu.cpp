@@ -47,3 +47,19 @@ void __fastcall TOptions_frame::checkoff_gra_w_oknieClick(TObject *Sender)
 	Form1->WindowState = 0;
 }
 //---------------------------------------------------------------------------
+void __fastcall TOptions_frame::checkoff_muzykaClick(TObject *Sender)
+{
+   //	MusicPlayer->Play();
+	checkoff_muzyka->Visible = false;
+	checkon_muzyka->Visible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TOptions_frame::checkon_muzykaClick(TObject *Sender)
+{
+   	//if (MusicPlayer->Tag == 2)
+	checkoff_muzyka->Visible = true;
+	checkon_muzyka->Visible = false;
+}
+//---------------------------------------------------------------------------
+

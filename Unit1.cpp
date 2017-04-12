@@ -8,15 +8,14 @@
 #include "Optionsmenu.h"
 #include "frameMap.h"
 #include "Ingamemenu.h"
+#include "MediaPlayer.h"
 #include <iostream>
-#include <vector>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "frameMap"
 #pragma resource "*.fmx"
 TForm1 *Form1;
 Player *player;
-std::vector <TMainmenu_frame*> buttons;
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -29,13 +28,25 @@ void __fastcall TForm1::Image1Click(TObject *Sender)
 	player->setName("Adrian");
 }
 //---------------------------------------------------------------------------
+void TForm1::mainMenuMusic()
+{
+    TMediaPlayer *MusicPlayer = new TMediaPlayer(this);
+	MusicPlayer->Parent=this;
+	MusicPlayer->FileName = "../../sounds/mainmenu_music.mp3";
+	MusicPlayer->Play();
+	MusicPlayer->Tag = 2;
+	MusicPlayer->Volume = 0.5;
+}
+
+
 void TForm1::MainMenu()
 {
+    mainMenuMusic();
 	TImage *MainMenuBackground = new TImage(this);
 	MainMenuBackground->Parent = this;
 	MainMenuBackground->Height=1080;
 	MainMenuBackground->Width=1920;
-	MainMenuBackground->Bitmap->LoadFromFile("../../img/MainMenu/background.bmp");
+	MainMenuBackground->Bitmap->LoadFromFile("../../img/background/background.bmp");
 	MainMenuBackground->Visible = true;
 	MainMenuBackground->Align = 11;
 
@@ -72,6 +83,7 @@ void TForm1::Game()
 	frame1Map = new Tframe1Map(this);
 	frame1Map->Parent = this;
 	frame1Map->Visible = false;
+    frame1Map->Align = 11;
 }
 //---------------------------------------------------------------------------
 void TForm1::FormSettings()

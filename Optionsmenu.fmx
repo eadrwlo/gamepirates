@@ -1305,6 +1305,7 @@ object Options_frame: TOptions_frame
     Size.Width = 41.000000000000000000
     Size.Height = 41.000000000000000000
     Size.PlatformDefault = False
+    OnClick = checkoff_muzykaClick
   end
   object checkon_gra_w_oknie: TImage
     MultiResBitmap = <
@@ -1907,5 +1908,6 @@ object Options_frame: TOptions_frame
     Size.Height = 41.000000000000000000
     Size.PlatformDefault = False
     Visible = False
+    OnClick = checkon_muzykaClick
   end
 end
