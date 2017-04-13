@@ -4,9 +4,6 @@ Player::Player(string _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAni
 {
 	name = _name;
 	ownedMoney = _ownedMoney;
-	currentPositionOnMap.X = 0;
-	currentPositionOnMap.Y = 0;
-	currentPositionOnMap.fieldNumber = 0;
 	playerImagePtr = _playerImagePtr;
 	playerFlowAnimationX =  _moveInXAxis;
 	playerFlowAnimationY =  _moveInYAxis;
@@ -31,4 +28,12 @@ void Player::movePlayer(int fieldToMove)
 		playerFlowAnimationX->Start();
 		playerFlowAnimationY->Start();
 	//}
+}
+
+/// ----- F I E L D implementation ------ ////
+
+Field::Field(int _fieldNumber, TImage *_fieldImagePtr)
+{
+	fieldNumber = _fieldNumber;
+	fieldImagePtr = _fieldImagePtr;
 }

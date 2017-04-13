@@ -4,22 +4,25 @@
 
 using namespace std;
 
-struct positionOnMap
+class Field
 {
-	int X;
-	int Y;
-    int fieldNumber;
+	protected:
+	int fieldNumber;
+	TImage *fieldImagePtr;
+
+	public:
+	Field(int _fieldNumber, TImage *_fieldImagePtr);
 };
 
 class Player
 {
 	protected:
 	string name;
-	positionOnMap currentPositionOnMap;
 	int ownedMoney;
 	TImage *playerImagePtr;
 	TFloatAnimation *playerFlowAnimationX;
 	TFloatAnimation *playerFlowAnimationY;
+	Field *currentFieldPtr;
 
 	public:
 	Player(string _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis);
@@ -29,11 +32,11 @@ class Player
 
 };
 
+
 class Port
 {
 	protected:
-    string name;
-	int portNumber;
+	string name;
 	int conquerCost;
 	int visitingPayment;
 	int extensionLvl;
@@ -41,7 +44,7 @@ class Port
 	Player *owner;
 	TImage *portImagePtr;
 
-    public:
+	public:
 	Port();
 	void setName();
 	string getName();

@@ -4,7 +4,6 @@
 #pragma hdrstop
 #include <ctime>
 #include "frameMap.h"
-#include "gameLib.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -18,6 +17,7 @@ __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
 	  player1_1 = new Player("Adrian", 100, player1, moveInXAxis, moveInYAxis );
+      fillFieldsVectorWithFields();
 }
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
@@ -58,7 +58,6 @@ void __fastcall Tframe1Map::przesunClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-
 void __fastcall Tframe1Map::Timer1Timer(TObject *Sender)
 {
 	if( moves == false)
@@ -75,6 +74,10 @@ void __fastcall Tframe1Map::Timer1Timer(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void Tframe1Map::fillFieldsVectorWithFields()
+{
+	this->fieldsVector.push_back(new Field(1, this->field01));
+}
 
 
 

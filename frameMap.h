@@ -13,6 +13,8 @@
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
 #include <FMX.Ani.hpp>
+#include "gameLib.h"
+#include <vector>
 //---------------------------------------------------------------------------
 class Tframe1Map : public TFrame
 {
@@ -75,9 +77,11 @@ __published:	// IDE-managed Components
 	void __fastcall przesunClick(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 private:	// User declarations
+    vector<Field*> fieldsVector;
 public:		// User declarations
 	__fastcall Tframe1Map(TComponent* Owner);
-    friend void throwDice();
+	friend void throwDice();
+    void fillFieldsVectorWithFields();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE Tframe1Map *frame1Map;

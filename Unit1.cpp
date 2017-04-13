@@ -4,9 +4,7 @@
 #pragma hdrstop
 #include "Unit1.h"
 #include "Mainmenu.h"
-#include "gameLib.h"
 #include "Optionsmenu.h"
-#include "frameMap.h"
 #include "Ingamemenu.h"
 #include <iostream>
 //---------------------------------------------------------------------------
