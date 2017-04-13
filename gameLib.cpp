@@ -20,11 +20,15 @@ void Player::setName(string _name)
 
 void Player::movePlayer(int fieldToMove)
 {
-	for(int i=0; i<fieldToMove; i++)
-	{
-		playerFlowAnimationX->StopValue = playerImagePtr->Position->X - 88;
-		playerFlowAnimationY->StopValue = playerImagePtr->Position->Y + 50;
+	//for(int i=0; i<fieldToMove; i++)
+	//{
+		playerFlowAnimationX->Duration *= fieldToMove;
+		playerFlowAnimationY->Duration *= fieldToMove;
+		playerFlowAnimationX->StopValue = playerImagePtr->Position->X - (fieldToMove*88);
+	   //	playerImagePtr->Position->X = playerFlowAnimationX->StopValue;
+		playerFlowAnimationY->StopValue = playerImagePtr->Position->Y + (fieldToMove*50);
+	  //	playerImagePtr->Position->Y = playerFlowAnimationY->StopValue;
 		playerFlowAnimationX->Start();
 		playerFlowAnimationY->Start();
-	}
+	//}
 }
