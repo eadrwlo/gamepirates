@@ -14,8 +14,4 @@ object Form1: TForm1
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   DesignerMasterStyle = 0
-  object MediaPlayer1: TMediaPlayer
-    Left = 592
-    Top = 360
-  end
 end
