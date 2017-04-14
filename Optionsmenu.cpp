@@ -14,6 +14,16 @@ TOptions_frame *Options_frame;
 __fastcall TOptions_frame::TOptions_frame(TComponent* Owner)
 	: TFrame(Owner)
 {
+    if (musicPlayer->State == 0)
+	{
+		checkoff_muzyka->Visible = false;
+		checkon_muzyka->Visible = true;
+	}
+	else
+	{
+		checkoff_muzyka->Visible = true;
+		checkon_muzyka->Visible = false;
+	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TOptions_frame::wrocClick(TObject *Sender)
@@ -49,17 +59,25 @@ void __fastcall TOptions_frame::checkoff_gra_w_oknieClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TOptions_frame::checkoff_muzykaClick(TObject *Sender)
 {
-   //	MusicPlayer->Play();
 	checkoff_muzyka->Visible = false;
 	checkon_muzyka->Visible = true;
+    musicPlayer->Play();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TOptions_frame::checkon_muzykaClick(TObject *Sender)
 {
-   	//if (MusicPlayer->Tag == 2)
+    musicPlayer->Stop();
 	checkoff_muzyka->Visible = true;
 	checkon_muzyka->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TOptions_frame::volumeButtonClick(TObject *Sender)
+{
+	//volumeButton->Parent = volumeBar;
+	volumeButton->DragMode = 2;
 }
 //---------------------------------------------------------------------------
 

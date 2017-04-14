@@ -21,11 +21,14 @@ __published:	// IDE-managed Components
 	TImage *checkoff_muzyka;
 	TImage *checkon_gra_w_oknie;
 	TImage *checkon_muzyka;
+	TImage *volumeBar;
+	TImage *volumeButton;
 	void __fastcall wrocClick(TObject *Sender);
 	void __fastcall checkon_gra_w_oknieClick(TObject *Sender);
 	void __fastcall checkoff_gra_w_oknieClick(TObject *Sender);
 	void __fastcall checkoff_muzykaClick(TObject *Sender);
 	void __fastcall checkon_muzykaClick(TObject *Sender);
+	void __fastcall volumeButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TOptions_frame(TComponent* Owner);

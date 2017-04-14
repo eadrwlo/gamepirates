@@ -30,13 +30,14 @@ private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
     void mainMenuMusic();
-	void FormSettings();
-	void MainMenu();
-	void OptionsMenu();
-	void Game();
-    void InGameMenu();
+	void formSettings();
+	void mainMenu();
+	void optionsMenu();
+	void game();
+	void inGameMenu();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;
+extern TMediaPlayer *musicPlayer;
 //---------------------------------------------------------------------------
 #endif
