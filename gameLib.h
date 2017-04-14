@@ -12,6 +12,7 @@ class Field
 
 	public:
 	Field(int _fieldNumber, TImage *_fieldImagePtr);
+	int getFieldNumber();
 };
 
 class Player
@@ -25,7 +26,9 @@ class Player
 	Field *currentFieldPtr;
 
 	public:
-	Player(string _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis);
+	Player(string _name, int _ownedMoney, TImage *_playerImagePtr,
+		   TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis,
+		   Field *_currentFieldPtr);
 	void setName(string _name);
 	string getName();
     void movePlayer(int fieldToMove);
