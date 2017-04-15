@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <fmx.h>
 #pragma hdrstop
@@ -10,12 +10,13 @@
 
 Tframe1Map *frame1Map;
 Player *player1_1;
-int number = 1;
 bool moves = false;
+bool buttonThowState = false;
 //---------------------------------------------------------------------------
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
+	drawnNumber = 1;
 	fillFieldsVectorWithFields();
 	player1_1 = new Player("Adrian", 100, player1, moveInXAxis, moveInYAxis, this->fieldsVector[0]);
 }
@@ -24,7 +25,7 @@ void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
 {
 	AnsiString throwTheDice = "Throw the Dice !";
 	AnsiString stopTheDice = "Stop the Dice !";
-	Label1->Text = " ";
+	Label1->Text = drawnNumber;
 //	else if (Button1->Text == stopTheDice)
 //	{
 //		Button1->Text = throwTheDice;
@@ -35,30 +36,28 @@ void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
 
 void __fastcall Tframe1Map::timerForDiceTimer(TObject *Sender)
 {
-		Label1->Text = number;
-		dice->ImageIndex = number - 1;
-		number ++;
-		if (number == 7)
-			number = 1;
+
+		drawnNumber++;
+		dice->ImageIndex = drawnNumber - 1;
+		if (drawnNumber == 7)
+		{
+			drawnNumber = 1;
+			dice->ImageIndex = drawnNumber - 1;
+		}
+		Label1->Text = drawnNumber;
 }
 //---------------------------------------------------------------------------
 
 
 void __fastcall Tframe1Map::przesunClick(TObject *Sender)
 {
-//	player1->Position->X -= 88;
-//	player1->Position->Y += 50;
-	player1_1->movePlayer(3);
-	//moveInXAxis->StopValue = player1->Position->X - 88;
-	//moveInYAxis->StopValue = player1->Position->Y + 50;
-	//moveInXAxis->Start();
-	//moveInYAxis->Start();
-    //rotatePlayer->Start();
+	fieldsCounter = 0;
+	timerForPlayerMovementExecute->Enabled = true;
 }
 //---------------------------------------------------------------------------
 
 
-void __fastcall Tframe1Map::Timer1Timer(TObject *Sender)
+void __fastcall Tframe1Map::groundMovementTimer(TObject *Sender)
 {
 	if( moves == false)
 	{
@@ -70,7 +69,6 @@ void __fastcall Tframe1Map::Timer1Timer(TObject *Sender)
 		background->Position->X -=3;
 		moves = false;
 	}
-
 }
 //---------------------------------------------------------------------------
 
@@ -115,5 +113,59 @@ void Tframe1Map::fillFieldsVectorWithFields()
 }
 
 
+void __fastcall Tframe1Map::timerForPlayerMovementTimer(TObject *Sender)
+{
+		ship->Position->X +=0.1;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
+{
+	player1_1->movePlayer(drawnNumber);
+	int currentFieldNumber = (player1_1->getCurrentFieldPtr())->getFieldNumber();
+	if (currentFieldNumber == 36)
+	{
+        player1_1->updateCurrentField(this->fieldsVector[0]);
+    }
+	else
+	{
+		player1_1->updateCurrentField(this->fieldsVector[currentFieldNumber]);
+	}
+
+	fieldsCounter ++;
+	if (fieldsCounter == drawnNumber)
+	{
+		timerForPlayerMovementExecute->Enabled = false;
+		fieldsCounter = 0;
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall Tframe1Map::CornerButton1Click(TObject *Sender)
+{
+	Label1->Text = drawnNumber;
+	timerForDice->Enabled = !(timerForDice->Enabled);
+	if(buttonThowState == false)
+	{
+		CornerButton1->Text = "Zatrzymaj kostke !";
+		buttonThowState = !(buttonThowState);
+	}
+	else if (buttonThowState)
+	{
+		CornerButton1->Text = "Rzuc kostka !";
+		buttonThowState = !(buttonThowState);
+    }
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall Tframe1Map::CornerButton2Click(TObject *Sender)
+{
+	timerForPlayerMovementExecute->Enabled = true;
+}
+//---------------------------------------------------------------------------
 
 

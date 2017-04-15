@@ -15,32 +15,44 @@ void Player::setName(string _name)
 	name = _name;
 }
 
-void Player::movePlayer(int fieldToMove)
+void Player::movePlayer(int drawnNumber)
 {
 	if ( currentFieldPtr->getFieldNumber() < 10 )
 	{
 		// to do - gracz jest na boku mapy -- poludnie - zachod
+		playerFlowAnimationX->StopValue = playerImagePtr->Position->X - 88;
+		playerFlowAnimationY->StopValue = playerImagePtr->Position->Y + 50;
 	}
 	else if ( currentFieldPtr->getFieldNumber() < 19 )
 	{
 		// to do - gracz jest na boku mapy -- polnoc - zachod
+		playerFlowAnimationX->StopValue = playerImagePtr->Position->X - 88;
+		playerFlowAnimationY->StopValue = playerImagePtr->Position->Y - 50;
 	}
 	else if ( currentFieldPtr->getFieldNumber() < 28 )
 	{
 		// to do - gracz jest na boku mapy -- polnoc - wschod
+		playerFlowAnimationX->StopValue = playerImagePtr->Position->X + 88;
+		playerFlowAnimationY->StopValue = playerImagePtr->Position->Y - 50;
 	}
 	else
 	{
 		// to do - gracz jest na boku mapy -- poludnie - wschod
+		playerFlowAnimationX->StopValue = playerImagePtr->Position->X + 88;
+		playerFlowAnimationY->StopValue = playerImagePtr->Position->Y + 50;
 	}
+	playerFlowAnimationX->Start();
+	playerFlowAnimationY->Start();
+}
 
-		playerFlowAnimationX->Duration = fieldToMove;
-		playerFlowAnimationY->Duration = fieldToMove;
-		playerFlowAnimationX->StopValue = playerImagePtr->Position->X - (fieldToMove*88);
-		playerFlowAnimationY->StopValue = playerImagePtr->Position->Y + (fieldToMove*50);
-		playerFlowAnimationX->Start();
-		playerFlowAnimationY->Start();
+void Player::updateCurrentField(Field *newFieldPtr)
+{
+   currentFieldPtr = newFieldPtr;
+}
 
+Field* Player::getCurrentFieldPtr()
+{
+	return currentFieldPtr;
 }
 
 /// ----- F I E L D implementation ------ ////
@@ -55,3 +67,5 @@ int Field::getFieldNumber()
 {
     return fieldNumber;
 }
+
+

@@ -14,6 +14,8 @@
 #include <System.ImageList.hpp>
 #include <FMX.Ani.hpp>
 #include "gameLib.h"
+#include <FMX.Colors.hpp>
+#include <FMX.Styles.Objects.hpp>
 #include <vector>
 //---------------------------------------------------------------------------
 class Tframe1Map : public TFrame
@@ -56,14 +58,11 @@ __published:	// IDE-managed Components
 	TImage *field27;
 	TImage *field28;
 	TLabel *Label1;
-	TButton *startStopThrowing;
 	TTimer *timerForDice;
 	TImageList *diceWalls;
 	TGlyph *dice;
-	TImage *startStopThrowing2;
 	TTimer *timerForThrowImagePulsing;
 	TImage *player1;
-	TButton *przesun;
 	TFloatAnimation *moveInXAxis;
 	TFloatAnimation *moveInYAxis;
 	TImage *Image38;
@@ -71,13 +70,26 @@ __published:	// IDE-managed Components
 	TFloatAnimation *FloatAnimation2;
 	TImage *field10;
 	TImage *background;
-	TTimer *Timer1;
+	TTimer *groundMovement;
+	TTimer *timerForPlayerMovement;
+	TTimer *timerForPlayerMovementExecute;
+	TButtonStyleObject *ButtonStyleObject1;
+	TCornerButton *CornerButton1;
+	TColorAnimation *ColorAnimation1;
+	TCornerButton *CornerButton2;
+	TImage *ship;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall przesunClick(TObject *Sender);
-	void __fastcall Timer1Timer(TObject *Sender);
+	void __fastcall groundMovementTimer(TObject *Sender);
+	void __fastcall timerForPlayerMovementTimer(TObject *Sender);
+	void __fastcall timerForPlayerMovementExecuteTimer(TObject *Sender);
+	void __fastcall CornerButton1Click(TObject *Sender);
+	void __fastcall CornerButton2Click(TObject *Sender);
 private:	// User declarations
-    vector<Field*> fieldsVector;
+	vector<Field*> fieldsVector;
+	int fieldsCounter;
+	int drawnNumber;
 public:		// User declarations
 	__fastcall Tframe1Map(TComponent* Owner);
 	friend void throwDice();
