@@ -3,7 +3,7 @@ object Mainmenu_frame: TMainmenu_frame
   Size.Width = 300.000000000000000000
   Size.Height = 400.000000000000000000
   Size.PlatformDefault = False
-  object Startgame_button: TImage
+  object startgame_button: TImage
     MultiResBitmap = <
       item
         Width = 251
@@ -278,9 +278,9 @@ object Mainmenu_frame: TMainmenu_frame
     Size.Width = 201.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
-    OnClick = Startgame_buttonClick
+    OnClick = startgame_buttonClick
   end
-  object Options_button: TImage
+  object options_button: TImage
     MultiResBitmap = <
       item
         Width = 242
@@ -600,9 +600,9 @@ object Mainmenu_frame: TMainmenu_frame
     Size.Width = 201.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
-    OnClick = Options_buttonClick
+    OnClick = options_buttonClick
   end
-  object Endgame_button: TImage
+  object endgame_button: TImage
     MultiResBitmap = <
       item
         Width = 287
@@ -985,6 +985,6 @@ object Mainmenu_frame: TMainmenu_frame
     Size.Width = 233.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
-    OnClick = Endgame_buttonClick
+    OnClick = endgame_buttonClick
   end
 end

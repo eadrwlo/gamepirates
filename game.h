@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit1H
-#define Unit1H
+#ifndef gameH
+#define gameH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <FMX.Controls.hpp>
@@ -19,7 +19,7 @@
 #include <System.Math.Vectors.hpp>
 #include <FMX.Media.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TgameForm : public TForm
 {
 __published:	// IDE-managed Components
 	void __fastcall FormCreate(TObject *Sender);
@@ -28,7 +28,7 @@ __published:	// IDE-managed Components
 
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
+	__fastcall TgameForm(TComponent* Owner);
     void mainMenuMusic();
 	void formSettings();
 	void mainMenu();
@@ -37,7 +37,7 @@ public:		// User declarations
 	void inGameMenu();
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TgameForm *gameForm;
 extern TMediaPlayer *musicPlayer;
 //---------------------------------------------------------------------------
 #endif

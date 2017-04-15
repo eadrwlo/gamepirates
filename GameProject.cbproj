@@ -3,7 +3,7 @@
         <ProjectGuid>{4E4F39AC-BC3F-4AD0-ABF1-EE9E03EB5482}</ProjectGuid>
         <ProjectVersion>18.2</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
-        <MainSource>Project1.cpp</MainSource>
+        <MainSource>GameProject.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -46,7 +46,7 @@
         <Icns_MainIcns>$(BDS)\bin\cbuilder_PROJECTICNS.icns</Icns_MainIcns>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <ProjectType>FmxGuiApplication</ProjectType>
-        <SanitizedProjectName>Project1</SanitizedProjectName>
+        <SanitizedProjectName>GameProject</SanitizedProjectName>
         <ILINK_LibraryPath>D:\Git_repositories\gamepirates\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <AllPackageLibs>rtl.lib;fmx.lib</AllPackageLibs>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -115,51 +115,51 @@
             <DependentOn>frameMap.h</DependentOn>
             <BuildOrder>5</BuildOrder>
         </CppCompile>
+        <CppCompile Include="game.cpp">
+            <Form>gameForm</Form>
+            <FormType>fmx</FormType>
+            <DependentOn>game.h</DependentOn>
+            <BuildOrder>1</BuildOrder>
+        </CppCompile>
         <CppCompile Include="gameLib.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
         <None Include="gameLib.h">
             <BuildOrder>3</BuildOrder>
         </None>
-        <CppCompile Include="Ingamemenu.cpp">
-            <Form>Ingamemenu_frame</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-            <DependentOn>Ingamemenu.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Mainmenu.cpp">
-            <Form>Mainmenu_frame</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-            <DependentOn>Mainmenu.h</DependentOn>
-            <BuildOrder>5</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Optionsmenu.cpp">
-            <Form>Options_frame</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-            <DependentOn>Optionsmenu.h</DependentOn>
-            <BuildOrder>6</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Project1.cpp">
+        <CppCompile Include="GameProject.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
-        <PCHCompile Include="Project1PCH1.h">
+        <PCHCompile Include="GameProjectPCH1.h">
             <BuildOrder>2</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="Unit1.cpp">
-            <Form>Form1</Form>
+        <CppCompile Include="inGameMenu.cpp">
+            <Form>Ingamemenu_frame</Form>
             <FormType>fmx</FormType>
-            <DependentOn>Unit1.h</DependentOn>
-            <BuildOrder>1</BuildOrder>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>inGameMenu.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
         </CppCompile>
-        <FormResources Include="Optionsmenu.fmx"/>
-        <FormResources Include="Unit1.fmx"/>
-        <FormResources Include="Mainmenu.fmx"/>
+        <CppCompile Include="mainMenu.cpp">
+            <Form>Mainmenu_frame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>mainMenu.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="optionsMenu.cpp">
+            <Form>Options_frame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>optionsMenu.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <FormResources Include="optionsMenu.fmx"/>
+        <FormResources Include="game.fmx"/>
+        <FormResources Include="mainMenu.fmx"/>
         <FormResources Include="frameMap.fmx"/>
-        <FormResources Include="Ingamemenu.fmx"/>
+        <FormResources Include="inGameMenu.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -178,7 +178,7 @@
         <BorlandProject>
             <CPlusPlusBuilder.Personality>
                 <Source>
-                    <Source Name="MainSource">Project1.cpp</Source>
+                    <Source Name="MainSource">GameProject.cpp</Source>
                 </Source>
                 <ProjectProperties>
                     <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>

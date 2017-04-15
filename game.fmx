@@ -1,8 +1,8 @@
-object Form1: TForm1
+object gameForm: TgameForm
   Left = 0
   Top = 0
   BorderStyle = None
-  Caption = 'Form1'
+  Caption = 'Pirate Game'
   ClientHeight = 1080
   ClientWidth = 1920
   Position = DesktopCenter

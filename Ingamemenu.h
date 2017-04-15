@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef IngamemenuH
-#define IngamemenuH
+#ifndef inGameMenuH
+#define inGameMenuH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <FMX.Controls.hpp>
@@ -12,14 +12,14 @@
 class TIngamemenu_frame : public TFrame
 {
 __published:	// IDE-managed Components
-	TImage *Options_button;
-	TImage *Endgame_button;
-	TImage *Image1;
-	TImage *Image2;
-	void __fastcall Options_buttonClick(TObject *Sender);
-	void __fastcall Endgame_buttonClick(TObject *Sender);
-	void __fastcall Image1Click(TObject *Sender);
-	void __fastcall Image2Click(TObject *Sender);
+	TImage *options_button;
+	TImage *endgame_button;
+	TImage *goBackToGame_button;
+	TImage *goToMainMenu_button;
+	void __fastcall options_buttonClick(TObject *Sender);
+	void __fastcall endgame_buttonClick(TObject *Sender);
+	void __fastcall goBackToGame_buttonClick(TObject *Sender);
+	void __fastcall goToMainMenu_buttonClick(TObject *Sender);
 	//void inGameMenuBackgroundVisibility(bool val);
 private:	// User declarations
 public:		// User declarations

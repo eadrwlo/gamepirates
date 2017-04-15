@@ -3,7 +3,7 @@ object Ingamemenu_frame: TIngamemenu_frame
   Size.Width = 300.000000000000000000
   Size.Height = 400.000000000000000000
   Size.PlatformDefault = False
-  object Options_button: TImage
+  object options_button: TImage
     MultiResBitmap = <
       item
         Width = 242
@@ -323,9 +323,9 @@ object Ingamemenu_frame: TIngamemenu_frame
     Size.Width = 185.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
-    OnClick = Options_buttonClick
+    OnClick = options_buttonClick
   end
-  object Endgame_button: TImage
+  object endgame_button: TImage
     MultiResBitmap = <
       item
         Width = 287
@@ -708,9 +708,9 @@ object Ingamemenu_frame: TIngamemenu_frame
     Size.Width = 233.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
-    OnClick = Endgame_buttonClick
+    OnClick = endgame_buttonClick
   end
-  object Image1: TImage
+  object goBackToGame_button: TImage
     MultiResBitmap = <
       item
         Width = 229
@@ -1058,9 +1058,9 @@ object Ingamemenu_frame: TIngamemenu_frame
     Size.Width = 185.000000000000000000
     Size.Height = 73.000000000000000000
     Size.PlatformDefault = False
-    OnClick = Image1Click
+    OnClick = goBackToGame_buttonClick
   end
-  object Image2: TImage
+  object goToMainMenu_button: TImage
     MultiResBitmap = <
       item
         Width = 258
@@ -1407,6 +1407,6 @@ object Ingamemenu_frame: TIngamemenu_frame
     Size.Width = 201.000000000000000000
     Size.Height = 73.000000000000000000
     Size.PlatformDefault = False
-    OnClick = Image2Click
+    OnClick = goToMainMenu_buttonClick
   end
 end

@@ -2,7 +2,7 @@
 
 #include <fmx.h>
 #pragma hdrstop
-#include "Unit1.h"
+#include "game.h"
 #include "Mainmenu.h"
 #include "Optionsmenu.h"
 #include "Ingamemenu.h"
@@ -11,13 +11,13 @@
 #pragma package(smart_init)
 #pragma link "frameMap"
 #pragma resource "*.fmx"
-TForm1 *Form1;
+TgameForm *gameForm;
 TImage *inGameMenuBackground;
 TMediaPlayer *musicPlayer;
 TImage *mainMenuBackground;
 
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner)
+__fastcall TgameForm::TgameForm(TComponent* Owner)
 	: TForm(Owner)
 {
 	inGameMenuBackground = new TImage(this);
@@ -29,7 +29,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	Ingamemenu_frame = new TIngamemenu_frame(this);
 }
 //---------------------------------------------------------------------------
-void TForm1::mainMenuMusic()
+void TgameForm::mainMenuMusic()
 {
 	musicPlayer->Parent=this;
 	musicPlayer->FileName = "../../sounds/mainmenu_music.mp3";
@@ -38,7 +38,7 @@ void TForm1::mainMenuMusic()
 }
 
 
-void TForm1::mainMenu()
+void TgameForm::mainMenu()
 {
 	mainMenuMusic();
 	mainMenuBackground->Parent = this;
@@ -54,41 +54,41 @@ void TForm1::mainMenu()
 	Mainmenu_frame->Parent = this;
 }
 //---------------------------------------------------------------------------
-void TForm1::optionsMenu()
+void TgameForm::optionsMenu()
 {
 	Options_frame->Parent=this;
 	Options_frame->Height = 400;
 	Options_frame->Width = 300;
 	Options_frame->Visible = false;
 	Options_frame->Parent = this;
-	if (Form1->BorderStyle == 2 && Form1->WindowState == 0)
+	if (gameForm->BorderStyle == 2 && gameForm->WindowState == 0)
 	{
-		Options_frame->checkon_gra_w_oknie->Visible = true;
-		Options_frame->checkoff_gra_w_oknie->Visible = false;
+		Options_frame->checkON_gameInWindow->Visible = true;
+		Options_frame->checkOFF_gameInWindow->Visible = false;
 	}
-	if (Form1->BorderStyle == 0 && Form1->WindowState == 2)
+	if (gameForm->BorderStyle == 0 && gameForm->WindowState == 2)
 	{
-		Options_frame->checkon_gra_w_oknie->Visible = false;
-		Options_frame->checkoff_gra_w_oknie->Visible = true;
+		Options_frame->checkON_gameInWindow->Visible = false;
+		Options_frame->checkOFF_gameInWindow->Visible = true;
 	}
 }
 //---------------------------------------------------------------------------
-void TForm1::game()
+void TgameForm::game()
 {
 	frame1Map->Parent = this;
 	frame1Map->Visible = false;
     frame1Map->Align = 11;
 }
 //---------------------------------------------------------------------------
-void TForm1::formSettings()
+void TgameForm::formSettings()
 {
-	Form1->Height=1080;
-	Form1->Width=1920;
+	gameForm->Height=1080;
+	gameForm->Width=1920;
 	//Form1->BorderStyle = 2;
 	//Form1->WindowState = 0;
 }
 //---------------------------------------------------------------------------
-void TForm1::inGameMenu()
+void TgameForm::inGameMenu()
 {
 	inGameMenuBackground->Parent = this;
 	inGameMenuBackground->Height=1080;
@@ -104,7 +104,7 @@ void TForm1::inGameMenu()
 	Ingamemenu_frame->Parent = this;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormCreate(TObject *Sender)
+void __fastcall TgameForm::FormCreate(TObject *Sender)
 {
 	formSettings();
 	mainMenu();
@@ -114,7 +114,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key, System::WideChar &KeyChar,
+void __fastcall TgameForm::FormKeyDown(TObject *Sender, WORD &Key, System::WideChar &KeyChar,
           TShiftState Shift)
 {
 	if (Key==VK_ESCAPE && frame1Map->Visible==true && Ingamemenu_frame->Visible == false
@@ -132,13 +132,13 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key, System::WideChar
 	&& Options_frame->Visible == true)
 	{
 		inGameMenuBackground->Visible = true;
-		Options_frame->wrocClick(Ingamemenu_frame);
+		Options_frame->goBack_buttonClick(this);
 	}
 	else if (Key==VK_ESCAPE && frame1Map->Visible==false && Ingamemenu_frame->Visible == false
 	&& Options_frame->Visible == true)
 	{
 		inGameMenuBackground->Visible = false;
-		Options_frame->wrocClick(Mainmenu_frame);
+		Options_frame->goBack_buttonClick(this);
 	}
 }
 //---------------------------------------------------------------------------
