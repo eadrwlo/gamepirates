@@ -16,6 +16,8 @@
 #include "gameLib.h"
 #include <FMX.Colors.hpp>
 #include <FMX.Styles.Objects.hpp>
+#include <FMX.Effects.hpp>
+#include <FMX.Filter.Effects.hpp>
 #include <vector>
 //---------------------------------------------------------------------------
 class Tframe1Map : public TFrame
