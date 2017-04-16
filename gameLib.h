@@ -37,7 +37,7 @@ class Player
 };
 
 
-class Port
+class Port: public Field
 {
 	protected:
 	string name;

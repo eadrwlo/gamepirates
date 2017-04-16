@@ -22,7 +22,7 @@ class Tframe1Map : public TFrame
 {
 __published:	// IDE-managed Components
 	TImage *field06;
-	TImage *Image36;
+	TImage *field10;
 	TImage *field09;
 	TImage *field08;
 	TImage *field07;
@@ -65,19 +65,21 @@ __published:	// IDE-managed Components
 	TImage *player1;
 	TFloatAnimation *moveInXAxis;
 	TFloatAnimation *moveInYAxis;
-	TImage *Image38;
-	TFloatAnimation *FloatAnimation1;
-	TFloatAnimation *FloatAnimation2;
-	TImage *field10;
 	TImage *background;
 	TTimer *groundMovement;
 	TTimer *timerForPlayerMovement;
 	TTimer *timerForPlayerMovementExecute;
-	TButtonStyleObject *ButtonStyleObject1;
 	TCornerButton *CornerButton1;
 	TColorAnimation *ColorAnimation1;
 	TCornerButton *CornerButton2;
 	TImage *ship;
+	TButtonStyleObject *ButtonStyleObject1;
+	TImage *player2;
+	TFloatAnimation *FloatAnimation1;
+	TFloatAnimation *FloatAnimation2;
+	TImage *player3;
+	TFloatAnimation *FloatAnimation3;
+	TFloatAnimation *FloatAnimation4;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall przesunClick(TObject *Sender);
