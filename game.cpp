@@ -34,13 +34,13 @@ void TgameForm::mainMenuMusic()
 	musicPlayer->Parent=this;
 	musicPlayer->FileName = "../../sounds/mainmenu_music.mp3";
 	musicPlayer->Play();
-	musicPlayer->Volume = 1.0;
+   //	musicPlayer->Volume = ((Options_frame->volumeButton_button->Position->X -
+						   //	Options_frame->volumeButton_button->Position->X)/180);
 }
 
 
 void TgameForm::mainMenu()
 {
-	mainMenuMusic();
 	mainMenuBackground->Parent = this;
 	mainMenuBackground->Height=1080;
 	mainMenuBackground->Width=1920;
@@ -56,6 +56,7 @@ void TgameForm::mainMenu()
 //---------------------------------------------------------------------------
 void TgameForm::optionsMenu()
 {
+    mainMenuMusic();
 	Options_frame->Parent=this;
 	Options_frame->Height = 400;
 	Options_frame->Width = 300;

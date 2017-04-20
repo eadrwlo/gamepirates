@@ -23,12 +23,20 @@ __published:	// IDE-managed Components
 	TImage *checkON_music;
 	TImage *volumeBar_label;
 	TImage *volumeButton_button;
+	TTimer *volumeButton_timer;
+	TImage *volume_label;
 	void __fastcall goBack_buttonClick(TObject *Sender);
 	void __fastcall checkON_gameInWindowClick(TObject *Sender);
 	void __fastcall checkOFF_gameInWindowClick(TObject *Sender);
 	void __fastcall checkOFF_musicClick(TObject *Sender);
 	void __fastcall checkON_musicClick(TObject *Sender);
-	void __fastcall volumeButton_buttonClick(TObject *Sender);
+	void __fastcall volumeButton_buttonMouseDown(TObject *Sender, TMouseButton Button,
+          TShiftState Shift, float X, float Y);
+	void __fastcall volumeButton_timerTimer(TObject *Sender);
+	void __fastcall volumeButton_buttonMouseUp(TObject *Sender, TMouseButton Button,
+		  TShiftState Shift, float X, float Y);
+	void __fastcall FrameMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          float X, float Y);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TOptions_frame(TComponent* Owner);
