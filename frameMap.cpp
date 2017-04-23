@@ -101,7 +101,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(25, this->field25));
 	this->fieldsVector.push_back(new Field(26, this->field26));
 	this->fieldsVector.push_back(new Field(27, this->field27));
-	this->fieldsVector.push_back(new Field(28, this->field28));
+	this->fieldsVector.push_back(new Whirpool(28, this->field28, this->whirpoolCard));
 	this->fieldsVector.push_back(new Field(29, this->field29));
 	this->fieldsVector.push_back(new Field(30, this->field30));
 	this->fieldsVector.push_back(new Field(31, this->field31));
@@ -113,11 +113,6 @@ void Tframe1Map::fillFieldsVectorWithFields()
 }
 
 
-void __fastcall Tframe1Map::timerForPlayerMovementTimer(TObject *Sender)
-{
-		ship->Position->X +=0.1;
-}
-//---------------------------------------------------------------------------
 
 
 void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
@@ -137,6 +132,7 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 	if (fieldsCounter == drawnNumber)
 	{
 		timerForPlayerMovementExecute->Enabled = false;
+        this->fieldsVector[currentFieldNumber]->mainEventWhenPlayerIsOnTheField();
 		fieldsCounter = 0;
 	}
 }

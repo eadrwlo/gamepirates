@@ -55,17 +55,39 @@ Field* Player::getCurrentFieldPtr()
 	return currentFieldPtr;
 }
 
-/// ----- F I E L D implementation ------ ////
+//// ----- F I E L D implementation ------ ////
 
-Field::Field(int _fieldNumber, TImage *_fieldImagePtr)
+Field::Field(int fieldNumber, TImage *fieldImagePtr)
 {
-	fieldNumber = _fieldNumber;
-	fieldImagePtr = _fieldImagePtr;
+	this->fieldNumber = fieldNumber;
+	this->fieldImagePtr = fieldImagePtr;
 }
+
+Field::Field(int fieldNumber, TImage *fieldImagePtr, TImage *cardImagePtr)
+{
+	this->fieldNumber = fieldNumber;
+	this->fieldImagePtr = fieldImagePtr;
+    this->cardImagePtr = cardImagePtr;
+}
+
 
 int Field::getFieldNumber()
 {
     return fieldNumber;
 }
+
+void Field::mainEventWhenPlayerIsOnTheField()
+{
+}
+
+
+//// ------ Whirpool implementation ------ ////
+void Whirpool::mainEventWhenPlayerIsOnTheField()
+{
+	this->cardImagePtr->Visible = true;
+}
+
+
+
 
 
