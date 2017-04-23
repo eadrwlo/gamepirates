@@ -35,8 +35,6 @@ __published:	// IDE-managed Components
 	void __fastcall volumeButton_timerTimer(TObject *Sender);
 	void __fastcall volumeButton_buttonMouseUp(TObject *Sender, TMouseButton Button,
 		  TShiftState Shift, float X, float Y);
-	void __fastcall FrameMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
-          float X, float Y);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TOptions_frame(TComponent* Owner);

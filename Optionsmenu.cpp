@@ -12,14 +12,13 @@
 TOptions_frame *Options_frame;
 POINT p;
 int mouseXposiotion = 0;
-int mouseYposiotion = 0;
 bool isMouseDown = 0;
 
 //---------------------------------------------------------------------------
 __fastcall TOptions_frame::TOptions_frame(TComponent* Owner)
 	: TFrame(Owner)
 {
-
+	volumeButton_button->Position->X = volumeBar_label->Position->X + 0.5*(volumeBar_label->Width);
 	musicPlayer->Volume = ((volumeButton_button->Position->X - volumeBar_label->Position->X)/180);
 	if (musicPlayer->State == 0)
 	{
@@ -86,20 +85,39 @@ void __fastcall TOptions_frame::volumeButton_buttonMouseDown(TObject *Sender, TM
 {
 	GetCursorPos(&p);
 	mouseXposiotion = p.x;
-	mouseYposiotion = p.y;
 	isMouseDown = true;
+	volumeButton_timer->Enabled = true;
+	if (volumeButton_button->Position->X <= volumeBar_label->Position->X)
+		{
+			volumeButton_timer->Enabled = true;
+		}
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TOptions_frame::volumeButton_timerTimer(TObject *Sender)
 {
-	if (mouseXposiotion != 0 && isMouseDown == true)
+    POINT p;
+	GetCursorPos(&p);
+	int currentPosition = 0;
+	if (isMouseDown == true)
 	{
-		POINT p;
-		GetCursorPos(&p);
-		volumeButton_button->Position->X = volumeButton_button->Position->X + (p.x - mouseXposiotion);
+		currentPosition = volumeButton_button->Position->X + (p.x - mouseXposiotion);
+		volumeButton_button->Position->X =  currentPosition;
 		mouseXposiotion = p.x;
 		musicPlayer->Volume = ((volumeButton_button->Position->X - volumeBar_label->Position->X)/180);
+		if (volumeButton_button->Position->X <= volumeBar_label->Position->X - 3)
+		{
+			volumeButton_button->Position->X = volumeBar_label->Position->X-2;
+			isMouseDown == false;
+			volumeButton_timer->Enabled = false;
+		}
+		if (volumeButton_button->Position->X >= (volumeBar_label->Position->X + volumeBar_label->Width - 3))
+		{
+			volumeButton_button->Position->X = volumeBar_label->Position->X + volumeBar_label->Width -4;
+			isMouseDown == false;
+			volumeButton_timer->Enabled = false;
+		}
+
 	}
 }
 //---------------------------------------------------------------------------
@@ -112,10 +130,4 @@ void __fastcall TOptions_frame::volumeButton_buttonMouseUp(TObject *Sender, TMou
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TOptions_frame::FrameMouseDown(TObject *Sender, TMouseButton Button,
-          TShiftState Shift, float X, float Y)
-{
-    isMouseDown = false;
-}
-//---------------------------------------------------------------------------
 

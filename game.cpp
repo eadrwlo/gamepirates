@@ -34,7 +34,7 @@ void TgameForm::mainMenuMusic()
 	musicPlayer->Parent=this;
 	musicPlayer->FileName = "../../sounds/mainmenu_music.mp3";
 	musicPlayer->Play();
-   //	musicPlayer->Volume = ((Options_frame->volumeButton_button->Position->X -
+    //musicPlayer->Volume = ((Options_frame->volumeButton_button->Position->X -
 						   //	Options_frame->volumeButton_button->Position->X)/180);
 }
 
