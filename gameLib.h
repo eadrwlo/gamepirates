@@ -3,7 +3,7 @@
 #include <FMX.Objects.hpp>
 
 using namespace std;
-
+class Player;
 class Field
 {
 	protected:
@@ -15,7 +15,7 @@ class Field
 	Field(int fieldNumber, TImage *fieldImagePtr);
 	Field(int fieldNumber, TImage *fieldImagePtr, TImage *cardImagePtr);
 	int getFieldNumber();
-	virtual void mainEventWhenPlayerIsOnTheField();
+	virtual void mainEventWhenPlayerIsOnTheField(Player *player);
 };
 
 class Player
@@ -35,6 +35,7 @@ class Player
 	void setName(string _name);
 	string getName();
 	void movePlayer(int drawnNumber);
+	void movePlayerToSpecificField(int fieldNumber);
 	void updateCurrentField(Field *newFieldPtr);
 	Field* getCurrentFieldPtr();
 };
@@ -55,7 +56,7 @@ class Port: public Field
 	Port();
 	void setName();
 	string getName();
-    void mainEventWhenPlayerIsOnTheField();
+	void mainEventWhenPlayerIsOnTheField(Player *player);
 };
 
 class Whirpool: public Field
@@ -66,7 +67,7 @@ class Whirpool: public Field
 	public:
     Whirpool(int fieldNumber, TImage *fieldImagePtr, TImage *cardImagePtr):Field(fieldNumber, fieldImagePtr, cardImagePtr){}
 	void setName();
-	void mainEventWhenPlayerIsOnTheField();
+	void mainEventWhenPlayerIsOnTheField(Player *player);
 	string getName();
 };
 

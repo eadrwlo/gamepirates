@@ -45,6 +45,18 @@ void Player::movePlayer(int drawnNumber)
 	playerFlowAnimationY->Start();
 }
 
+
+void Player::movePlayerToSpecificField(int fieldNumber)
+{
+	if (fieldNumber < 28 && fieldNumber > 18)
+	{
+	   playerImagePtr->Position->X -= (87 * (currentFieldPtr->getFieldNumber() - fieldNumber));
+	   playerImagePtr->Position->Y += (50 * (currentFieldPtr->getFieldNumber() - fieldNumber));
+	}
+}
+
+
+
 void Player::updateCurrentField(Field *newFieldPtr)
 {
    currentFieldPtr = newFieldPtr;
@@ -76,15 +88,17 @@ int Field::getFieldNumber()
     return fieldNumber;
 }
 
-void Field::mainEventWhenPlayerIsOnTheField()
+void Field::mainEventWhenPlayerIsOnTheField(Player *player)
 {
 }
 
 
 //// ------ Whirpool implementation ------ ////
-void Whirpool::mainEventWhenPlayerIsOnTheField()
+void Whirpool::mainEventWhenPlayerIsOnTheField(Player *player)
 {
 	this->cardImagePtr->Visible = true;
+    player->movePlayerToSpecificField(21);
+
 }
 
 

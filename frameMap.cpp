@@ -132,7 +132,7 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 	if (fieldsCounter == drawnNumber)
 	{
 		timerForPlayerMovementExecute->Enabled = false;
-        this->fieldsVector[currentFieldNumber]->mainEventWhenPlayerIsOnTheField();
+        this->fieldsVector[currentFieldNumber]->mainEventWhenPlayerIsOnTheField(player1_1);
 		fieldsCounter = 0;
 	}
 }
