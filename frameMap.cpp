@@ -101,7 +101,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(25, this->field25));
 	this->fieldsVector.push_back(new Field(26, this->field26));
 	this->fieldsVector.push_back(new Field(27, this->field27));
-	this->fieldsVector.push_back(new Whirpool(28, this->field28, this->whirpoolCard));
+	this->fieldsVector.push_back(new Whirlpool(28, this->field28, this->whirpoolCard));
 	this->fieldsVector.push_back(new Field(29, this->field29));
 	this->fieldsVector.push_back(new Field(30, this->field30));
 	this->fieldsVector.push_back(new Field(31, this->field31));
@@ -163,5 +163,6 @@ void __fastcall Tframe1Map::CornerButton2Click(TObject *Sender)
 	timerForPlayerMovementExecute->Enabled = true;
 }
 //---------------------------------------------------------------------------
+
 
 

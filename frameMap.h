@@ -86,6 +86,18 @@ __published:	// IDE-managed Components
 	TImage *Image1;
 	TImage *Image2;
 	TImage *Image3;
+	TImage *Image5;
+	TImage *Image6;
+	TImage *Image7;
+	TImage *Image8;
+	TImage *Image9;
+	TImage *Image10;
+	TImage *Image11;
+	TImage *Image12;
+	TImage *Image13;
+	TImage *Image14;
+	TImage *Image15;
+	TImage *Image16;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall przesunClick(TObject *Sender);

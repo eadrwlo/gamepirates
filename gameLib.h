@@ -59,13 +59,13 @@ class Port: public Field
 	void mainEventWhenPlayerIsOnTheField(Player *player);
 };
 
-class Whirpool: public Field
+class Whirlpool: public Field
 {
 	protected:
 	string name;
 
 	public:
-    Whirpool(int fieldNumber, TImage *fieldImagePtr, TImage *cardImagePtr):Field(fieldNumber, fieldImagePtr, cardImagePtr){}
+    Whirlpool(int fieldNumber, TImage *fieldImagePtr, TImage *cardImagePtr):Field(fieldNumber, fieldImagePtr, cardImagePtr){}
 	void setName();
 	void mainEventWhenPlayerIsOnTheField(Player *player);
 	string getName();
