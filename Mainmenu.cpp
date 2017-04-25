@@ -37,3 +37,4 @@ void __fastcall TmainMenu_frame::startgame_buttonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+

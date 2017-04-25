@@ -13,6 +13,7 @@ USEFORM("mainMenu.cpp", mainMenu_frame); /* TFrame: File Type */
 USEFORM("game.cpp", gameForm);
 USEFORM("frameMap.cpp", frame1Map); /* TFrame: File Type */
 USEFORM("startgameMenu.cpp", startgameSettingsMenu_frame); /* TFrame: File Type */
+USEFORM("playerMenu.cpp", player_frame); /* TFrame: File Type */
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {
