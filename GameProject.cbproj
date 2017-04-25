@@ -134,32 +134,40 @@
             <BuildOrder>2</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="inGameMenu.cpp">
-            <Form>Ingamemenu_frame</Form>
+        <CppCompile Include="ingameMenu.cpp">
+            <Form>ingameMenu_frame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
-            <DependentOn>inGameMenu.h</DependentOn>
+            <DependentOn>ingameMenu.h</DependentOn>
             <BuildOrder>8</BuildOrder>
         </CppCompile>
         <CppCompile Include="mainMenu.cpp">
-            <Form>Mainmenu_frame</Form>
+            <Form>mainMenu_frame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
             <DependentOn>mainMenu.h</DependentOn>
             <BuildOrder>5</BuildOrder>
         </CppCompile>
         <CppCompile Include="optionsMenu.cpp">
-            <Form>Options_frame</Form>
+            <Form>optionsMenu_frame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
             <DependentOn>optionsMenu.h</DependentOn>
             <BuildOrder>6</BuildOrder>
         </CppCompile>
-        <FormResources Include="inGameMenu.fmx"/>
+        <CppCompile Include="startgameMenu.cpp">
+            <Form>startgameSettingsMenu_frame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>startgameMenu.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <FormResources Include="ingameMenu.fmx"/>
         <FormResources Include="optionsMenu.fmx"/>
         <FormResources Include="mainMenu.fmx"/>
         <FormResources Include="game.fmx"/>
         <FormResources Include="frameMap.fmx"/>
+        <FormResources Include="startgameMenu.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

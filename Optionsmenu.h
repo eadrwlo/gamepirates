@@ -10,7 +10,7 @@
 #include <FMX.Types.hpp>
 #include "Mainmenu.h"
 //---------------------------------------------------------------------------
-class TOptions_frame : public TFrame
+class ToptionsMenu_frame : public TFrame
 {
 __published:	// IDE-managed Components
 	TImage *gameInWinow_label;
@@ -37,9 +37,9 @@ __published:	// IDE-managed Components
 		  TShiftState Shift, float X, float Y);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TOptions_frame(TComponent* Owner);
+	__fastcall ToptionsMenu_frame(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TOptions_frame *Options_frame;
+extern PACKAGE ToptionsMenu_frame *optionsMenu_frame;
 //---------------------------------------------------------------------------
 #endif

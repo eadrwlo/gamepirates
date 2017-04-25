@@ -7,11 +7,12 @@
 #pragma hdrstop
 #include <System.StartUpCopy.hpp>
 //---------------------------------------------------------------------------
-USEFORM("optionsMenu.cpp", Options_frame); /* TFrame: File Type */
+USEFORM("ingameMenu.cpp", ingameMenu_frame); /* TFrame: File Type */
+USEFORM("optionsMenu.cpp", optionsMenu_frame); /* TFrame: File Type */
+USEFORM("mainMenu.cpp", mainMenu_frame); /* TFrame: File Type */
 USEFORM("game.cpp", gameForm);
-USEFORM("mainMenu.cpp", Mainmenu_frame); /* TFrame: File Type */
 USEFORM("frameMap.cpp", frame1Map); /* TFrame: File Type */
-USEFORM("inGameMenu.cpp", Ingamemenu_frame); /* TFrame: File Type */
+USEFORM("startgameMenu.cpp", startgameSettingsMenu_frame); /* TFrame: File Type */
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {

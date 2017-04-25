@@ -23,10 +23,10 @@ __fastcall TgameForm::TgameForm(TComponent* Owner)
 	inGameMenuBackground = new TImage(this);
 	musicPlayer = new TMediaPlayer(this);
 	mainMenuBackground = new TImage(this);
-	Mainmenu_frame = new TMainmenu_frame(this);
-	Options_frame = new TOptions_frame(this);
+	mainMenu_frame = new TmainMenu_frame(this);
+	optionsMenu_frame = new ToptionsMenu_frame(this);
 	frame1Map = new Tframe1Map(this);
-	Ingamemenu_frame = new TIngamemenu_frame(this);
+	ingameMenu_frame = new TingameMenu_frame(this);
 }
 //---------------------------------------------------------------------------
 void TgameForm::mainMenuMusic()
@@ -34,8 +34,8 @@ void TgameForm::mainMenuMusic()
 	musicPlayer->Parent=this;
 	musicPlayer->FileName = "../../sounds/mainmenu_music.mp3";
 	musicPlayer->Play();
-    //musicPlayer->Volume = ((Options_frame->volumeButton_button->Position->X -
-						   //	Options_frame->volumeButton_button->Position->X)/180);
+    //musicPlayer->Volume = ((optionsMenu_frame->volumeButton_button->Position->X -
+						   //	optionsMenu_frame->volumeButton_button->Position->X)/180);
 }
 
 
@@ -47,30 +47,30 @@ void TgameForm::mainMenu()
 	mainMenuBackground->Bitmap->LoadFromFile("../../img/background/background.bmp");
 	mainMenuBackground->Visible = true;
 	mainMenuBackground->Align = 11;
-	Mainmenu_frame->Parent=this;
-	Mainmenu_frame->Height = 400;
-	Mainmenu_frame->Width = 300;
-	Mainmenu_frame->Visible = true;
-	Mainmenu_frame->Parent = this;
+	mainMenu_frame->Parent=this;
+	mainMenu_frame->Height = 400;
+	mainMenu_frame->Width = 300;
+	mainMenu_frame->Visible = true;
+	mainMenu_frame->Parent = this;
 }
 //---------------------------------------------------------------------------
 void TgameForm::optionsMenu()
 {
     mainMenuMusic();
-	Options_frame->Parent=this;
-	Options_frame->Height = 400;
-	Options_frame->Width = 300;
-	Options_frame->Visible = false;
-	Options_frame->Parent = this;
+	optionsMenu_frame->Parent=this;
+	optionsMenu_frame->Height = 400;
+	optionsMenu_frame->Width = 300;
+	optionsMenu_frame->Visible = false;
+	optionsMenu_frame->Parent = this;
 	if (gameForm->BorderStyle == 2 && gameForm->WindowState == 0)
 	{
-		Options_frame->checkON_gameInWindow->Visible = true;
-		Options_frame->checkOFF_gameInWindow->Visible = false;
+		optionsMenu_frame->checkON_gameInWindow->Visible = true;
+		optionsMenu_frame->checkOFF_gameInWindow->Visible = false;
 	}
 	if (gameForm->BorderStyle == 0 && gameForm->WindowState == 2)
 	{
-		Options_frame->checkON_gameInWindow->Visible = false;
-		Options_frame->checkOFF_gameInWindow->Visible = true;
+		optionsMenu_frame->checkON_gameInWindow->Visible = false;
+		optionsMenu_frame->checkOFF_gameInWindow->Visible = true;
 	}
 }
 //---------------------------------------------------------------------------
@@ -98,11 +98,11 @@ void TgameForm::inGameMenu()
 	inGameMenuBackground->Visible = false;
 	inGameMenuBackground->Align = 11;
 	inGameMenuBackground->Opacity = 0.7;
-	Ingamemenu_frame->Parent=this;
-	Ingamemenu_frame->Height = 400;
-	Ingamemenu_frame->Width = 300;
-	Ingamemenu_frame->Visible = false;
-	Ingamemenu_frame->Parent = this;
+	ingameMenu_frame->Parent=this;
+	ingameMenu_frame->Height = 400;
+	ingameMenu_frame->Width = 300;
+	ingameMenu_frame->Visible = false;
+	ingameMenu_frame->Parent = this;
 }
 //---------------------------------------------------------------------------
 void __fastcall TgameForm::FormCreate(TObject *Sender)
@@ -118,28 +118,28 @@ void __fastcall TgameForm::FormCreate(TObject *Sender)
 void __fastcall TgameForm::FormKeyDown(TObject *Sender, WORD &Key, System::WideChar &KeyChar,
           TShiftState Shift)
 {
-	if (Key==VK_ESCAPE && frame1Map->Visible==true && Ingamemenu_frame->Visible == false
-	&& Options_frame->Visible == false)
+	if (Key==VK_ESCAPE && frame1Map->Visible==true && ingameMenu_frame->Visible == false
+	&& optionsMenu_frame->Visible == false)
 	{
-		Ingamemenu_frame->Visible = true;
+		ingameMenu_frame->Visible = true;
 		inGameMenuBackground->Visible = true;
 	}
-	else if (Key==VK_ESCAPE && frame1Map->Visible==true && Ingamemenu_frame->Visible == true)
+	else if (Key==VK_ESCAPE && frame1Map->Visible==true && ingameMenu_frame->Visible == true)
 	{
-		Ingamemenu_frame->Visible = false;
+		ingameMenu_frame->Visible = false;
 		inGameMenuBackground->Visible = false;
 	}
-	else if (Key==VK_ESCAPE && frame1Map->Visible==true && Ingamemenu_frame->Visible == false
-	&& Options_frame->Visible == true)
+	else if (Key==VK_ESCAPE && frame1Map->Visible==true && ingameMenu_frame->Visible == false
+	&& optionsMenu_frame->Visible == true)
 	{
 		inGameMenuBackground->Visible = true;
-		Options_frame->goBack_buttonClick(this);
+		optionsMenu_frame->goBack_buttonClick(this);
 	}
-	else if (Key==VK_ESCAPE && frame1Map->Visible==false && Ingamemenu_frame->Visible == false
-	&& Options_frame->Visible == true)
+	else if (Key==VK_ESCAPE && frame1Map->Visible==false && ingameMenu_frame->Visible == false
+	&& optionsMenu_frame->Visible == true)
 	{
 		inGameMenuBackground->Visible = false;
-		Options_frame->goBack_buttonClick(this);
+		optionsMenu_frame->goBack_buttonClick(this);
 	}
 }
 //---------------------------------------------------------------------------

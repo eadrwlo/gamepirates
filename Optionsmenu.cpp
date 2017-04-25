@@ -9,13 +9,13 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
-TOptions_frame *Options_frame;
+ToptionsMenu_frame *optionsMenu_frame;
 POINT p;
 int mouseXposiotion = 0;
 bool isMouseDown = 0;
 
 //---------------------------------------------------------------------------
-__fastcall TOptions_frame::TOptions_frame(TComponent* Owner)
+__fastcall ToptionsMenu_frame::ToptionsMenu_frame(TComponent* Owner)
 	: TFrame(Owner)
 {
 	volumeButton_button->Position->X = volumeBar_label->Position->X + 0.5*(volumeBar_label->Width);
@@ -32,22 +32,22 @@ __fastcall TOptions_frame::TOptions_frame(TComponent* Owner)
 	}
 }
 //---------------------------------------------------------------------------
-void __fastcall TOptions_frame::goBack_buttonClick(TObject *Sender)
+void __fastcall ToptionsMenu_frame::goBack_buttonClick(TObject *Sender)
 {
 	if(frame1Map->Visible == true)
 	{
-		Ingamemenu_frame->Visible=true;
-		Options_frame->Visible=false;
+		ingameMenu_frame->Visible=true;
+		optionsMenu_frame->Visible=false;
 	}
 	else
 	{
-		Mainmenu_frame->Visible=true;
-		Options_frame->Visible=false;
+		mainMenu_frame->Visible=true;
+		optionsMenu_frame->Visible=false;
     }
 
 }
 //---------------------------------------------------------------------------
-void __fastcall TOptions_frame::checkON_gameInWindowClick(TObject *Sender)
+void __fastcall ToptionsMenu_frame::checkON_gameInWindowClick(TObject *Sender)
 {
 	 checkON_gameInWindow->Visible = false;
 	 checkOFF_gameInWindow->Visible = true;
@@ -55,7 +55,7 @@ void __fastcall TOptions_frame::checkON_gameInWindowClick(TObject *Sender)
 	 gameForm->WindowState = 2;
 }
 //---------------------------------------------------------------------------
-void __fastcall TOptions_frame::checkOFF_gameInWindowClick(TObject *Sender)
+void __fastcall ToptionsMenu_frame::checkOFF_gameInWindowClick(TObject *Sender)
 {
 	checkON_gameInWindow->Visible = true;
 	checkOFF_gameInWindow->Visible = false;
@@ -63,7 +63,7 @@ void __fastcall TOptions_frame::checkOFF_gameInWindowClick(TObject *Sender)
 	gameForm->WindowState = 0;
 }
 //---------------------------------------------------------------------------
-void __fastcall TOptions_frame::checkOFF_musicClick(TObject *Sender)
+void __fastcall ToptionsMenu_frame::checkOFF_musicClick(TObject *Sender)
 {
 	checkOFF_music->Visible = false;
 	checkON_music->Visible = true;
@@ -71,7 +71,7 @@ void __fastcall TOptions_frame::checkOFF_musicClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TOptions_frame::checkON_musicClick(TObject *Sender)
+void __fastcall ToptionsMenu_frame::checkON_musicClick(TObject *Sender)
 {
     musicPlayer->Stop();
 	checkOFF_music->Visible = true;
@@ -80,7 +80,7 @@ void __fastcall TOptions_frame::checkON_musicClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TOptions_frame::volumeButton_buttonMouseDown(TObject *Sender, TMouseButton Button,
+void __fastcall ToptionsMenu_frame::volumeButton_buttonMouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, float X, float Y)
 {
 	GetCursorPos(&p);
@@ -94,7 +94,7 @@ void __fastcall TOptions_frame::volumeButton_buttonMouseDown(TObject *Sender, TM
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TOptions_frame::volumeButton_timerTimer(TObject *Sender)
+void __fastcall ToptionsMenu_frame::volumeButton_timerTimer(TObject *Sender)
 {
     POINT p;
 	GetCursorPos(&p);
@@ -123,7 +123,7 @@ void __fastcall TOptions_frame::volumeButton_timerTimer(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TOptions_frame::volumeButton_buttonMouseUp(TObject *Sender, TMouseButton Button,
+void __fastcall ToptionsMenu_frame::volumeButton_buttonMouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, float X, float Y)
 {
     isMouseDown = false;

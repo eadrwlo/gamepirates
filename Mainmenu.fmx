@@ -1,4 +1,4 @@
-object Mainmenu_frame: TMainmenu_frame
+object mainMenu_frame: TmainMenu_frame
   Align = Center
   Size.Width = 300.000000000000000000
   Size.Height = 400.000000000000000000

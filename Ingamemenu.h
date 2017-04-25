@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef inGameMenuH
-#define inGameMenuH
+#ifndef ingameMenuH
+#define ingameMenuH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <FMX.Controls.hpp>
@@ -9,7 +9,7 @@
 #include <FMX.Objects.hpp>
 #include <FMX.Types.hpp>
 //---------------------------------------------------------------------------
-class TIngamemenu_frame : public TFrame
+class TingameMenu_frame : public TFrame
 {
 __published:	// IDE-managed Components
 	TImage *options_button;
@@ -23,10 +23,10 @@ __published:	// IDE-managed Components
 	//void inGameMenuBackgroundVisibility(bool val);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TIngamemenu_frame(TComponent* Owner);
+	__fastcall TingameMenu_frame(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TIngamemenu_frame *Ingamemenu_frame;
+extern PACKAGE TingameMenu_frame *ingameMenu_frame;
 extern TImage *inGameMenuBackground;
 //---------------------------------------------------------------------------
 #endif

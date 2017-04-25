@@ -1,4 +1,4 @@
-object Ingamemenu_frame: TIngamemenu_frame
+object ingameMenu_frame: TingameMenu_frame
   Align = Center
   Size.Width = 300.000000000000000000
   Size.Height = 400.000000000000000000
