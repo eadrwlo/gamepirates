@@ -75,11 +75,11 @@ Field::Field(int fieldNumber, TImage *fieldImagePtr)
 	this->fieldImagePtr = fieldImagePtr;
 }
 
-Field::Field(int fieldNumber, TImage *fieldImagePtr, TImage *cardImagePtr)
+Field::Field(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr)
 {
 	this->fieldNumber = fieldNumber;
 	this->fieldImagePtr = fieldImagePtr;
-    this->cardImagePtr = cardImagePtr;
+	this->cardFramePtr = cardFramePtr;
 }
 
 
@@ -94,9 +94,9 @@ void Field::mainEventWhenPlayerIsOnTheField(Player *player)
 
 
 //// ------ Whirpool implementation ------ ////
-void Whirpool::mainEventWhenPlayerIsOnTheField(Player *player)
+void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player)
 {
-	this->cardImagePtr->Visible = true;
+    this->cardFramePtr->Visible = true;
     player->movePlayerToSpecificField(21);
 
 }

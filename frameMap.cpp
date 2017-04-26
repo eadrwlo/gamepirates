@@ -4,12 +4,14 @@
 #pragma hdrstop
 #include <ctime>
 #include "frameMap.h"
+#include "whirlpoolCard.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
 
 Tframe1Map *frame1Map;
 Player *player1_1;
+bool isLastLoopIteration = false;
 bool moves = false;
 bool buttonThowState = false;
 //---------------------------------------------------------------------------
@@ -101,7 +103,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(25, this->field25));
 	this->fieldsVector.push_back(new Field(26, this->field26));
 	this->fieldsVector.push_back(new Field(27, this->field27));
-	this->fieldsVector.push_back(new Whirlpool(28, this->field28, this->whirpoolCard));
+	this->fieldsVector.push_back(new Whirlpool(28, this->field28, new TwhirlpoolCardFrame(this)));
 	this->fieldsVector.push_back(new Field(29, this->field29));
 	this->fieldsVector.push_back(new Field(30, this->field30));
 	this->fieldsVector.push_back(new Field(31, this->field31));
@@ -117,23 +119,31 @@ void Tframe1Map::fillFieldsVectorWithFields()
 
 void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 {
-	player1_1->movePlayer(drawnNumber);
-	int currentFieldNumber = (player1_1->getCurrentFieldPtr())->getFieldNumber();
-	if (currentFieldNumber == 36)
+if (!isLastLoopIteration)
 	{
-        player1_1->updateCurrentField(this->fieldsVector[0]);
-    }
+		player1_1->movePlayer(drawnNumber);
+		if ((player1_1->getCurrentFieldPtr())->getFieldNumber() == 36)
+		{
+			player1_1->updateCurrentField(this->fieldsVector[0]);
+		}
+		else
+		{
+			player1_1->updateCurrentField(this->fieldsVector[(player1_1->getCurrentFieldPtr())->getFieldNumber()]);
+		}
+
+		fieldsCounter ++;
+		if (fieldsCounter == drawnNumber)
+		{
+			isLastLoopIteration = true;
+			fieldsCounter = 0;
+		}
+	}
 	else
 	{
-		player1_1->updateCurrentField(this->fieldsVector[currentFieldNumber]);
-	}
-
-	fieldsCounter ++;
-	if (fieldsCounter == drawnNumber)
-	{
+		//Label1->Text = (player1_1->getCurrentFieldPtr())->getFieldNumber();
+		this->fieldsVector[(player1_1->getCurrentFieldPtr()->getFieldNumber())-1]->mainEventWhenPlayerIsOnTheField(player1_1);
 		timerForPlayerMovementExecute->Enabled = false;
-        this->fieldsVector[currentFieldNumber]->mainEventWhenPlayerIsOnTheField(player1_1);
-		fieldsCounter = 0;
+		isLastLoopIteration = false;
 	}
 }
 //---------------------------------------------------------------------------
@@ -163,6 +173,7 @@ void __fastcall Tframe1Map::CornerButton2Click(TObject *Sender)
 	timerForPlayerMovementExecute->Enabled = true;
 }
 //---------------------------------------------------------------------------
+
 
 
 

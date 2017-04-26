@@ -9,11 +9,11 @@ class Field
 	protected:
 	int fieldNumber;
 	TImage *fieldImagePtr;
-	TImage *cardImagePtr;
+	TFrame *cardFramePtr;
 
 	public:
 	Field(int fieldNumber, TImage *fieldImagePtr);
-	Field(int fieldNumber, TImage *fieldImagePtr, TImage *cardImagePtr);
+	Field(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr);
 	int getFieldNumber();
 	virtual void mainEventWhenPlayerIsOnTheField(Player *player);
 };
@@ -56,7 +56,7 @@ class Port: public Field
 	Port();
 	void setName();
 	string getName();
-	void mainEventWhenPlayerIsOnTheField(Player *player);
+	void mainEventWhenPlayerIsOnTheField(Player *player, TFrame *framePtr);
 };
 
 class Whirlpool: public Field
@@ -65,7 +65,7 @@ class Whirlpool: public Field
 	string name;
 
 	public:
-    Whirlpool(int fieldNumber, TImage *fieldImagePtr, TImage *cardImagePtr):Field(fieldNumber, fieldImagePtr, cardImagePtr){}
+    Whirlpool(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr):Field(fieldNumber, fieldImagePtr, cardFramePtr){}
 	void setName();
 	void mainEventWhenPlayerIsOnTheField(Player *player);
 	string getName();

@@ -81,7 +81,6 @@ __published:	// IDE-managed Components
 	TImage *portGrbrtain3;
 	TImage *portGrbrtain2;
 	TImage *portGrbrtain;
-	TImage *whirpoolCard;
 	TImage *Image4;
 	TImage *Image1;
 	TImage *Image2;

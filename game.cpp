@@ -6,6 +6,7 @@
 #include "Mainmenu.h"
 #include "Optionsmenu.h"
 #include "Ingamemenu.h"
+#include "whirlpoolCard.h"
 #include <iostream>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -27,6 +28,7 @@ __fastcall TgameForm::TgameForm(TComponent* Owner)
 	optionsMenu_frame = new ToptionsMenu_frame(this);
 	frame1Map = new Tframe1Map(this);
 	ingameMenu_frame = new TingameMenu_frame(this);
+	//whirlpoolCardFrame = new TwhirlpoolCardFrame(this);
 }
 //---------------------------------------------------------------------------
 void TgameForm::mainMenuMusic()
