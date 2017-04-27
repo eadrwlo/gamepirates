@@ -17,4 +17,9 @@ __fastcall TwhirlpoolCardFrame::TwhirlpoolCardFrame(TComponent* Owner)
 	this->Position->X = 800;
 	this->Position->Y = 280;
 }
+
+TGlyph *TwhirlpoolCardFrame::getNumber1()
+{
+    return number1;
+}
 //---------------------------------------------------------------------------

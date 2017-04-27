@@ -1,5 +1,6 @@
 #include "gameLib.h"
 #include <windows.h>
+#include "whirlpoolCard.h"
 Player::Player(string _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis, Field *_currentFieldPtr)
 {
 	name = _name;
@@ -48,11 +49,36 @@ void Player::movePlayer(int drawnNumber)
 
 void Player::movePlayerToSpecificField(int fieldNumber)
 {
-	if (fieldNumber < 28 && fieldNumber > 18)
+	if (fieldNumber == 1)
+	{
+		playerImagePtr->Position->X += (87 * 9);
+		playerImagePtr->Position->Y += (50 * 9);
+	}
+	else if (fieldNumber < 28 && fieldNumber > 18)
 	{
 	   playerImagePtr->Position->X -= (87 * (currentFieldPtr->getFieldNumber() - fieldNumber));
 	   playerImagePtr->Position->Y += (50 * (currentFieldPtr->getFieldNumber() - fieldNumber));
 	}
+	else if (fieldNumber > 28 && fieldNumber <= 36)
+	{
+		playerImagePtr->Position->X += (87 * (fieldNumber - currentFieldPtr->getFieldNumber()));
+		playerImagePtr->Position->Y += (50 * (fieldNumber - currentFieldPtr->getFieldNumber()));
+	}
+	else if (fieldNumber > 9 && fieldNumber <=18)
+	{
+		playerImagePtr->Position->X -= (87 * 9);
+		playerImagePtr->Position->Y += (50 * 9);
+		playerImagePtr->Position->X += (87 * (19 - fieldNumber));
+		playerImagePtr->Position->Y += (50 * (19 - fieldNumber));
+	}
+	else if (fieldNumber > 1 && fieldNumber <10)
+	{
+		playerImagePtr->Position->X += (87 * 9);
+		playerImagePtr->Position->Y += (50 * 9);
+		playerImagePtr->Position->X -= (87 * (fieldNumber-1));
+		playerImagePtr->Position->Y += (50 * (fieldNumber-1));
+    }
+
 }
 
 
@@ -96,9 +122,15 @@ void Field::mainEventWhenPlayerIsOnTheField(Player *player)
 //// ------ Whirpool implementation ------ ////
 void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player)
 {
-    this->cardFramePtr->Visible = true;
-    player->movePlayerToSpecificField(21);
-
+	//srand( time( NULL ) );
+	//int randomNumber = (rand()%36)+1;
+	int randomNumber = 19;
+	int firstNumber = randomNumber / 10;
+	int secondNumber = randomNumber % (firstNumber * 10);
+	cardFramePtr->Visible = true;
+	(static_cast<TwhirlpoolCardFrame*>(cardFramePtr))->number1->ImageIndex = firstNumber;
+	(static_cast<TwhirlpoolCardFrame*>(cardFramePtr))->number2->ImageIndex = secondNumber;
+	player->movePlayerToSpecificField(randomNumber);
 }
 
 

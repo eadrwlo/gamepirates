@@ -24,6 +24,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TwhirlpoolCardFrame(TComponent* Owner);
+    TGlyph *getNumber1();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TwhirlpoolCardFrame *whirlpoolCardFrame;
