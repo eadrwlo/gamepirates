@@ -23,5 +23,9 @@ TGlyph *TwhirlpoolCardFrame::getNumber1()
     return number1;
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TwhirlpoolCardFrame::ZamknijClick(TObject *Sender)
+{
+    Visible = false;
+}
+//---------------------------------------------------------------------------
 

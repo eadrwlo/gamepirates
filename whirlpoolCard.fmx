@@ -2646,6 +2646,18 @@ object whirlpoolCardFrame: TwhirlpoolCardFrame
     ImageIndex = 0
     Images = commonNumbers
   end
+  object Zamknij: TButton
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 120.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Zamknij'
+    TextSettings.Font.Size = 20.000000000000000000
+    OnClick = ZamknijClick
+  end
   object commonNumbers: TImageList
     Source = <
       item

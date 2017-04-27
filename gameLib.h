@@ -1,7 +1,8 @@
 //---------------------------------------------------------------------------
 #include <iostream>
 #include <FMX.Objects.hpp>
-
+#include <FMX.StdCtrls.hpp>
+#include <vector>
 using namespace std;
 class Player;
 class Field
@@ -15,7 +16,7 @@ class Field
 	Field(int fieldNumber, TImage *fieldImagePtr);
 	Field(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr);
 	int getFieldNumber();
-	virtual void mainEventWhenPlayerIsOnTheField(Player *player);
+	virtual void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
 };
 
 class Player
@@ -67,7 +68,7 @@ class Whirlpool: public Field
 	public:
     Whirlpool(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr):Field(fieldNumber, fieldImagePtr, cardFramePtr){}
 	void setName();
-	void mainEventWhenPlayerIsOnTheField(Player *player);
+	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
 	string getName();
 };
 
