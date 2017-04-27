@@ -23,3 +23,5 @@ TGlyph *TwhirlpoolCardFrame::getNumber1()
     return number1;
 }
 //---------------------------------------------------------------------------
+
+

@@ -35,6 +35,7 @@ public:		// User declarations
 	void optionsMenu();
 	void game();
 	void inGameMenu();
+    void startgameMenu();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TgameForm *gameForm;

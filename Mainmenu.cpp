@@ -6,6 +6,7 @@
 #include "mainMenu.h"
 #include "Optionsmenu.h"
 #include "frameMap.h"
+#include "startgameMenu.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -33,7 +34,9 @@ void __fastcall TmainMenu_frame::options_buttonClick(TObject *Sender)
 
 void __fastcall TmainMenu_frame::startgame_buttonClick(TObject *Sender)
 {
-    frame1Map->Visible = Visible;
+	//frame1Map->Visible = Visible;
+    mainMenu_frame->Visible = false;
+	startgameMenu_frame->Visible = true;
 }
 //---------------------------------------------------------------------------
 

@@ -7,6 +7,7 @@
 #include "Optionsmenu.h"
 #include "Ingamemenu.h"
 #include "whirlpoolCard.h"
+#include "startgameMenu.h"
 #include <iostream>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -28,6 +29,7 @@ __fastcall TgameForm::TgameForm(TComponent* Owner)
 	optionsMenu_frame = new ToptionsMenu_frame(this);
 	frame1Map = new Tframe1Map(this);
 	ingameMenu_frame = new TingameMenu_frame(this);
+	startgameMenu_frame = new TstartgameMenu_frame(this);
 	//whirlpoolCardFrame = new TwhirlpoolCardFrame(this);
 }
 //---------------------------------------------------------------------------
@@ -38,6 +40,12 @@ void TgameForm::mainMenuMusic()
 	musicPlayer->Play();
     //musicPlayer->Volume = ((optionsMenu_frame->volumeButton_button->Position->X -
 						   //	optionsMenu_frame->volumeButton_button->Position->X)/180);
+}
+
+void TgameForm::startgameMenu()
+{
+	startgameMenu_frame->Visible = false;
+	startgameMenu_frame->Parent = this;
 }
 
 
@@ -53,7 +61,6 @@ void TgameForm::mainMenu()
 	mainMenu_frame->Height = 400;
 	mainMenu_frame->Width = 300;
 	mainMenu_frame->Visible = true;
-	mainMenu_frame->Parent = this;
 }
 //---------------------------------------------------------------------------
 void TgameForm::optionsMenu()
@@ -63,7 +70,6 @@ void TgameForm::optionsMenu()
 	optionsMenu_frame->Height = 400;
 	optionsMenu_frame->Width = 300;
 	optionsMenu_frame->Visible = false;
-	optionsMenu_frame->Parent = this;
 	if (gameForm->BorderStyle == 2 && gameForm->WindowState == 0)
 	{
 		optionsMenu_frame->checkON_gameInWindow->Visible = true;
@@ -100,7 +106,6 @@ void TgameForm::inGameMenu()
 	inGameMenuBackground->Visible = false;
 	inGameMenuBackground->Align = 11;
 	inGameMenuBackground->Opacity = 0.7;
-	ingameMenu_frame->Parent=this;
 	ingameMenu_frame->Height = 400;
 	ingameMenu_frame->Width = 300;
 	ingameMenu_frame->Visible = false;
@@ -111,6 +116,7 @@ void __fastcall TgameForm::FormCreate(TObject *Sender)
 {
 	formSettings();
 	mainMenu();
+	startgameMenu();
 	game();
 	inGameMenu();
 	optionsMenu();

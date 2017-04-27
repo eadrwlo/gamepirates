@@ -11,21 +11,32 @@
 #include <FMX.StdCtrls.hpp>
 #include <FMX.Types.hpp>
 #include "playerMenu.h"
+#include <FMX.ImgList.hpp>
+#include <System.ImageList.hpp>
 //---------------------------------------------------------------------------
-class TstartgameSettingsMenu_frame : public TFrame
+class TstartgameMenu_frame : public TFrame
 {
 __published:	// IDE-managed Components
-	TImage *Image1;
-	TImage *Image2;
-	TImage *Image3;
-	TLabel *numberOfPlayers_label;
+	TImage *numberOfPlayers_label;
+	TImage *plus_button;
+	TImage *minus_button;
 	Tplayer_frame *Frame11;
 	Tplayer_frame *Frame12;
+	Tplayer_frame *player_frame1;
+	Tplayer_frame *player_frame2;
+	TImageList *listOfNumbers;
+	TImage *startgame_button;
+	TImage *goBack_button;
+	TGlyph *number;
+	void __fastcall startgame_buttonClick(TObject *Sender);
+	void __fastcall goBack_buttonClick(TObject *Sender);
+	void __fastcall plus_buttonClick(TObject *Sender);
+	void __fastcall minus_buttonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TstartgameSettingsMenu_frame(TComponent* Owner);
+	__fastcall TstartgameMenu_frame(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TstartgameSettingsMenu_frame *startgameSettingsMenu_frame;
+extern PACKAGE TstartgameMenu_frame *startgameMenu_frame;
 //---------------------------------------------------------------------------
 #endif

@@ -1,17 +1,54 @@
 //---------------------------------------------------------------------------
 
 #include <fmx.h>
+#include "frameMap.h"
 #pragma hdrstop
 
 #include "startgameMenu.h"
+#include "mainMenu.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "playerMenu"
 #pragma resource "*.fmx"
-TstartgameSettingsMenu_frame *startgameSettingsMenu_frame;
+TstartgameMenu_frame *startgameMenu_frame;
 //---------------------------------------------------------------------------
-__fastcall TstartgameSettingsMenu_frame::TstartgameSettingsMenu_frame(TComponent* Owner)
+__fastcall TstartgameMenu_frame::TstartgameMenu_frame(TComponent* Owner)
 	: TFrame(Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall TstartgameMenu_frame::startgame_buttonClick(TObject *Sender)
+{
+	frame1Map->Visible = Visible;
+	startgameMenu_frame->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TstartgameMenu_frame::goBack_buttonClick(TObject *Sender)
+{
+    startgameMenu_frame->Visible = false;
+	mainMenu_frame->Visible = true;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TstartgameMenu_frame::plus_buttonClick(TObject *Sender)
+{
+	if (number->ImageIndex < 2)
+	{
+		number->ImageIndex++;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TstartgameMenu_frame::minus_buttonClick(TObject *Sender)
+{
+	if (number->ImageIndex > 0)
+	{
+		number->ImageIndex--;
+	}
+}
+//---------------------------------------------------------------------------
+
