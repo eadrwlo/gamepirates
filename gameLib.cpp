@@ -49,37 +49,35 @@ void Player::movePlayer(int drawnNumber)
 
 void Player::movePlayerToSpecificField(int fieldNumber)
 {
-//	if (fieldNumber == 0)
-//	{
-//		playerImagePtr->Position->X += (87 * 9);
-//		playerImagePtr->Position->Y += (50 * 9);
-//	}
-//	else if (fieldNumber < 27 && fieldNumber > 18)
-//	{
-//	   playerImagePtr->Position->X -= (87 * (currentFieldPtr->getFieldNumber() - fieldNumber));
-//	   playerImagePtr->Position->Y += (50 * (currentFieldPtr->getFieldNumber() - fieldNumber));
-	   this->playerImagePtr->Position->X -= 100;
-	   this->playerImagePtr->Position->Y += 100;
-//	}
-//	else if (fieldNumber > 27 && fieldNumber <= 35)
-//	{
-//		playerImagePtr->Position->X += (87 * (fieldNumber - currentFieldPtr->getFieldNumber()));
-//		playerImagePtr->Position->Y += (50 * (fieldNumber - currentFieldPtr->getFieldNumber()));
-//	}
-//	else if (fieldNumber > 8 && fieldNumber <=17)
-//	{
-//		playerImagePtr->Position->X -= (87 * 9);
-//		playerImagePtr->Position->Y += (50 * 9);
-//		playerImagePtr->Position->X += (87 * (18 - fieldNumber));
-//		playerImagePtr->Position->Y += (50 * (18 - fieldNumber));
-//	}
-//	else if (fieldNumber > 0 && fieldNumber < 9)
-//	{
-//		playerImagePtr->Position->X += (87 * 9);
-//		playerImagePtr->Position->Y += (50 * 9);
-//		playerImagePtr->Position->X -= (87 * (fieldNumber-1));
-//		playerImagePtr->Position->Y += (50 * (fieldNumber-1));
-//    }
+	if (fieldNumber == 0)
+	{
+		playerImagePtr->Position->X += (87 * 9);
+		playerImagePtr->Position->Y += (50 * 9);
+	}
+	else if (fieldNumber < 27 && fieldNumber > 18)
+	{
+	   playerImagePtr->Position->X -= (87 * (currentFieldPtr->getFieldNumber() - fieldNumber));
+	   playerImagePtr->Position->Y += (50 * (currentFieldPtr->getFieldNumber() - fieldNumber));
+	}
+	else if (fieldNumber > 27 && fieldNumber <= 35)
+	{
+		playerImagePtr->Position->X += (87 * (fieldNumber - currentFieldPtr->getFieldNumber()));
+		playerImagePtr->Position->Y += (50 * (fieldNumber - currentFieldPtr->getFieldNumber()));
+	}
+	else if (fieldNumber > 8 && fieldNumber <=17)
+	{
+		playerImagePtr->Position->X -= (87 * 9);
+		playerImagePtr->Position->Y += (50 * 9);
+		playerImagePtr->Position->X += (87 * (18 - fieldNumber));
+		playerImagePtr->Position->Y += (50 * (18 - fieldNumber));
+	}
+	else if (fieldNumber > 0 && fieldNumber < 9)
+	{
+		playerImagePtr->Position->X += (87 * 9);
+		playerImagePtr->Position->Y += (50 * 9);
+		playerImagePtr->Position->X -= (87 * (fieldNumber-1));
+		playerImagePtr->Position->Y += (50 * (fieldNumber-1));
+    }
 
 }
 
@@ -127,7 +125,7 @@ void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, v
 
 	srand( time( NULL ) );
 	//int randomNumber = (rand()%36)+1;
-	int randomNumber = 26;
+	int randomNumber = 0;
 	player->movePlayerToSpecificField(randomNumber);
 	player->updateCurrentField(fieldsVector->at(randomNumber));
 	label->Text = random(5);
