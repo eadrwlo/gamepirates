@@ -27,7 +27,6 @@ void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
 {
 	AnsiString throwTheDice = "Throw the Dice !";
 	AnsiString stopTheDice = "Stop the Dice !";
-	Label1->Text = drawnNumber;
 //	else if (Button1->Text == stopTheDice)
 //	{
 //		Button1->Text = throwTheDice;
@@ -105,7 +104,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(26, this->field27));
 	this->fieldsVector.push_back(new Whirlpool(27, this->field28, new TwhirlpoolCardFrame(this)));
 	this->fieldsVector.push_back(new Field(28, this->field29));
-	this->fieldsVector.push_back(new Field(39, this->field30));
+	this->fieldsVector.push_back(new Field(29, this->field30));
 	this->fieldsVector.push_back(new Field(30, this->field31));
 	this->fieldsVector.push_back(new Field(31, this->field32));
 	this->fieldsVector.push_back(new Field(32, this->field33));
@@ -114,14 +113,18 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(35, this->field36));
 }
 
-
-
+// ************************************
+// Funnkcja timera przesuwająca gracza.
+// Każde wyzwolenie funkcji (wlączenie timera) timerForPlayerMovementExecuteTimer przesuwa gracza o jedno pole.
+// Funkcja "sama" zatrzymuje timer który nią steruje w momencie kiedy wykona sie odpowiednią ilość razy tzn
+// przesunie gracza o wyrzuconą licznbę oczek.
+// *************************************
 
 void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 {
-if (!isLastLoopIteration)
+	if (!isLastLoopIteration)
 	{
-		player1_1->movePlayer(drawnNumber);
+		player1_1->movePlayerToNeighbouringFiedl();
 		if ((player1_1->getCurrentFieldPtr())->getFieldNumber() == 35)
 		{
 			player1_1->updateCurrentField(this->fieldsVector[0]);
@@ -145,6 +148,8 @@ if (!isLastLoopIteration)
 		timerForPlayerMovementExecute->Enabled = false;
 		isLastLoopIteration = false;
 	}
+	//Label1->Text = player1_1->getCurrentFieldPtr()->getFieldNumber();
+	Label1->Text = RandomRange(0,35);
 }
 //---------------------------------------------------------------------------
 

@@ -16,7 +16,7 @@ void Player::setName(string _name)
 	name = _name;
 }
 
-void Player::movePlayer(int drawnNumber)
+void Player::movePlayerToNeighbouringFiedl()
 {
 	if ( currentFieldPtr->getFieldNumber() < 9 )
 	{
@@ -36,7 +36,7 @@ void Player::movePlayer(int drawnNumber)
 		playerFlowAnimationX->StopValue = playerImagePtr->Position->X + 88;
 		playerFlowAnimationY->StopValue = playerImagePtr->Position->Y - 50;
 	}
-	else
+	else if ( currentFieldPtr->getFieldNumber() < 36 )
 	{
 		// to do - gracz jest na boku mapy -- poludnie - wschod
 		playerFlowAnimationX->StopValue = playerImagePtr->Position->X + 88;
@@ -122,18 +122,23 @@ void Field::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vecto
 //// ------ Whirpool implementation ------ ////
 void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
 {
-
-	srand( time( NULL ) );
-	//int randomNumber = (rand()%36)+1;
-	int randomNumber = 0;
+	int randomNumber = RandomRange(0,35);
 	player->movePlayerToSpecificField(randomNumber);
 	player->updateCurrentField(fieldsVector->at(randomNumber));
-	label->Text = random(5);
-	int firstNumber = randomNumber / 10;
-	int secondNumber = randomNumber % (firstNumber * 10);
+
+	if (randomNumber < 10 )
+	{
+        (static_cast<TwhirlpoolCardFrame*>(cardFramePtr))->number2->SendToBack();
+		(static_cast<TwhirlpoolCardFrame*>(cardFramePtr))->number1->ImageIndex = randomNumber;
+	}
+	else
+	{
+		int firstNumber = randomNumber / 10;
+		int secondNumber = randomNumber % (firstNumber * 10);
+		(static_cast<TwhirlpoolCardFrame*>(cardFramePtr))->number1->ImageIndex = firstNumber;
+		(static_cast<TwhirlpoolCardFrame*>(cardFramePtr))->number2->ImageIndex = secondNumber;
+	}
 	cardFramePtr->Visible = true;
-	(static_cast<TwhirlpoolCardFrame*>(cardFramePtr))->number1->ImageIndex = firstNumber;
-	(static_cast<TwhirlpoolCardFrame*>(cardFramePtr))->number2->ImageIndex = secondNumber;
 }
 
 

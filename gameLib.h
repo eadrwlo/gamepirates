@@ -35,7 +35,7 @@ class Player
 		   Field *_currentFieldPtr);
 	void setName(string _name);
 	string getName();
-	void movePlayer(int drawnNumber);
+	void movePlayerToNeighbouringFiedl();
 	void movePlayerToSpecificField(int fieldNumber);
 	void updateCurrentField(Field *newFieldPtr);
 	Field* getCurrentFieldPtr();

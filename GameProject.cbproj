@@ -134,14 +134,14 @@
             <BuildOrder>2</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="ingameMenu.cpp">
+        <CppCompile Include="Ingamemenu.cpp">
             <Form>ingameMenu_frame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
             <DependentOn>ingameMenu.h</DependentOn>
             <BuildOrder>8</BuildOrder>
         </CppCompile>
-        <CppCompile Include="mainMenu.cpp">
+        <CppCompile Include="Mainmenu.cpp">
             <Form>mainMenu_frame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
@@ -177,8 +177,8 @@
             <BuildOrder>11</BuildOrder>
         </CppCompile>
         <FormResources Include="optionsMenu.fmx"/>
-        <FormResources Include="mainMenu.fmx"/>
-        <FormResources Include="ingameMenu.fmx"/>
+        <FormResources Include="Mainmenu.fmx"/>
+        <FormResources Include="Ingamemenu.fmx"/>
         <FormResources Include="whirlpoolCard.fmx"/>
         <FormResources Include="startgameMenu.fmx"/>
         <FormResources Include="playerMenu.fmx"/>
