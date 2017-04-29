@@ -8,13 +8,14 @@
 #include <System.StartUpCopy.hpp>
 //---------------------------------------------------------------------------
 USEFORM("optionsMenu.cpp", optionsMenu_frame); /* TFrame: File Type */
-USEFORM("mainMenu.cpp", mainMenu_frame); /* TFrame: File Type */
-USEFORM("ingameMenu.cpp", ingameMenu_frame); /* TFrame: File Type */
+USEFORM("Mainmenu.cpp", mainMenu_frame); /* TFrame: File Type */
+USEFORM("Ingamemenu.cpp", ingameMenu_frame); /* TFrame: File Type */
 USEFORM("whirlpoolCard.cpp", whirlpoolCardFrame); /* TFrame: File Type */
 USEFORM("startgameMenu.cpp", startgameMenu_frame); /* TFrame: File Type */
 USEFORM("playerMenu.cpp", player_frame); /* TFrame: File Type */
 USEFORM("game.cpp", gameForm);
 USEFORM("frameMap.cpp", frame1Map); /* TFrame: File Type */
+USEFORM("greatBritainCard.cpp", greatBritainFrame); /* TFrame: File Type */
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {

@@ -54,10 +54,10 @@ class Port: public Field
 	TImage *portImagePtr;
 
 	public:
-	Port();
+	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr):Field(fieldNumber, fieldImagePtr, cardFramePtr){};
 	void setName();
 	string getName();
-	void mainEventWhenPlayerIsOnTheField(Player *player, TFrame *framePtr);
+	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
 };
 
 class Whirlpool: public Field
