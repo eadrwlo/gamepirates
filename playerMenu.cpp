@@ -14,3 +14,6 @@ __fastcall Tplayer_frame::Tplayer_frame(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+
+

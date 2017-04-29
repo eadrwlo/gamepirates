@@ -13,6 +13,7 @@
 #include "playerMenu.h"
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
+#include <vector>
 //---------------------------------------------------------------------------
 class TstartgameMenu_frame : public TFrame
 {
@@ -20,14 +21,14 @@ __published:	// IDE-managed Components
 	TImage *numberOfPlayers_label;
 	TImage *plus_button;
 	TImage *minus_button;
-	Tplayer_frame *Frame11;
-	Tplayer_frame *Frame12;
-	Tplayer_frame *player_frame1;
-	Tplayer_frame *player_frame2;
 	TImageList *listOfNumbers;
 	TImage *startgame_button;
 	TImage *goBack_button;
 	TGlyph *number;
+	Tplayer_frame *player_frame1;
+	Tplayer_frame *player_frame2;
+	Tplayer_frame *player_frame3;
+	Tplayer_frame *player_frame4;
 	void __fastcall startgame_buttonClick(TObject *Sender);
 	void __fastcall goBack_buttonClick(TObject *Sender);
 	void __fastcall plus_buttonClick(TObject *Sender);
@@ -35,6 +36,8 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TstartgameMenu_frame(TComponent* Owner);
+	vector <Tplayer_frame*> playerList;
+	vector <Tplayer_frame*>::iterator it;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TstartgameMenu_frame *startgameMenu_frame;
