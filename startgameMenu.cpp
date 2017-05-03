@@ -63,3 +63,4 @@ void __fastcall TstartgameMenu_frame::minus_buttonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
