@@ -44,6 +44,7 @@ class Player
 
 class Port: public Field
 {
+	//friend class TgreatBritainFrame;
 	protected:
 	string name;
 	int conquerCost;
@@ -51,6 +52,7 @@ class Port: public Field
 	int extensionLvl;
 	int defensivePower;
 	Player *owner;
+    Player *currentPlayerLocatedOnField;
 	TImage *portImagePtr;
 
 	public:

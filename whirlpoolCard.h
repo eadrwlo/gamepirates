@@ -21,8 +21,9 @@ __published:	// IDE-managed Components
 	TGlyph *number1;
 	TImageList *commonNumbers;
 	TGlyph *number2;
-	TButton *Zamknij;
+	TImage *closeButton;
 	void __fastcall ZamknijClick(TObject *Sender);
+	void __fastcall closeButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TwhirlpoolCardFrame(TComponent* Owner);

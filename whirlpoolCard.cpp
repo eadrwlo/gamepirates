@@ -29,3 +29,10 @@ void __fastcall TwhirlpoolCardFrame::ZamknijClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TwhirlpoolCardFrame::closeButtonClick(TObject *Sender)
+{
+
+	Visible = false;
+}
+//---------------------------------------------------------------------------
+

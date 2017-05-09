@@ -14,12 +14,12 @@
 //---------------------------------------------------------------------------
 class TgreatBritainFrame : public TFrame
 {
+    friend class Port;
 __published:	// IDE-managed Components
-	TImage *Image1;
+	TImage *cardImage;
 	TColorButton *buyButton;
-	TColorButton *ColorButton1;
+	TColorButton *conquerButton;
 	void __fastcall buyButtonClick(TObject *Sender);
-	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, float X, float Y);
 
 private:	// User declarations
 public:		// User declarations

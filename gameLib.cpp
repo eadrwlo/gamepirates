@@ -144,7 +144,9 @@ void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, v
 //// ------ Port implementation ------ ////
 void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
 {
-   cardFramePtr->Visible = true;
+	currentPlayerLocatedOnField = player;
+	cardFramePtr->Visible = true;
+
 }
 
 

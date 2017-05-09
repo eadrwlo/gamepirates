@@ -20,12 +20,7 @@ __fastcall TgreatBritainFrame::TgreatBritainFrame(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TgreatBritainFrame::buyButtonClick(TObject *Sender)
 {
-    Visible = false;
-}
-//---------------------------------------------------------------------------
-void __fastcall TgreatBritainFrame::Image1MouseMove(TObject *Sender, TShiftState Shift,
-          float X, float Y)
-{
-    buyButton->Color = 1;
+
+	Visible = false;
 }
 //---------------------------------------------------------------------------

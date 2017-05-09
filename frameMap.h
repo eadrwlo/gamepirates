@@ -110,7 +110,7 @@ private:	// User declarations
 	int drawnNumber;
 public:		// User declarations
 	__fastcall Tframe1Map(TComponent* Owner);
-	friend void throwDice();
+	//friend void throwDice();
     void fillFieldsVectorWithFields();
 };
 //---------------------------------------------------------------------------
