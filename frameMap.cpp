@@ -19,9 +19,12 @@ bool buttonThowState = false;
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
+	this->iterator = 4;
+    this->numberOfPlayers = 2;
 	drawnNumber = 1;
 	fillFieldsVectorWithFields();
-	player1_1 = new Player("Adrian", 100, player1, moveInXAxis, moveInYAxis, this->fieldsVector[0]);
+	this->players.push_back(new Player("Adrian", 100, player1, moveInXAxis, moveInYAxis, this->fieldsVector[0]));
+    this->players.push_back(new Player("Adrian", 100, player3, moveInXAxis, moveInYAxis, this->fieldsVector[0]));
 }
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
@@ -125,14 +128,14 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 {
 	if (!isLastLoopIteration)
 	{
-		player1_1->movePlayerToNeighbouringFiedl();
-		if ((player1_1->getCurrentFieldPtr())->getFieldNumber() == 35)
+		players[0]->movePlayerToNeighbouringFiedl();
+		if ((players[0]->getCurrentFieldPtr())->getFieldNumber() == 35)
 		{
-			player1_1->updateCurrentField(this->fieldsVector[0]);
+			players[0]->updateCurrentField(this->fieldsVector[0]);
 		}
 		else
 		{
-			player1_1->updateCurrentField(this->fieldsVector[(player1_1->getCurrentFieldPtr())->getFieldNumber()+1]);
+			players[0]->updateCurrentField(this->fieldsVector[(players[0]->getCurrentFieldPtr())->getFieldNumber()+1]);
 		}
 
 		fieldsCounter ++;
@@ -145,7 +148,7 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 	else
 	{
 		//Label1->Text = (player1_1->getCurrentFieldPtr())->getFieldNumber();
-		this->fieldsVector[(player1_1->getCurrentFieldPtr()->getFieldNumber())]->mainEventWhenPlayerIsOnTheField(player1_1, Label1, &(this->fieldsVector));
+		this->fieldsVector[(players[0]->getCurrentFieldPtr()->getFieldNumber())]->mainEventWhenPlayerIsOnTheField(players[0], Label1, &(this->fieldsVector));
 		timerForPlayerMovementExecute->Enabled = false;
 		isLastLoopIteration = false;
 	}

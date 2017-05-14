@@ -106,8 +106,11 @@ __published:	// IDE-managed Components
 	void __fastcall CornerButton2Click(TObject *Sender);
 private:	// User declarations
 	vector<Field*> fieldsVector;
+    vector<Player*> players;
 	int fieldsCounter;
 	int drawnNumber;
+	int numberOfPlayers;
+    unsigned int iterator;
 public:		// User declarations
 	__fastcall Tframe1Map(TComponent* Owner);
 	//friend void throwDice();
