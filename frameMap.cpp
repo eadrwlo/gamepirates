@@ -19,12 +19,16 @@ bool buttonThowState = false;
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
-	this->iterator = 4;
-    this->numberOfPlayers = 2;
+	this->numberOfPlayers = 1;
+	this->iterator = this->numberOfPlayers;
+	//for(int player = 0; player < this->numberOfPlayers; player++)
+	//{
+		//this->playersWhoAreStillInGame.push_back(true);
+	//}
 	drawnNumber = 1;
 	fillFieldsVectorWithFields();
 	this->players.push_back(new Player("Adrian", 100, player1, moveInXAxis, moveInYAxis, this->fieldsVector[0]));
-    this->players.push_back(new Player("Adrian", 100, player3, moveInXAxis, moveInYAxis, this->fieldsVector[0]));
+	//this->players.push_back(new Player("Adrian", 100, player3, moveInXAxis, moveInYAxis, this->fieldsVector[0]));
 }
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
@@ -126,16 +130,17 @@ void Tframe1Map::fillFieldsVectorWithFields()
 
 void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 {
+	this->indexOfPlayer = (this->iterator % this->numberOfPlayers);
 	if (!isLastLoopIteration)
 	{
-		players[0]->movePlayerToNeighbouringFiedl();
-		if ((players[0]->getCurrentFieldPtr())->getFieldNumber() == 35)
+		players[indexOfPlayer]->movePlayerToNeighbouringFiedl();
+		if ((players[indexOfPlayer]->getCurrentFieldPtr())->getFieldNumber() == 35)
 		{
-			players[0]->updateCurrentField(this->fieldsVector[0]);
+			players[indexOfPlayer]->updateCurrentField(this->fieldsVector[0]);
 		}
 		else
 		{
-			players[0]->updateCurrentField(this->fieldsVector[(players[0]->getCurrentFieldPtr())->getFieldNumber()+1]);
+			players[indexOfPlayer]->updateCurrentField(this->fieldsVector[(players[indexOfPlayer]->getCurrentFieldPtr())->getFieldNumber()+1]);
 		}
 
 		fieldsCounter ++;
@@ -148,12 +153,14 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 	else
 	{
 		//Label1->Text = (player1_1->getCurrentFieldPtr())->getFieldNumber();
-		this->fieldsVector[(players[0]->getCurrentFieldPtr()->getFieldNumber())]->mainEventWhenPlayerIsOnTheField(players[0], Label1, &(this->fieldsVector));
+		this->fieldsVector[(players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber())]->mainEventWhenPlayerIsOnTheField(players[indexOfPlayer], Label1, &(this->fieldsVector));
 		timerForPlayerMovementExecute->Enabled = false;
 		isLastLoopIteration = false;
 	}
 	//Label1->Text = player1_1->getCurrentFieldPtr()->getFieldNumber();
 	Label1->Text = RandomRange(0,35);
+	this->iterator++;
+
 }
 //---------------------------------------------------------------------------
 

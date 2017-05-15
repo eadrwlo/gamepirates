@@ -110,7 +110,9 @@ private:	// User declarations
 	int fieldsCounter;
 	int drawnNumber;
 	int numberOfPlayers;
-    unsigned int iterator;
+	unsigned int iterator;
+    vector<bool> playersWhoAreStillInGame;
+	int indexOfPlayer;
 public:		// User declarations
 	__fastcall Tframe1Map(TComponent* Owner);
 	//friend void throwDice();
