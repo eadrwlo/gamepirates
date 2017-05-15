@@ -19,7 +19,7 @@ bool buttonThowState = false;
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
-	this->numberOfPlayers = 1;
+	this->numberOfPlayers = 2;
 	this->iterator = this->numberOfPlayers;
 	//for(int player = 0; player < this->numberOfPlayers; player++)
 	//{
@@ -27,8 +27,8 @@ __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	//}
 	drawnNumber = 1;
 	fillFieldsVectorWithFields();
-	this->players.push_back(new Player("Adrian", 100, player1, moveInXAxis, moveInYAxis, this->fieldsVector[0]));
-	//this->players.push_back(new Player("Adrian", 100, player3, moveInXAxis, moveInYAxis, this->fieldsVector[0]));
+	this->players.push_back(new Player("Mariusz", 100, player2, moveInXAxisPlayer2, moveInYAxisPlayer2, this->fieldsVector[0]));
+    this->players.push_back(new Player("Adrian", 100, player1, moveInXAxisPlayer1, moveInYAxisPlayer1, this->fieldsVector[0]));
 }
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
@@ -60,6 +60,8 @@ void __fastcall Tframe1Map::timerForDiceTimer(TObject *Sender)
 
 void __fastcall Tframe1Map::przesunClick(TObject *Sender)
 {
+	this->indexOfPlayer = (this->iterator % this->numberOfPlayers);
+	iterator = iterator + 1;
 	fieldsCounter = 0;
 	timerForPlayerMovementExecute->Enabled = true;
 }
@@ -130,7 +132,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 
 void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 {
-	this->indexOfPlayer = (this->iterator % this->numberOfPlayers);
+
 	if (!isLastLoopIteration)
 	{
 		players[indexOfPlayer]->movePlayerToNeighbouringFiedl();
@@ -157,9 +159,8 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 		timerForPlayerMovementExecute->Enabled = false;
 		isLastLoopIteration = false;
 	}
-	//Label1->Text = player1_1->getCurrentFieldPtr()->getFieldNumber();
-	Label1->Text = RandomRange(0,35);
-	this->iterator++;
+	Label1->Text = this->iterator;
+	//Label1->Text = RandomRange(0,35);
 
 }
 //---------------------------------------------------------------------------
@@ -167,7 +168,7 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 
 void __fastcall Tframe1Map::CornerButton1Click(TObject *Sender)
 {
-	Label1->Text = drawnNumber;
+	//Label1->Text = drawnNumber;
 	timerForDice->Enabled = !(timerForDice->Enabled);
 	if(buttonThowState == false)
 	{

@@ -65,8 +65,8 @@ __published:	// IDE-managed Components
 	TGlyph *dice;
 	TTimer *timerForThrowImagePulsing;
 	TImage *player1;
-	TFloatAnimation *moveInXAxis;
-	TFloatAnimation *moveInYAxis;
+	TFloatAnimation *moveInXAxisPlayer1;
+	TFloatAnimation *moveInYAxisPlayer1;
 	TImage *background;
 	TTimer *groundMovement;
 	TTimer *timerForPlayerMovement;
@@ -74,9 +74,9 @@ __published:	// IDE-managed Components
 	TCornerButton *CornerButton1;
 	TColorAnimation *ColorAnimation1;
 	TCornerButton *CornerButton2;
-	TImage *player3;
-	TFloatAnimation *FloatAnimation3;
-	TFloatAnimation *FloatAnimation4;
+	TImage *player2;
+	TFloatAnimation *moveInXAxisPlayer2;
+	TFloatAnimation *moveInYAxisPlayer2;
 	TImage *portGrbrtain4;
 	TImage *portGrbrtain3;
 	TImage *portGrbrtain2;
@@ -97,6 +97,10 @@ __published:	// IDE-managed Components
 	TImage *Image14;
 	TImage *Image15;
 	TImage *Image16;
+	TFloatAnimation *FloatAnimation1;
+	TImage *player3;
+	TFloatAnimation *moveInXAxisPlayer3;
+	TFloatAnimation *moveInYAxisPlayer3;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall przesunClick(TObject *Sender);
