@@ -155,7 +155,7 @@
             <DependentOn>mainMenu.h</DependentOn>
             <BuildOrder>5</BuildOrder>
         </CppCompile>
-        <CppCompile Include="optionsMenu.cpp">
+        <CppCompile Include="Optionsmenu.cpp">
             <Form>optionsMenu_frame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
@@ -183,7 +183,7 @@
             <DependentOn>whirlpoolCard.h</DependentOn>
             <BuildOrder>11</BuildOrder>
         </CppCompile>
-        <FormResources Include="optionsMenu.fmx"/>
+        <FormResources Include="Optionsmenu.fmx"/>
         <FormResources Include="Mainmenu.fmx"/>
         <FormResources Include="Ingamemenu.fmx"/>
         <FormResources Include="whirlpoolCard.fmx"/>
