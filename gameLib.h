@@ -28,6 +28,7 @@ class Player
 	TFloatAnimation *playerFlowAnimationX;
 	TFloatAnimation *playerFlowAnimationY;
 	Field *currentFieldPtr;
+	int permissionToMoveInCurrentTurn;
 
 	public:
 	Player(string _name, int _ownedMoney, TImage *_playerImagePtr,
@@ -39,6 +40,9 @@ class Player
 	void movePlayerToSpecificField(int fieldNumber);
 	void updateCurrentField(Field *newFieldPtr);
 	Field* getCurrentFieldPtr();
+	int getPermissionToMove();
+	void allowPlayerForMoveInNextTurn();
+	void forbidPlayerForMoveInNextTurn();
 };
 
 

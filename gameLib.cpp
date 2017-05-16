@@ -9,6 +9,7 @@ Player::Player(string _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAni
 	playerFlowAnimationX =  _moveInXAxis;
 	playerFlowAnimationY =  _moveInYAxis;
 	currentFieldPtr = _currentFieldPtr;
+	permissionToMoveInCurrentTurn = 1;
 }
 
 void Player::setName(string _name)
@@ -91,6 +92,21 @@ void Player::updateCurrentField(Field *newFieldPtr)
 Field* Player::getCurrentFieldPtr()
 {
 	return currentFieldPtr;
+}
+
+int Player::getPermissionToMove()
+{
+	return permissionToMoveInCurrentTurn;
+}
+
+void Player::allowPlayerForMoveInNextTurn()
+{
+	permissionToMoveInCurrentTurn = 1;
+}
+
+void Player::forbidPlayerForMoveInNextTurn()
+{
+	permissionToMoveInCurrentTurn = 0;
 }
 
 //// ----- F I E L D implementation ------ ////

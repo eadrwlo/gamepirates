@@ -15,20 +15,23 @@ Player *player1_1;
 bool isLastLoopIteration = false;
 bool moves = false;
 bool buttonThowState = false;
+
 //---------------------------------------------------------------------------
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
-	this->numberOfPlayers = 2;
-	this->iterator = this->numberOfPlayers;
-	//for(int player = 0; player < this->numberOfPlayers; player++)
-	//{
-		//this->playersWhoAreStillInGame.push_back(true);
-	//}
+	this->numberOfPlayers = 4;
+	iterator = numberOfPlayers;
+	for(int player = 0; player < this->numberOfPlayers; player++)
+	{
+		this->playersWhoAreStillInGame.push_back(true);
+	}
 	drawnNumber = 1;
 	fillFieldsVectorWithFields();
+	this->players.push_back(new Player("Adrian", 100, player1, moveInXAxisPlayer1, moveInYAxisPlayer1, this->fieldsVector[0]));
 	this->players.push_back(new Player("Mariusz", 100, player2, moveInXAxisPlayer2, moveInYAxisPlayer2, this->fieldsVector[0]));
-    this->players.push_back(new Player("Adrian", 100, player1, moveInXAxisPlayer1, moveInYAxisPlayer1, this->fieldsVector[0]));
+	this->players.push_back(new Player("Blady Kris", 100, player3, moveInXAxisPlayer3, moveInYAxisPlayer3, this->fieldsVector[0]));
+    this->players.push_back(new Player("Piech", 100, player4, moveInXAxisPlayer4, moveInYAxisPlayer4, this->fieldsVector[0]));
 }
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
@@ -60,8 +63,6 @@ void __fastcall Tframe1Map::timerForDiceTimer(TObject *Sender)
 
 void __fastcall Tframe1Map::przesunClick(TObject *Sender)
 {
-	this->indexOfPlayer = (this->iterator % this->numberOfPlayers);
-	iterator = iterator + 1;
 	fieldsCounter = 0;
 	timerForPlayerMovementExecute->Enabled = true;
 }
@@ -132,7 +133,6 @@ void Tframe1Map::fillFieldsVectorWithFields()
 
 void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 {
-
 	if (!isLastLoopIteration)
 	{
 		players[indexOfPlayer]->movePlayerToNeighbouringFiedl();
@@ -159,9 +159,9 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 		timerForPlayerMovementExecute->Enabled = false;
 		isLastLoopIteration = false;
 	}
-	Label1->Text = this->iterator;
-	//Label1->Text = RandomRange(0,35);
 
+	Label1->Text = indexOfPlayer;
+	//Label1->Text = RandomRange(0,35);
 }
 //---------------------------------------------------------------------------
 
@@ -187,7 +187,15 @@ void __fastcall Tframe1Map::CornerButton1Click(TObject *Sender)
 
 void __fastcall Tframe1Map::CornerButton2Click(TObject *Sender)
 {
-	timerForPlayerMovementExecute->Enabled = true;
+	indexOfPlayer = (iterator % numberOfPlayers);
+	if(playersWhoAreStillInGame[indexOfPlayer])
+	{
+		if(players[indexOfPlayer]->getPermissionToMove())
+		timerForPlayerMovementExecute->Enabled = true;
+		else
+		players[indexOfPlayer]->allowPlayerForMoveInNextTurn();
+	}
+	iterator++;
 }
 //---------------------------------------------------------------------------
 

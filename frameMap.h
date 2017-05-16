@@ -101,6 +101,9 @@ __published:	// IDE-managed Components
 	TImage *player3;
 	TFloatAnimation *moveInXAxisPlayer3;
 	TFloatAnimation *moveInYAxisPlayer3;
+	TImage *player4;
+	TFloatAnimation *moveInXAxisPlayer4;
+	TFloatAnimation *moveInYAxisPlayer4;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall przesunClick(TObject *Sender);
