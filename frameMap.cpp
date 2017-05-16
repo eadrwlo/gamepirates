@@ -160,7 +160,7 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 		isLastLoopIteration = false;
 	}
 
-	Label1->Text = indexOfPlayer;
+	//Label1->Text = indexOfPlayer;
 	//Label1->Text = RandomRange(0,35);
 }
 //---------------------------------------------------------------------------
