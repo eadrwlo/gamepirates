@@ -5,7 +5,7 @@
 
 #include "mainMenu.h"
 #include "Optionsmenu.h"
-#include "frameMap.h"
+//#include "frameMap.h"
 #include "startgameMenu.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)

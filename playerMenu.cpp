@@ -22,6 +22,7 @@ void __fastcall Tplayer_frame::next_buttonClick(TObject *Sender)
 	if (playerAvatar->ImageIndex < 5)
 	{
 		playerAvatar->ImageIndex++;
+
     }
 
 }

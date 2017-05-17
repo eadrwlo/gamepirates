@@ -10,10 +10,10 @@
 #include <FMX.Objects.hpp>
 #include <FMX.StdCtrls.hpp>
 #include <FMX.Types.hpp>
-#include "playerMenu.h"
+
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
-#include <vector>
+#include "playerMenu.h"
 //---------------------------------------------------------------------------
 class TstartgameMenu_frame : public TFrame
 {
@@ -36,7 +36,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TstartgameMenu_frame(TComponent* Owner);
-	vector <Tplayer_frame*> playerList;
+    vector <Tplayer_frame*> playerList;
 	vector <Tplayer_frame*>::iterator it;
 };
 //---------------------------------------------------------------------------

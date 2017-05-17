@@ -10,16 +10,19 @@
 #include <FMX.Types.hpp>
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
+#include "frameMap.h"
+#include <FMX.Controls.Presentation.hpp>
+#include <FMX.Edit.hpp>
 //---------------------------------------------------------------------------
 class Tplayer_frame : public TFrame
 {
 __published:	// IDE-managed Components
-	TText *Text1;
 	TImage *backgorund;
 	TImageList *playerPictruesList;
 	TGlyph *playerAvatar;
 	TImage *next_button;
 	TImage *previous_button;
+	TEdit *nameField;
 	void __fastcall next_buttonClick(TObject *Sender);
 	void __fastcall previous_buttonClick(TObject *Sender);
 	void __fastcall Text1Click(TObject *Sender);
@@ -31,3 +34,4 @@ public:		// User declarations
 extern PACKAGE Tplayer_frame *player_frame;
 //---------------------------------------------------------------------------
 #endif
+

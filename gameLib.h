@@ -22,7 +22,7 @@ class Field
 class Player
 {
 	protected:
-	string name;
+	UnicodeString name;
 	int ownedMoney;
 	TImage *playerImagePtr;
 	TFloatAnimation *playerFlowAnimationX;
@@ -31,10 +31,10 @@ class Player
 	int permissionToMoveInCurrentTurn;
 
 	public:
-	Player(string _name, int _ownedMoney, TImage *_playerImagePtr,
+	Player(UnicodeString _name, int _ownedMoney, TImage *_playerImagePtr,
 		   TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis,
 		   Field *_currentFieldPtr);
-	void setName(string _name);
+	void setName(UnicodeString _name);
 	string getName();
 	void movePlayerToNeighbouringFiedl();
 	void movePlayerToSpecificField(int fieldNumber);

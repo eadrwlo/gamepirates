@@ -67,7 +67,6 @@ __published:	// IDE-managed Components
 	TImage *player1;
 	TFloatAnimation *moveInXAxisPlayer1;
 	TFloatAnimation *moveInYAxisPlayer1;
-	TImage *background;
 	TTimer *groundMovement;
 	TTimer *timerForPlayerMovement;
 	TTimer *timerForPlayerMovementExecute;
@@ -104,6 +103,7 @@ __published:	// IDE-managed Components
 	TImage *player4;
 	TFloatAnimation *moveInXAxisPlayer4;
 	TFloatAnimation *moveInYAxisPlayer4;
+	TImage *background;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall przesunClick(TObject *Sender);
@@ -112,15 +112,18 @@ __published:	// IDE-managed Components
 	void __fastcall CornerButton1Click(TObject *Sender);
 	void __fastcall CornerButton2Click(TObject *Sender);
 private:	// User declarations
-	vector<Field*> fieldsVector;
-    vector<Player*> players;
+
+
+public:		// User declarations
 	int fieldsCounter;
 	int drawnNumber;
-	int numberOfPlayers;
 	unsigned int iterator;
-    vector<bool> playersWhoAreStillInGame;
+
 	int indexOfPlayer;
-public:		// User declarations
+	vector<bool> playersWhoAreStillInGame;
+    int numberOfPlayers;
+	vector<Player*> players;
+    vector<Field*> fieldsVector;
 	__fastcall Tframe1Map(TComponent* Owner);
 	//friend void throwDice();
     void fillFieldsVectorWithFields();

@@ -20,7 +20,8 @@ bool buttonThowState = false;
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
-	this->numberOfPlayers = 4;
+    //Przeniesione do startgameMenu.cpp - pamietac zeby zawsze wybrac 4 graczy!!!!!!!!
+	/*this->numberOfPlayers = 4;
 	iterator = numberOfPlayers;
 	for(int player = 0; player < this->numberOfPlayers; player++)
 	{
@@ -31,7 +32,7 @@ __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	this->players.push_back(new Player("Adrian", 100, player1, moveInXAxisPlayer1, moveInYAxisPlayer1, this->fieldsVector[0]));
 	this->players.push_back(new Player("Mariusz", 100, player2, moveInXAxisPlayer2, moveInYAxisPlayer2, this->fieldsVector[0]));
 	this->players.push_back(new Player("Blady Kris", 100, player3, moveInXAxisPlayer3, moveInYAxisPlayer3, this->fieldsVector[0]));
-    this->players.push_back(new Player("Piech", 100, player4, moveInXAxisPlayer4, moveInYAxisPlayer4, this->fieldsVector[0]));
+	this->players.push_back(new Player("Piech", 100, player4, moveInXAxisPlayer4, moveInYAxisPlayer4, this->fieldsVector[0])); */
 }
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
@@ -198,6 +199,8 @@ void __fastcall Tframe1Map::CornerButton2Click(TObject *Sender)
 	iterator++;
 }
 //---------------------------------------------------------------------------
+
+
 
 
 

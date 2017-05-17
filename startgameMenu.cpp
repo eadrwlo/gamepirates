@@ -1,14 +1,15 @@
 //---------------------------------------------------------------------------
 
 #include <fmx.h>
-#include "frameMap.h"
 #pragma hdrstop
 
 #include "startgameMenu.h"
+#include "playerMenu.h"
 #include "mainMenu.h"
+#include "frameMap.h"
+#include <string>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
-#pragma link "playerMenu"
 #pragma resource "*.fmx"
 TstartgameMenu_frame *startgameMenu_frame;
 //---------------------------------------------------------------------------
@@ -18,23 +19,40 @@ __fastcall TstartgameMenu_frame::TstartgameMenu_frame(TComponent* Owner)
 	number->ImageIndex = 0;
 	player_frame3->Visible = false;
 	player_frame4->Visible = false;
+	playerList.push_back(player_frame1);
+	playerList.push_back(player_frame2);
 	playerList.push_back(player_frame3);
 	playerList.push_back(player_frame4);
-    it = playerList.begin();
+    it = playerList.begin() + 2;
 }
 //---------------------------------------------------------------------------
 
 
 void __fastcall TstartgameMenu_frame::startgame_buttonClick(TObject *Sender)
 {
+	frame1Map->numberOfPlayers = number->ImageIndex + 2;
+	for(int player = 0; player < frame1Map->numberOfPlayers; player++)
+	{
+		frame1Map->playersWhoAreStillInGame.push_back(true);
+	}
+	frame1Map->drawnNumber = 1;
+	frame1Map->fillFieldsVectorWithFields();
+	frame1Map->iterator = 0;
+	frame1Map->players.push_back(new Player(player_frame1->nameField->Text, 100, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0]));
+	frame1Map->players.push_back(new Player(player_frame2->nameField->Text, 100, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0]));
+	frame1Map->players.push_back(new Player(player_frame3->nameField->Text, 100, frame1Map->player3, frame1Map->moveInXAxisPlayer3,frame1Map->moveInYAxisPlayer3, frame1Map->fieldsVector[0]));
+	frame1Map->players.push_back(new Player(player_frame4->nameField->Text, 100, frame1Map->player4, frame1Map->moveInXAxisPlayer4,frame1Map->moveInYAxisPlayer4, frame1Map->fieldsVector[0]));
+   //	(new Player("Adrian", 100, player1, moveInXAxisPlayer1, moveInYAxisPlayer1, this->fieldsVector[0]));
 	frame1Map->Visible = Visible;
 	startgameMenu_frame->Visible = false;
+
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TstartgameMenu_frame::goBack_buttonClick(TObject *Sender)
 {
-    startgameMenu_frame->Visible = false;
+	startgameMenu_frame->Visible = false;
+
 	mainMenu_frame->Visible = true;
 }
 //---------------------------------------------------------------------------

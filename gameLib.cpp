@@ -1,7 +1,7 @@
 #include "gameLib.h"
 #include <windows.h>
 #include "whirlpoolCard.h"
-Player::Player(string _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis, Field *_currentFieldPtr)
+Player::Player(UnicodeString _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis, Field *_currentFieldPtr)
 {
 	name = _name;
 	ownedMoney = _ownedMoney;
@@ -12,7 +12,7 @@ Player::Player(string _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAni
 	permissionToMoveInCurrentTurn = 1;
 }
 
-void Player::setName(string _name)
+void Player::setName (UnicodeString _name)
 {
 	name = _name;
 }
