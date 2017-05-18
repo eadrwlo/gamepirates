@@ -10,7 +10,6 @@
 #include <FMX.Types.hpp>
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
-#include "frameMap.h"
 #include <FMX.Controls.Presentation.hpp>
 #include <FMX.Edit.hpp>
 //---------------------------------------------------------------------------

@@ -10,10 +10,11 @@
 #include <FMX.Objects.hpp>
 #include <FMX.StdCtrls.hpp>
 #include <FMX.Types.hpp>
-
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
 #include "playerMenu.h"
+#include <vector>
+using namespace std;
 //---------------------------------------------------------------------------
 class TstartgameMenu_frame : public TFrame
 {

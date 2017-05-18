@@ -13,12 +13,11 @@
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
 #include <FMX.Ani.hpp>
-#include "gameLib.h"
+#include "Port.h"
 #include <FMX.Colors.hpp>
 #include <FMX.Styles.Objects.hpp>
 #include <FMX.Effects.hpp>
 #include <FMX.Filter.Effects.hpp>
-#include <vector>
 //---------------------------------------------------------------------------
 class Tframe1Map : public TFrame
 {

@@ -121,12 +121,6 @@
             <DependentOn>game.h</DependentOn>
             <BuildOrder>1</BuildOrder>
         </CppCompile>
-        <CppCompile Include="gameLib.cpp">
-            <BuildOrder>4</BuildOrder>
-        </CppCompile>
-        <None Include="gameLib.h">
-            <BuildOrder>3</BuildOrder>
-        </None>
         <CppCompile Include="GameProject.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
@@ -162,6 +156,12 @@
             <DependentOn>optionsMenu.h</DependentOn>
             <BuildOrder>6</BuildOrder>
         </CppCompile>
+        <CppCompile Include="player.cpp">
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <None Include="player.h">
+            <BuildOrder>13</BuildOrder>
+        </None>
         <CppCompile Include="playerMenu.cpp">
             <Form>player_frame</Form>
             <FormType>fmx</FormType>
@@ -169,6 +169,12 @@
             <DependentOn>playerMenu.h</DependentOn>
             <BuildOrder>10</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Port.cpp">
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <None Include="Port.h">
+            <BuildOrder>3</BuildOrder>
+        </None>
         <CppCompile Include="startgameMenu.cpp">
             <Form>startgameMenu_frame</Form>
             <FormType>fmx</FormType>
@@ -185,13 +191,13 @@
         </CppCompile>
         <FormResources Include="Optionsmenu.fmx"/>
         <FormResources Include="Mainmenu.fmx"/>
-        <FormResources Include="Ingamemenu.fmx"/>
         <FormResources Include="whirlpoolCard.fmx"/>
         <FormResources Include="startgameMenu.fmx"/>
         <FormResources Include="playerMenu.fmx"/>
-        <FormResources Include="greatBritainCard.fmx"/>
+        <FormResources Include="Ingamemenu.fmx"/>
         <FormResources Include="game.fmx"/>
         <FormResources Include="frameMap.fmx"/>
+        <FormResources Include="greatBritainCard.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
