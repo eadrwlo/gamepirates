@@ -105,7 +105,6 @@ __published:	// IDE-managed Components
 	TImage *background;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
-	void __fastcall przesunClick(TObject *Sender);
 	void __fastcall groundMovementTimer(TObject *Sender);
 	void __fastcall timerForPlayerMovementExecuteTimer(TObject *Sender);
 	void __fastcall CornerButton1Click(TObject *Sender);

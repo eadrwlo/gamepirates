@@ -11,18 +11,24 @@
 #include <FMX.Colors.hpp>
 #include <FMX.Controls.Presentation.hpp>
 #include <FMX.StdCtrls.hpp>
-#include "Port.h"
+#include "Player.h"
 //---------------------------------------------------------------------------
 class TgreatBritainFrame : public TFrame
 {
     friend class Port;
 __published:	// IDE-managed Components
 	TImage *cardImage;
-	TColorButton *buyButton;
+	TColorButton *payButton;
 	TColorButton *conquerButton;
-	void __fastcall buyButtonClick(TObject *Sender);
+	TLabel *extensionLvlLabel;
+	TLabel *ownerLabel;
+	TLabel *conquerCostLabel;
+	TLabel *visitingPaymentLabel;
+	void __fastcall payButtonClick(TObject *Sender);
 
 private:	// User declarations
+	Player *currentlyOperatedPlayer;
+	Port *portRelatedWithCard;
 public:		// User declarations
 	__fastcall TgreatBritainFrame(TComponent* Owner);
 };

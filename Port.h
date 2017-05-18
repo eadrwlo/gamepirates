@@ -24,7 +24,6 @@ class Field
 
 class Port: public Field
 {
-	//friend class TgreatBritainFrame;
 	protected:
 	UnicodeString name;
 	int conquerCost;
@@ -36,7 +35,7 @@ class Port: public Field
 	TImage *portImagePtr;
 
 	public:
-	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr):Field(fieldNumber, fieldImagePtr, cardFramePtr){};
+	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost);
 	void setName();
 	UnicodeString getName();
 	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);

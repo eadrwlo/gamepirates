@@ -18,7 +18,7 @@ __fastcall TgreatBritainFrame::TgreatBritainFrame(TComponent* Owner)
 	this->Position->Y = 220;
 }
 //---------------------------------------------------------------------------
-void __fastcall TgreatBritainFrame::buyButtonClick(TObject *Sender)
+void __fastcall TgreatBritainFrame::payButtonClick(TObject *Sender)
 {
 
 	Visible = false;

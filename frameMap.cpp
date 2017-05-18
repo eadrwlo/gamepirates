@@ -61,15 +61,6 @@ void __fastcall Tframe1Map::timerForDiceTimer(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
-void __fastcall Tframe1Map::przesunClick(TObject *Sender)
-{
-	fieldsCounter = 0;
-	timerForPlayerMovementExecute->Enabled = true;
-}
-//---------------------------------------------------------------------------
-
-
 void __fastcall Tframe1Map::groundMovementTimer(TObject *Sender)
 {
 	if( moves == false)
@@ -106,7 +97,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(16, this->field17));
 	this->fieldsVector.push_back(new Field(17, this->field18));
 	this->fieldsVector.push_back(new Field(18, this->field19));
-	this->fieldsVector.push_back(new Port(19, this->field20, new TgreatBritainFrame(this)));
+	this->fieldsVector.push_back(new Port(19, this->field20, new TgreatBritainFrame(this), 100));
 	this->fieldsVector.push_back(new Field(20, this->field21));
 	this->fieldsVector.push_back(new Field(21, this->field22));
 	this->fieldsVector.push_back(new Field(22, this->field23));

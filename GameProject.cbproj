@@ -189,14 +189,14 @@
             <DependentOn>whirlpoolCard.h</DependentOn>
             <BuildOrder>11</BuildOrder>
         </CppCompile>
-        <FormResources Include="Optionsmenu.fmx"/>
-        <FormResources Include="Mainmenu.fmx"/>
+        <FormResources Include="playerMenu.fmx"/>
         <FormResources Include="whirlpoolCard.fmx"/>
         <FormResources Include="startgameMenu.fmx"/>
-        <FormResources Include="playerMenu.fmx"/>
-        <FormResources Include="Ingamemenu.fmx"/>
+        <FormResources Include="Optionsmenu.fmx"/>
         <FormResources Include="game.fmx"/>
         <FormResources Include="frameMap.fmx"/>
+        <FormResources Include="Mainmenu.fmx"/>
+        <FormResources Include="Ingamemenu.fmx"/>
         <FormResources Include="greatBritainCard.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
