@@ -35,6 +35,7 @@ __published:	// IDE-managed Components
 	void __fastcall plus_buttonClick(TObject *Sender);
 	void __fastcall minus_buttonClick(TObject *Sender);
 private:	// User declarations
+    void fillPlayersVectorWithStartingSettings(int numberOfPlayers);
 public:		// User declarations
 	__fastcall TstartgameMenu_frame(TComponent* Owner);
     vector <Tplayer_frame*> playerList;

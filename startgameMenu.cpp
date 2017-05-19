@@ -38,11 +38,7 @@ void __fastcall TstartgameMenu_frame::startgame_buttonClick(TObject *Sender)
 	frame1Map->drawnNumber = 1;
 	frame1Map->fillFieldsVectorWithFields();
 	frame1Map->iterator = 0;
-	frame1Map->players.push_back(new Player(player_frame1->nameField->Text, 100, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0]));
-	frame1Map->players.push_back(new Player(player_frame2->nameField->Text, 100, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0]));
-	frame1Map->players.push_back(new Player(player_frame3->nameField->Text, 100, frame1Map->player3, frame1Map->moveInXAxisPlayer3,frame1Map->moveInYAxisPlayer3, frame1Map->fieldsVector[0]));
-	frame1Map->players.push_back(new Player(player_frame4->nameField->Text, 100, frame1Map->player4, frame1Map->moveInXAxisPlayer4,frame1Map->moveInYAxisPlayer4, frame1Map->fieldsVector[0]));
-   //	(new Player("Adrian", 100, player1, moveInXAxisPlayer1, moveInYAxisPlayer1, this->fieldsVector[0]));
+    fillPlayersVectorWithStartingSettings(frame1Map->numberOfPlayers);
 	frame1Map->Visible = Visible;
 	startgameMenu_frame->Visible = false;
 
@@ -56,6 +52,29 @@ void __fastcall TstartgameMenu_frame::goBack_buttonClick(TObject *Sender)
 	mainMenu_frame->Visible = true;
 }
 //---------------------------------------------------------------------------
+
+void TstartgameMenu_frame::fillPlayersVectorWithStartingSettings(int numberOfPlayers)
+{
+	switch (numberOfPlayers)
+	{
+		case 2 :
+			frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 100, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0]));
+			frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 100, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0]));
+			frame1Map->player3->Visible = false;
+			frame1Map->player4->Visible = false;
+		case 3:
+			frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 100, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0]));
+			frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 100, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0]));
+			frame1Map->players.push_back(new Player(player_frame3->playerNameInput->Text, 100, frame1Map->player3, frame1Map->moveInXAxisPlayer3,frame1Map->moveInYAxisPlayer3, frame1Map->fieldsVector[0]));
+            frame1Map->player4->Visible = false;
+		case 4:
+            frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 100, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0]));
+			frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 100, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0]));
+			frame1Map->players.push_back(new Player(player_frame3->playerNameInput->Text, 100, frame1Map->player3, frame1Map->moveInXAxisPlayer3,frame1Map->moveInYAxisPlayer3, frame1Map->fieldsVector[0]));
+			frame1Map->players.push_back(new Player(player_frame4->playerNameInput->Text, 100, frame1Map->player4, frame1Map->moveInXAxisPlayer4,frame1Map->moveInYAxisPlayer4, frame1Map->fieldsVector[0]));
+    }
+}
+
 
 
 void __fastcall TstartgameMenu_frame::plus_buttonClick(TObject *Sender)
