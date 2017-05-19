@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef greatBritainCardH
-#define greatBritainCardH
+#ifndef commonCardH
+#define commonCardH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <FMX.Controls.hpp>
@@ -12,6 +12,9 @@
 #include <FMX.Controls.Presentation.hpp>
 #include <FMX.StdCtrls.hpp>
 #include "Player.h"
+#include <FMX.Ani.hpp>
+#include <FMX.ImgList.hpp>
+#include <System.ImageList.hpp>
 //---------------------------------------------------------------------------
 class TgreatBritainFrame : public TFrame
 {
@@ -24,6 +27,12 @@ __published:	// IDE-managed Components
 	TLabel *ownerLabel;
 	TLabel *conquerCostLabel;
 	TLabel *visitingPaymentLabel;
+	TImageList *writingsForEachCountryImageList;
+	TGlyph *writing;
+	TImageList *flagsImageList;
+	TGlyph *flagImage;
+	TLabel *cityLabel;
+	TColorAnimation *ColorAnimation1;
 	void __fastcall payButtonClick(TObject *Sender);
 
 private:	// User declarations

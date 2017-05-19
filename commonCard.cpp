@@ -3,7 +3,7 @@
 #include <fmx.h>
 #pragma hdrstop
 
-#include "greatBritainCard.h"
+#include "commonCard.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"

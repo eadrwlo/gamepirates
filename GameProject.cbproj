@@ -108,6 +108,13 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="commonCard.cpp">
+            <Form>greatBritainFrame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>commonCard.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
         <CppCompile Include="frameMap.cpp">
             <Form>frame1Map</Form>
             <FormType>fmx</FormType>
@@ -128,13 +135,6 @@
             <BuildOrder>2</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="greatBritainCard.cpp">
-            <Form>greatBritainFrame</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-            <DependentOn>greatBritainCard.h</DependentOn>
-            <BuildOrder>12</BuildOrder>
-        </CppCompile>
         <CppCompile Include="Ingamemenu.cpp">
             <Form>ingameMenu_frame</Form>
             <FormType>fmx</FormType>
@@ -197,7 +197,7 @@
         <FormResources Include="frameMap.fmx"/>
         <FormResources Include="Mainmenu.fmx"/>
         <FormResources Include="Ingamemenu.fmx"/>
-        <FormResources Include="greatBritainCard.fmx"/>
+        <FormResources Include="commonCard.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
