@@ -23,6 +23,8 @@ __fastcall TstartgameMenu_frame::TstartgameMenu_frame(TComponent* Owner)
 	playerList.push_back(player_frame2);
 	playerList.push_back(player_frame3);
 	playerList.push_back(player_frame4);
+	player_frame1->playerAvatar->ImageIndex = 0;
+    player_frame2->playerAvatar->ImageIndex = 1;
     it = playerList.begin() + 2;
 }
 //---------------------------------------------------------------------------
@@ -82,6 +84,7 @@ void __fastcall TstartgameMenu_frame::plus_buttonClick(TObject *Sender)
 	if (number->ImageIndex < 2)
 	{
 		number->ImageIndex++;
+        (*it)->next_buttonClick(*it);
 		(*it)->Visible = true;
 		it++;
 	}

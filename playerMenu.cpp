@@ -4,6 +4,8 @@
 #pragma hdrstop
 
 #include "playerMenu.h"
+#include "startgameMenu.h"
+#include "frameMap.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -13,16 +15,38 @@ __fastcall Tplayer_frame::Tplayer_frame(TComponent* Owner)
 	: TFrame(Owner)
 {
 
+   //	 frame1Map->player1->Bitmap = playerPictruesList->Source[0];
+
 }
 //---------------------------------------------------------------------------
 
 
 void __fastcall Tplayer_frame::next_buttonClick(TObject *Sender)
 {
-	if (playerAvatar->ImageIndex < 5)
+    int k=0;
+	if (playerAvatar->ImageIndex < 6  )
 	{
-		playerAvatar->ImageIndex++;
 
+		for (int i=1;i<6;i++)
+		{
+			for (int j=0;j<startgameMenu_frame->number->ImageIndex + 2;j++)
+			{
+				if(playerAvatar->ImageIndex + i !=startgameMenu_frame->playerList[j]->playerAvatar->ImageIndex)
+				{
+					k++;
+				}
+			}
+			if (k==startgameMenu_frame->number->ImageIndex + 2)
+			{
+				playerAvatar->ImageIndex =playerAvatar->ImageIndex+i;
+				if(playerAvatar->ImageIndex >=6)
+				{
+					playerAvatar->ImageIndex = 5;
+				}
+				return;
+			}
+			k=0;
+		}
     }
 
 }
@@ -30,9 +54,29 @@ void __fastcall Tplayer_frame::next_buttonClick(TObject *Sender)
 
 void __fastcall Tplayer_frame::previous_buttonClick(TObject *Sender)
 {
+	int k=0;
 	if (playerAvatar->ImageIndex >0)
 	{
-        playerAvatar->ImageIndex--;
+		for (int i=1;i<6;i++)
+		{
+			for (int j=0;j<startgameMenu_frame->number->ImageIndex + 2;j++)
+			{
+				if(playerAvatar->ImageIndex - i !=startgameMenu_frame->playerList[j]->playerAvatar->ImageIndex)
+				{
+					k++;
+				}
+			}
+			if (k==startgameMenu_frame->number->ImageIndex + 2)
+			{
+				playerAvatar->ImageIndex =playerAvatar->ImageIndex-i;
+				if(playerAvatar->ImageIndex <0)
+				{
+					playerAvatar->ImageIndex = 0;
+				}
+                return;
+			}
+			k=0;
+		}
     }
 
 }
