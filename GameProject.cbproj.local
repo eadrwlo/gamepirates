@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2017-05-20 08:20:58.875,D:\Git_repositories\gamepirates\portsCard.fmx=D:\Git_repositories\gamepirates\commonCard.fmx</Transaction>
-    <Transaction>2017-05-20 08:20:58.875,D:\Git_repositories\gamepirates\portsCard.h=D:\Git_repositories\gamepirates\commonCard.h</Transaction>
-    <Transaction>2017-05-20 08:20:58.875,D:\Git_repositories\gamepirates\portsCard.cpp=D:\Git_repositories\gamepirates\commonCard.cpp</Transaction>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.875,D:\Git_repositories\gamepirates\commonCard.h=D:\Git_repositories\gamepirates\portsCard.h</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.875,D:\Git_repositories\gamepirates\commonCard.fmx=D:\Git_repositories\gamepirates\portsCard.fmx</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.875,D:\Git_repositories\gamepirates\commonCard.cpp=D:\Git_repositories\gamepirates\portsCard.cpp</Transaction>
   </Transactions>
-  <ProjectSortOrder AutoSort="0" SortType="0">
+	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="frameMap.cpp"/>
     <File Path="frameMap.cpp"/>
     <File Path="frameMap.fmx"/>

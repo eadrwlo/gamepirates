@@ -85,13 +85,13 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Port(6, this->field06, new TportsCardFrame(this, 6), 100, 25, "Maasvlakte Rotterdam", NETHERLANDS));
 	this->fieldsVector.push_back(new Field(7, this->field07));
 	this->fieldsVector.push_back(new Field(8, this->field08));
-	this->fieldsVector.push_back(new Port(9, this->field09, new TportsCardFrame(this, 9), 100, 25, "Barcelona", SPAIN));
-	this->fieldsVector.push_back(new Field(10, this->field10));
-	this->fieldsVector.push_back(new Port(11, this->field11, new TportsCardFrame(this, 11), 100, 25, "Valencia", SPAIN));
-	this->fieldsVector.push_back(new Field(12, this->field12));
-	this->fieldsVector.push_back(new Port(13, this->field13, new TportsCardFrame(this, 13), 100, 25, "Las Palmas", SPAIN));
+	this->fieldsVector.push_back(new Field(9, this->field09));
+	this->fieldsVector.push_back(new Port(10, this->field10, new TportsCardFrame(this, 10), 100, 25, "Barcelona", SPAIN));
+	this->fieldsVector.push_back(new Field(11, this->field11));
+	this->fieldsVector.push_back(new Port(12, this->field12, new TportsCardFrame(this, 11), 100, 25, "Valencia", SPAIN));
+	this->fieldsVector.push_back(new Field(13, this->field13));
 	this->fieldsVector.push_back(new Port(14, this->field14, new TportsCardFrame(this, 14), 100, 25, "Bilbao", SPAIN));
-	this->fieldsVector.push_back(new Field(15, this->field15));
+	this->fieldsVector.push_back(new Port(15, this->field15, new TportsCardFrame(this, 15), 100, 25, "Las Palmas", SPAIN));
 	this->fieldsVector.push_back(new Field(16, this->field16));
 	this->fieldsVector.push_back(new Field(17, this->field17));
 	this->fieldsVector.push_back(new Field(18, this->field18));
@@ -144,7 +144,7 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 	}
 	else
 	{
-		Label1->Text = players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber();
+		//Label1->Text = players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber();
 		this->fieldsVector[(players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber())]->mainEventWhenPlayerIsOnTheField(players[indexOfPlayer], Label1, &(this->fieldsVector));
 		timerForPlayerMovementExecute->Enabled = false;
 		isLastLoopIteration = false;

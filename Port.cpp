@@ -58,15 +58,17 @@ void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, v
 //// ------ Port implementation ------ ////
 Port::Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation):Field(fieldNumber, fieldImagePtr, cardFramePtr)
 {
+	this->owner = NULL;
 	this->conquerCost = conquerCost;
 	this->visitingPayment = visitingPayment;
 	this->name = name;
 	this->extensionLvl = 1;
 	this->portsCardFramePtr = (static_cast<TportsCardFrame*>(cardFramePtr));
+    portsCardFramePtr->portRelatedWithCard = this;
 	portsCardFramePtr->conquerCostLabel->Text = conquerCost;
 	portsCardFramePtr->visitingPaymentLabel->Text = visitingPayment;
 	portsCardFramePtr->cityLabel->Text = name;
-	//portsCardFramePtr->extensionLvlLabel->Text = 1;
+	portsCardFramePtr->extensionLvlLabel->Text = 1;
 
 	switch (nation)
 	{
@@ -105,11 +107,35 @@ Port::Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int con
     };
 }
 
-void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
+int Port::getConquerCost()
+{
+    return conquerCost;
+}
+
+void Port::setOwner(Player *owner)
+{
+	this->owner = owner;
+}
+
+Player* Port::getOwner()
+{
+   return owner;
+}
+void Port::setCurrentPlayerLocatedOnField(Player *player)
 {
 	currentPlayerLocatedOnField = player;
-	cardFramePtr->Visible = true;
+}
+Player* Port::getCurrentPlayerLocatedOnField()
+{
+	return currentPlayerLocatedOnField;
+}
 
+
+void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
+{
+	label->Text = player->getCurrentFieldPtr()->getFieldNumber();
+	currentPlayerLocatedOnField = player;
+	cardFramePtr->Visible = true;
 }
 
 

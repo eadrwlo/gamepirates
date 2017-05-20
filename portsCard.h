@@ -34,12 +34,17 @@ __published:	// IDE-managed Components
 	TGlyph *flagImage;
 	TLabel *cityLabel;
 	void __fastcall payButtonClick(TObject *Sender);
+	void __fastcall conquerButtonClick(TObject *Sender);
 
 private:	// User declarations
-	Player *currentlyOperatedPlayer;
+	//Player *currentlyOperatedPlayer;
+	//Player *ownerOfRelatedPort;
 	Port *portRelatedWithCard;
 public:		// User declarations
 	__fastcall TportsCardFrame(TComponent* Owner, int cardNumber);
+	//Player* getOwnerOfRelatedPort();
+	void setCurrentlyOperatedPlayer(Player *player);
+
 };
 //---------------------------------------------------------------------------
 //extern PACKAGE TportsCardFrame *portsCardFrame;

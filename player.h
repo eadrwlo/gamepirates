@@ -19,6 +19,8 @@ class Player
 		   Field *_currentFieldPtr);
 	void setName(UnicodeString _name);
 	UnicodeString getName();
+	int getOwnedMoney();
+    void setOwnedMoney(int money);
 	void movePlayerToNeighbouringFiedl();
 	void movePlayerToSpecificField(int fieldNumber);
 	void updateCurrentField(Field *newFieldPtr);

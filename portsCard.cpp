@@ -23,7 +23,30 @@ __fastcall TportsCardFrame::TportsCardFrame(TComponent* Owner, int cardNumber)
 //---------------------------------------------------------------------------
 void __fastcall TportsCardFrame::payButtonClick(TObject *Sender)
 {
+	Visible = false;
+}
 
+//Player* TportsCardFrame::getOwnerOfRelatedPort()
+//{
+//	return ownerOfRelatedPort;
+//}
+//void TportsCardFrame::setCurrentlyOperatedPlayer(Player *player)
+//{
+//	currentlyOperatedPlayer = player;
+//}
+
+//---------------------------------------------------------------------------
+void __fastcall TportsCardFrame::conquerButtonClick(TObject *Sender)
+{
+	if (portRelatedWithCard->getCurrentPlayerLocatedOnField() != portRelatedWithCard->getOwner()) // Czy port nie jest gracza ktory na nim stanal?
+	{
+		if (portRelatedWithCard->getCurrentPlayerLocatedOnField()->getOwnedMoney() > portRelatedWithCard->getConquerCost())
+		{
+			portRelatedWithCard->setOwner(portRelatedWithCard->getCurrentPlayerLocatedOnField());
+			ownerLabel->Text = portRelatedWithCard->getOwner()->getName();
+		}
+	}
 	Visible = false;
 }
 //---------------------------------------------------------------------------
+

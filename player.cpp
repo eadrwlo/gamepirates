@@ -11,9 +11,17 @@ Player::Player(UnicodeString _name, int _ownedMoney, TImage *_playerImagePtr, TF
 	permissionToMoveInCurrentTurn = 1;
 }
 
-void Player::setName (UnicodeString _name)
+void Player::setName(UnicodeString _name)
 {
 	name = _name;
+}
+UnicodeString Player::getName()
+{
+	return name;
+}
+int Player::getOwnedMoney()
+{
+    return ownedMoney;
 }
 
 void Player::movePlayerToNeighbouringFiedl()

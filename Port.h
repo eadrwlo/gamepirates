@@ -44,14 +44,19 @@ class Port: public Field
 	int extensionLvl;
 	int defensivePower;
 	Player *owner;
-    Player *currentPlayerLocatedOnField;
+	Player *currentPlayerLocatedOnField;
 	TImage *portImagePtr;
 	TportsCardFrame *portsCardFramePtr;
 
 	public:
 	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation);
 	void setName();
+	int getConquerCost();
 	UnicodeString getName();
+	void setOwner(Player *owner);
+	Player* getOwner();
+	void setCurrentPlayerLocatedOnField(Player *player);
+	Player *getCurrentPlayerLocatedOnField();
 	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
 };
 
