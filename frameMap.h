@@ -18,6 +18,7 @@
 #include <FMX.Styles.Objects.hpp>
 #include <FMX.Effects.hpp>
 #include <FMX.Filter.Effects.hpp>
+#include "playerStatisticsBox.h"
 //---------------------------------------------------------------------------
 class Tframe1Map : public TFrame
 {
@@ -102,12 +103,17 @@ __published:	// IDE-managed Components
 	TFloatAnimation *moveInXAxisPlayer4;
 	TFloatAnimation *moveInYAxisPlayer4;
 	TImage *background;
+	TplayerStatisticsBoxFrame *playerStatisticsBoxFrame2;
+	TplayerStatisticsBoxFrame *playerStatisticsBoxFrame1;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall groundMovementTimer(TObject *Sender);
 	void __fastcall timerForPlayerMovementExecuteTimer(TObject *Sender);
 	void __fastcall CornerButton1Click(TObject *Sender);
 	void __fastcall CornerButton2Click(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame1Click(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame1boxImageMouseEnter(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame1boxImageMouseLeave(TObject *Sender);
 private:	// User declarations
 
 

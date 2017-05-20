@@ -7,6 +7,7 @@
 #include "whirlpoolCard.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "playerStatisticsBox"
 #pragma resource "*.fmx"
 
 Tframe1Map *frame1Map;
@@ -189,10 +190,34 @@ void __fastcall Tframe1Map::CornerButton2Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall Tframe1Map::playerStatisticsBoxFrame1Click(TObject *Sender)
+{
+	Visible = false;
+}
+//---------------------------------------------------------------------------
 
 
 
 
 
 
+
+
+
+
+
+
+void __fastcall Tframe1Map::playerStatisticsBoxFrame1boxImageMouseEnter(TObject *Sender)
+
+{
+	playerStatisticsBoxFrame1->Position->X = 2;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tframe1Map::playerStatisticsBoxFrame1boxImageMouseLeave(TObject *Sender)
+
+{
+	playerStatisticsBoxFrame1->Position->X = -360;
+}
+//---------------------------------------------------------------------------
 
