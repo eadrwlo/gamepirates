@@ -7,9 +7,9 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
-TgreatBritainFrame *greatBritainFrame;
+TcommonCardFrame *commonCardFrame;
 //---------------------------------------------------------------------------
-__fastcall TgreatBritainFrame::TgreatBritainFrame(TComponent* Owner)
+__fastcall TcommonCardFrame::TcommonCardFrame(TComponent* Owner)
 	: TFrame(Owner)
 {
     this->Parent = static_cast<TFrame*>(Owner);
@@ -18,7 +18,7 @@ __fastcall TgreatBritainFrame::TgreatBritainFrame(TComponent* Owner)
 	this->Position->Y = 220;
 }
 //---------------------------------------------------------------------------
-void __fastcall TgreatBritainFrame::payButtonClick(TObject *Sender)
+void __fastcall TcommonCardFrame::payButtonClick(TObject *Sender)
 {
 
 	Visible = false;

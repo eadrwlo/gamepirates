@@ -1,7 +1,7 @@
 #include "Port.h"
 #include <windows.h>
 #include "whirlpoolCard.h"
-#include "greatBritainCard.h"
+#include "commonCard.h"
 class Player;
 
 //// ----- F I E L D implementation ------ ////
@@ -57,10 +57,16 @@ void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, v
 }
 
 //// ------ Port implementation ------ ////
-Port::Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost):Field(fieldNumber, fieldImagePtr, cardFramePtr)
+Port::Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation):Field(fieldNumber, fieldImagePtr, cardFramePtr)
 {
 	this->conquerCost = conquerCost;
-	(static_cast<TgreatBritainFrame*>(cardFramePtr))->conquerCostLabel->Text = conquerCost;
+	this->visitingPayment = visitingPayment;
+	this->name = name;
+    this->extensionLvl = 1;
+	(static_cast<TcommonCardFrame*>(cardFramePtr))->conquerCostLabel->Text = conquerCost;
+	(static_cast<TcommonCardFrame*>(cardFramePtr))->visitingPaymentLabel->Text = visitingPayment;
+	(static_cast<TcommonCardFrame*>(cardFramePtr))->cityLabel->Text = name;
+	(static_cast<TcommonCardFrame*>(cardFramePtr))->extensionLvlLabel->Text = 1;
 }
 
 void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)

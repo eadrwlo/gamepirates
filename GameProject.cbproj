@@ -109,7 +109,7 @@
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="commonCard.cpp">
-            <Form>greatBritainFrame</Form>
+            <Form>commonCardFrame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
             <DependentOn>commonCard.h</DependentOn>
@@ -195,9 +195,9 @@
         <FormResources Include="Optionsmenu.fmx"/>
         <FormResources Include="game.fmx"/>
         <FormResources Include="frameMap.fmx"/>
+        <FormResources Include="commonCard.fmx"/>
         <FormResources Include="Mainmenu.fmx"/>
         <FormResources Include="Ingamemenu.fmx"/>
-        <FormResources Include="commonCard.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -5,7 +5,7 @@
 #include <ctime>
 #include "frameMap.h"
 #include "whirlpoolCard.h"
-#include "greatBritainCard.h"
+#include "commonCard.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -97,7 +97,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(16, this->field17));
 	this->fieldsVector.push_back(new Field(17, this->field18));
 	this->fieldsVector.push_back(new Field(18, this->field19));
-	this->fieldsVector.push_back(new Port(19, this->field20, new TgreatBritainFrame(this), 100));
+	this->fieldsVector.push_back(new Port(19, this->field20, new TcommonCardFrame(this), 100, 25, "Brington", GREAT_BRITAIN));
 	this->fieldsVector.push_back(new Field(20, this->field21));
 	this->fieldsVector.push_back(new Field(21, this->field22));
 	this->fieldsVector.push_back(new Field(22, this->field23));

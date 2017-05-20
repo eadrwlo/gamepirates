@@ -16,7 +16,7 @@
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
 //---------------------------------------------------------------------------
-class TgreatBritainFrame : public TFrame
+class TcommonCardFrame : public TFrame
 {
     friend class Port;
 __published:	// IDE-managed Components
@@ -39,9 +39,9 @@ private:	// User declarations
 	Player *currentlyOperatedPlayer;
 	Port *portRelatedWithCard;
 public:		// User declarations
-	__fastcall TgreatBritainFrame(TComponent* Owner);
+	__fastcall TcommonCardFrame(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TgreatBritainFrame *greatBritainFrame;
+extern PACKAGE TcommonCardFrame *commonCardFrame;
 //---------------------------------------------------------------------------
 #endif

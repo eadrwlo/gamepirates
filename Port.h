@@ -7,6 +7,17 @@
 #include "player.h"
 using namespace std;
 
+enum Nations
+{
+	PORTUGAL = 1,
+	NETHERLANDS = 2,
+	GREAT_BRITAIN =	3,
+	FRANCE = 4,
+	SPAIN = 5
+};
+
+
+
 class Player;
 class Field
 {
@@ -35,7 +46,7 @@ class Port: public Field
 	TImage *portImagePtr;
 
 	public:
-	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost);
+	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation);
 	void setName();
 	UnicodeString getName();
 	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
