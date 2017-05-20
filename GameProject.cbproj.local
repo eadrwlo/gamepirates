@@ -1,2 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject/>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2017-05-20 08:20:58.875,D:\Git_repositories\gamepirates\portsCard.fmx=D:\Git_repositories\gamepirates\commonCard.fmx</Transaction>
+    <Transaction>2017-05-20 08:20:58.875,D:\Git_repositories\gamepirates\portsCard.h=D:\Git_repositories\gamepirates\commonCard.h</Transaction>
+    <Transaction>2017-05-20 08:20:58.875,D:\Git_repositories\gamepirates\portsCard.cpp=D:\Git_repositories\gamepirates\commonCard.cpp</Transaction>
+  </Transactions>
+  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="frameMap.cpp"/>
+    <File Path="frameMap.cpp"/>
+    <File Path="frameMap.fmx"/>
+    <File Path="frameMap.h"/>
+    <File Path="game.cpp"/>
+    <File Path="game.cpp"/>
+    <File Path="game.fmx"/>
+    <File Path="game.h"/>
+    <File Path="GameProject.cpp"/>
+    <File Path="GameProjectPCH1.h"/>
+    <File Path="Ingamemenu.cpp"/>
+    <File Path="Ingamemenu.cpp"/>
+    <File Path="Ingamemenu.fmx"/>
+    <File Path="ingameMenu.h"/>
+    <File Path="Mainmenu.cpp"/>
+    <File Path="Mainmenu.cpp"/>
+    <File Path="Mainmenu.fmx"/>
+    <File Path="mainMenu.h"/>
+    <File Path="Optionsmenu.cpp"/>
+    <File Path="Optionsmenu.cpp"/>
+    <File Path="Optionsmenu.fmx"/>
+    <File Path="optionsMenu.h"/>
+    <File Path="player.cpp"/>
+    <File Path="player.h"/>
+    <File Path="playerMenu.cpp"/>
+    <File Path="playerMenu.cpp"/>
+    <File Path="playerMenu.fmx"/>
+    <File Path="playerMenu.h"/>
+    <File Path="Port.cpp"/>
+    <File Path="Port.h"/>
+    <File Path="portsCard.cpp"/>
+    <File Path="portsCard.cpp"/>
+    <File Path="portsCard.fmx"/>
+    <File Path="portsCard.h"/>
+    <File Path="startgameMenu.cpp"/>
+    <File Path="startgameMenu.cpp"/>
+    <File Path="startgameMenu.fmx"/>
+    <File Path="startgameMenu.h"/>
+    <File Path="whirlpoolCard.cpp"/>
+    <File Path="whirlpoolCard.cpp"/>
+    <File Path="whirlpoolCard.fmx"/>
+    <File Path="whirlpoolCard.h"/>
+  </ProjectSortOrder>
+</BorlandProject>

@@ -5,8 +5,10 @@
 #include <FMX.StdCtrls.hpp>
 #include <vector>
 #include "player.h"
+#include "portsCard.h"
 using namespace std;
 
+class TportsCardFrame;
 enum Nations
 {
 	PORTUGAL = 1,
@@ -44,6 +46,7 @@ class Port: public Field
 	Player *owner;
     Player *currentPlayerLocatedOnField;
 	TImage *portImagePtr;
+	TportsCardFrame *portsCardFramePtr;
 
 	public:
 	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation);

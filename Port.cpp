@@ -1,7 +1,6 @@
 #include "Port.h"
 #include <windows.h>
 #include "whirlpoolCard.h"
-#include "commonCard.h"
 class Player;
 
 //// ----- F I E L D implementation ------ ////
@@ -62,11 +61,48 @@ Port::Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int con
 	this->conquerCost = conquerCost;
 	this->visitingPayment = visitingPayment;
 	this->name = name;
-    this->extensionLvl = 1;
-	(static_cast<TcommonCardFrame*>(cardFramePtr))->conquerCostLabel->Text = conquerCost;
-	(static_cast<TcommonCardFrame*>(cardFramePtr))->visitingPaymentLabel->Text = visitingPayment;
-	(static_cast<TcommonCardFrame*>(cardFramePtr))->cityLabel->Text = name;
-	(static_cast<TcommonCardFrame*>(cardFramePtr))->extensionLvlLabel->Text = 1;
+	this->extensionLvl = 1;
+	this->portsCardFramePtr = (static_cast<TportsCardFrame*>(cardFramePtr));
+	portsCardFramePtr->conquerCostLabel->Text = conquerCost;
+	portsCardFramePtr->visitingPaymentLabel->Text = visitingPayment;
+	portsCardFramePtr->cityLabel->Text = name;
+	//portsCardFramePtr->extensionLvlLabel->Text = 1;
+
+	switch (nation)
+	{
+	case PORTUGAL:
+	{
+		portsCardFramePtr->flagImage->ImageIndex = 0;
+		portsCardFramePtr->writing->ImageIndex = 0;
+        break;
+	}
+	case NETHERLANDS:
+	{
+		portsCardFramePtr->flagImage->ImageIndex = 1;
+		portsCardFramePtr->writing->ImageIndex = 1;
+		break;
+	}
+	case GREAT_BRITAIN:
+	{
+		portsCardFramePtr->flagImage->ImageIndex = 2;
+		portsCardFramePtr->writing->ImageIndex = 2;
+		break;
+	}
+	case FRANCE:
+	{
+		portsCardFramePtr->flagImage->ImageIndex = 3;
+		portsCardFramePtr->writing->ImageIndex = 3;
+		break;
+	}
+	case SPAIN:
+	{
+		portsCardFramePtr->flagImage->ImageIndex = 4;
+		portsCardFramePtr->writing->ImageIndex = 4;
+		break;
+	}
+	default:
+        break;
+    };
 }
 
 void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)

@@ -108,13 +108,6 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="commonCard.cpp">
-            <Form>commonCardFrame</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-            <DependentOn>commonCard.h</DependentOn>
-            <BuildOrder>12</BuildOrder>
-        </CppCompile>
         <CppCompile Include="frameMap.cpp">
             <Form>frame1Map</Form>
             <FormType>fmx</FormType>
@@ -175,6 +168,13 @@
         <None Include="Port.h">
             <BuildOrder>3</BuildOrder>
         </None>
+        <CppCompile Include="portsCard.cpp">
+            <Form>portsCardFrame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>portsCard.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
         <CppCompile Include="startgameMenu.cpp">
             <Form>startgameMenu_frame</Form>
             <FormType>fmx</FormType>
@@ -195,7 +195,7 @@
         <FormResources Include="Optionsmenu.fmx"/>
         <FormResources Include="game.fmx"/>
         <FormResources Include="frameMap.fmx"/>
-        <FormResources Include="commonCard.fmx"/>
+        <FormResources Include="portsCard.fmx"/>
         <FormResources Include="Mainmenu.fmx"/>
         <FormResources Include="Ingamemenu.fmx"/>
         <BuildConfiguration Include="Release">

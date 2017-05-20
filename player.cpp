@@ -18,7 +18,7 @@ void Player::setName (UnicodeString _name)
 
 void Player::movePlayerToNeighbouringFiedl()
 {
-	if ( currentFieldPtr->getFieldNumber() < 9 )
+	if ( currentFieldPtr->getFieldNumber() < 9)
 	{
 		// to do - gracz jest na boku mapy -- poludnie - zachod
 		playerFlowAnimationX->StopValue = playerImagePtr->Position->X - 88;

@@ -22,17 +22,16 @@
 class Tframe1Map : public TFrame
 {
 __published:	// IDE-managed Components
-	TImage *field06;
-	TImage *field10;
+	TImage *field05;
 	TImage *field09;
 	TImage *field08;
 	TImage *field07;
-	TImage *field05;
+	TImage *field06;
 	TImage *field04;
 	TImage *field03;
 	TImage *field02;
 	TImage *field01;
-	TImage *field36;
+	TImage *field00;
 	TImage *field35;
 	TImage *field34;
 	TImage *field33;
@@ -40,6 +39,8 @@ __published:	// IDE-managed Components
 	TImage *field31;
 	TImage *field30;
 	TImage *field29;
+	TImage *field28;
+	TImage *field10;
 	TImage *field11;
 	TImage *field12;
 	TImage *field13;
@@ -57,7 +58,6 @@ __published:	// IDE-managed Components
 	TImage *field25;
 	TImage *field26;
 	TImage *field27;
-	TImage *field28;
 	TLabel *Label1;
 	TTimer *timerForDice;
 	TImageList *diceWalls;
@@ -95,7 +95,6 @@ __published:	// IDE-managed Components
 	TImage *Image14;
 	TImage *Image15;
 	TImage *Image16;
-	TFloatAnimation *FloatAnimation1;
 	TImage *player3;
 	TFloatAnimation *moveInXAxisPlayer3;
 	TFloatAnimation *moveInYAxisPlayer3;
