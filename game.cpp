@@ -149,6 +149,12 @@ void __fastcall TgameForm::FormKeyDown(TObject *Sender, WORD &Key, System::WideC
 		inGameMenuBackground->Visible = false;
 		optionsMenu_frame->goBack_buttonClick(this);
 	}
+	else if (Key==VK_ESCAPE && startgameMenu_frame->Visible == true)
+	{
+		startgameMenu_frame->Visible == false;
+        startgameMenu_frame->goBack_buttonClick(this);
+
+    }
 }
 //---------------------------------------------------------------------------
 
