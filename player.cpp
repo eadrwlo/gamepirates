@@ -1,6 +1,6 @@
 #include "player.h"
 
-Player::Player(UnicodeString _name, int _ownedMoney, TImage *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis, Field *_currentFieldPtr)
+Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis, Field *_currentFieldPtr)
 {
 	name = _name;
 	ownedMoney = _ownedMoney;

@@ -7,14 +7,14 @@ class Player
 	protected:
 	UnicodeString name;
 	int ownedMoney;
-	TImage *playerImagePtr;
+	TGlyph *playerImagePtr;
 	TFloatAnimation *playerFlowAnimationX;
 	TFloatAnimation *playerFlowAnimationY;
 	Field *currentFieldPtr;
 	int permissionToMoveInCurrentTurn;
 
 	public:
-	Player(UnicodeString _name, int _ownedMoney, TImage *_playerImagePtr,
+	Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 		   TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis,
 		   Field *_currentFieldPtr);
 	void setName(UnicodeString _name);

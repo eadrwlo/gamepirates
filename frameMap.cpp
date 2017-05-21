@@ -221,3 +221,7 @@ void __fastcall Tframe1Map::playerStatisticsBoxFrame1boxImageMouseLeave(TObject 
 }
 //---------------------------------------------------------------------------
 
+
+
+
+
