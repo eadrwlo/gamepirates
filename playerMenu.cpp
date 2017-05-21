@@ -36,13 +36,13 @@ void __fastcall Tplayer_frame::next_buttonClick(TObject *Sender)
 					k++;
 				}
 			}
+			if(playerAvatar->ImageIndex + i >= 6)
+			{
+				return;
+			}
 			if (k==startgameMenu_frame->number->ImageIndex + 2)
 			{
 				playerAvatar->ImageIndex =playerAvatar->ImageIndex+i;
-				if(playerAvatar->ImageIndex >=6)
-				{
-					playerAvatar->ImageIndex = 5;
-				}
 				return;
 			}
 			k=0;
@@ -66,13 +66,14 @@ void __fastcall Tplayer_frame::previous_buttonClick(TObject *Sender)
 					k++;
 				}
 			}
+            if(playerAvatar->ImageIndex - i < 0)
+			{
+				return;
+			}
 			if (k==startgameMenu_frame->number->ImageIndex + 2)
 			{
-				playerAvatar->ImageIndex =playerAvatar->ImageIndex-i;
-				if(playerAvatar->ImageIndex <0)
-				{
-					playerAvatar->ImageIndex = 0;
-				}
+				playerAvatar->ImageIndex = playerAvatar->ImageIndex-i;
+
                 return;
 			}
 			k=0;
@@ -87,4 +88,5 @@ void __fastcall Tplayer_frame::Text1Click(TObject *Sender)
 	//Text1->
 }
 //---------------------------------------------------------------------------
+
 
