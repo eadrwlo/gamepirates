@@ -86,7 +86,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Port(6, this->field06, new TportsCardFrame(this, 6), 100, 25, "Maasvlakte Rotterdam", NETHERLANDS));
 	this->fieldsVector.push_back(new Field(7, this->field07));
 	this->fieldsVector.push_back(new Field(8, this->field08));
-	this->fieldsVector.push_back(new Field(9, this->field09));
+	this->fieldsVector.push_back(new LuckyWind(9, this->field09, NULL, &iterator));
 	this->fieldsVector.push_back(new Port(10, this->field10, new TportsCardFrame(this, 10), 100, 25, "Barcelona", SPAIN));
 	this->fieldsVector.push_back(new Field(11, this->field11));
 	this->fieldsVector.push_back(new Port(12, this->field12, new TportsCardFrame(this, 11), 100, 25, "Valencia", SPAIN));
@@ -94,7 +94,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Port(14, this->field14, new TportsCardFrame(this, 14), 100, 25, "Bilbao", SPAIN));
 	this->fieldsVector.push_back(new Port(15, this->field15, new TportsCardFrame(this, 15), 100, 25, "Las Palmas", SPAIN));
 	this->fieldsVector.push_back(new Field(16, this->field16));
-	this->fieldsVector.push_back(new Field(17, this->field17));
+	this->fieldsVector.push_back(new Shallow(17, this->field17, NULL));
 	this->fieldsVector.push_back(new Field(18, this->field18));
 	this->fieldsVector.push_back(new Port(19, this->field19, new TportsCardFrame(this, 19), 100, 25, "Brington", GREAT_BRITAIN));
 	this->fieldsVector.push_back(new Port(20, this->field20, new TportsCardFrame(this, 20), 100, 25, "London", GREAT_BRITAIN));
@@ -109,7 +109,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Port(29, this->field29, new TportsCardFrame(this, 29), 100, 25, "Montpellier", FRANCE));
 	this->fieldsVector.push_back(new Field(30, this->field30));
 	this->fieldsVector.push_back(new Port(31, this->field31, new TportsCardFrame(this, 31), 100, 25, "Lizbona", PORTUGAL));
-	this->fieldsVector.push_back(new Field(32, this->field32));
+	this->fieldsVector.push_back(new Storm(32, this->field32, NULL));
 	this->fieldsVector.push_back(new Port(35, this->field33, new TportsCardFrame(this, 33), 100, 25, "Setubal", PORTUGAL));
 	this->fieldsVector.push_back(new Port(34, this->field34, new TportsCardFrame(this, 34), 100, 25, "Madera", PORTUGAL));
 	this->fieldsVector.push_back(new Port(35, this->field35, new TportsCardFrame(this, 35), 100, 25, "Vania do Castelo", PORTUGAL));

@@ -72,6 +72,28 @@ class Whirlpool: public Field
 	UnicodeString getName();
 };
 
+class LuckyWind: public Field
+{
+	unsigned int* iterator;
+	public:
+	LuckyWind(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, unsigned int *iterator);
+	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
+};
+
+class Shallow: public Field
+{
+	public:
+	Shallow(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr):Field(fieldNumber, fieldImagePtr, cardFramePtr){}
+	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
+};
+
+class Storm: public Field
+{
+	public:
+	Storm(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr):Field(fieldNumber, fieldImagePtr, cardFramePtr){}
+	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
+};
+
 #endif
 //---------------------------------------------------------------------------
 

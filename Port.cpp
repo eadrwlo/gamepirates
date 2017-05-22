@@ -138,5 +138,28 @@ void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector
 	cardFramePtr->Visible = true;
 }
 
+//// ------ LuckyWind implementation ------ ////
+LuckyWind::LuckyWind(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, unsigned int *iterator):Field(fieldNumber, fieldImagePtr, cardFramePtr)
+{
+	this->iterator = iterator;
+}
 
+void LuckyWind::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
+{
+	label->Text = *iterator;
+	--(*(this->iterator));
+
+}
+
+//// ------ Shallow implementation ------ ////
+void Shallow::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
+{
+	player->forbidPlayerForMoveInNextTurn();
+}
+
+//// ------ Storm implementation ------ ////
+void Storm::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
+{
+	player->forbidPlayerForMoveInNextTurn();
+}
 
