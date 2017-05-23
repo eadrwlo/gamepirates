@@ -63,11 +63,9 @@ __published:	// IDE-managed Components
 	TTimer *timerForDice;
 	TImageList *diceWalls;
 	TGlyph *dice;
-	TTimer *timerForThrowImagePulsing;
 	TFloatAnimation *moveInXAxisPlayer1;
 	TFloatAnimation *moveInYAxisPlayer1;
 	TTimer *groundMovement;
-	TTimer *timerForPlayerMovement;
 	TTimer *timerForPlayerMovementExecute;
 	TCornerButton *CornerButton1;
 	TColorAnimation *ColorAnimation1;

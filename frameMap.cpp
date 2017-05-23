@@ -110,7 +110,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(30, this->field30));
 	this->fieldsVector.push_back(new Port(31, this->field31, new TportsCardFrame(this, 31), 100, 25, "Lizbona", PORTUGAL));
 	this->fieldsVector.push_back(new Storm(32, this->field32, NULL));
-	this->fieldsVector.push_back(new Port(35, this->field33, new TportsCardFrame(this, 33), 100, 25, "Setubal", PORTUGAL));
+	this->fieldsVector.push_back(new Port(33, this->field33, new TportsCardFrame(this, 33), 100, 25, "Setubal", PORTUGAL));
 	this->fieldsVector.push_back(new Port(34, this->field34, new TportsCardFrame(this, 34), 100, 25, "Madera", PORTUGAL));
 	this->fieldsVector.push_back(new Port(35, this->field35, new TportsCardFrame(this, 35), 100, 25, "Vania do Castelo", PORTUGAL));
 }
@@ -151,7 +151,7 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 		isLastLoopIteration = false;
 	}
 
-	//Label1->Text = indexOfPlayer;
+	Label1->Text = players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber();
 	//Label1->Text = RandomRange(0,35);
 }
 //---------------------------------------------------------------------------
@@ -220,6 +220,9 @@ void __fastcall Tframe1Map::playerStatisticsBoxFrame1boxImageMouseLeave(TObject 
 	playerStatisticsBoxFrame1->Position->X = -360;
 }
 //---------------------------------------------------------------------------
+
+
+
 
 
 
