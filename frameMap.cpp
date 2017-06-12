@@ -5,6 +5,7 @@
 #include <ctime>
 #include "frameMap.h"
 #include "whirlpoolCard.h"
+#include "pirateShipCard.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "playerStatisticsBox"
@@ -79,7 +80,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(5, this->field05));
 	this->fieldsVector.push_back(new Port(6, this->field06, new TportsCardFrame(this, 6), 100, 25, "Maasvlakte Rotterdam", NETHERLANDS));
 	this->fieldsVector.push_back(new Field(7, this->field07));
-	this->fieldsVector.push_back(new Field(8, this->field08));
+	this->fieldsVector.push_back(new PirateShip(8, this->field08, new TpirateShipFrame(this)));
 	this->fieldsVector.push_back(new LuckyWind(9, this->field09, NULL, &iterator));
 	this->fieldsVector.push_back(new Port(10, this->field10, new TportsCardFrame(this, 10), 100, 25, "Barcelona", SPAIN));
 	this->fieldsVector.push_back(new Field(11, this->field11));

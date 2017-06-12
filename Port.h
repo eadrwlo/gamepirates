@@ -94,6 +94,13 @@ class Storm: public Field
 	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
 };
 
+class PirateShip: public Field
+{
+	public:
+	PirateShip(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr):Field(fieldNumber, fieldImagePtr, cardFramePtr){}
+	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
+};
+
 #endif
 //---------------------------------------------------------------------------
 

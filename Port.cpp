@@ -163,3 +163,9 @@ void Storm::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vecto
 	player->forbidPlayerForMoveInNextTurn();
 }
 
+//// ------ PirateShip implementation ------ ////
+void PirateShip::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
+{
+    cardFramePtr->Visible = true;
+}
+
