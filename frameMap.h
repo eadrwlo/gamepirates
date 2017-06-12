@@ -103,6 +103,8 @@ __published:	// IDE-managed Components
 	TGlyph *player2;
 	TGlyph *player3;
 	TGlyph *player4;
+	TplayerStatisticsBoxFrame *playerStatisticsBoxFrame3;
+	TplayerStatisticsBoxFrame *playerStatisticsBoxFrame4;
 	void __fastcall startStopThrowingClick(TObject *Sender);
 	void __fastcall timerForDiceTimer(TObject *Sender);
 	void __fastcall groundMovementTimer(TObject *Sender);
@@ -112,6 +114,12 @@ __published:	// IDE-managed Components
 	void __fastcall playerStatisticsBoxFrame1Click(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame1boxImageMouseEnter(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame1boxImageMouseLeave(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame2boxImageMouseEnter(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame2boxImageMouseLeave(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame3boxImageMouseEnter(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame3boxImageMouseLeave(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame4boxImageMouseEnter(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame4boxImageMouseLeave(TObject *Sender);
 private:	// User declarations
 
 

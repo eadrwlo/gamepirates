@@ -36,12 +36,6 @@ __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
 {
-	AnsiString throwTheDice = "Throw the Dice !";
-	AnsiString stopTheDice = "Stop the Dice !";
-//	else if (Button1->Text == stopTheDice)
-//	{
-//		Button1->Text = throwTheDice;
-//    }
 	timerForDice->Enabled = !(timerForDice->Enabled);
 }
 //---------------------------------------------------------------------------
@@ -196,21 +190,10 @@ void __fastcall Tframe1Map::playerStatisticsBoxFrame1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
 void __fastcall Tframe1Map::playerStatisticsBoxFrame1boxImageMouseEnter(TObject *Sender)
 
 {
-	playerStatisticsBoxFrame1->Position->X = 2;
+	playerStatisticsBoxFrame1->Position->X = 0;
 }
 //---------------------------------------------------------------------------
 
@@ -221,10 +204,45 @@ void __fastcall Tframe1Map::playerStatisticsBoxFrame1boxImageMouseLeave(TObject 
 }
 //---------------------------------------------------------------------------
 
+void __fastcall Tframe1Map::playerStatisticsBoxFrame2boxImageMouseEnter(TObject *Sender)
 
+{
+	 playerStatisticsBoxFrame2->Position->X = 1550;
+}
+//---------------------------------------------------------------------------
 
+void __fastcall Tframe1Map::playerStatisticsBoxFrame2boxImageMouseLeave(TObject *Sender)
 
+{
+	playerStatisticsBoxFrame2->Position->X = 1907;
+}
+//---------------------------------------------------------------------------
 
+void __fastcall Tframe1Map::playerStatisticsBoxFrame3boxImageMouseEnter(TObject *Sender)
 
+{
+	playerStatisticsBoxFrame3->Position->X = 1550;
+}
+//---------------------------------------------------------------------------
 
+void __fastcall Tframe1Map::playerStatisticsBoxFrame3boxImageMouseLeave(TObject *Sender)
+
+{
+	playerStatisticsBoxFrame3->Position->X = 1907;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tframe1Map::playerStatisticsBoxFrame4boxImageMouseEnter(TObject *Sender)
+
+{
+	playerStatisticsBoxFrame4->Position->X = 0;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tframe1Map::playerStatisticsBoxFrame4boxImageMouseLeave(TObject *Sender)
+
+{
+    playerStatisticsBoxFrame4->Position->X = -360;
+}
+//---------------------------------------------------------------------------
 

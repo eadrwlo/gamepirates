@@ -1,6 +1,7 @@
 #ifndef playerH
 #define playerH
 #include "Port.h"
+#include "playerStatisticsBox.h"
 class Field;
 class Player
 {
@@ -12,11 +13,12 @@ class Player
 	TFloatAnimation *playerFlowAnimationY;
 	Field *currentFieldPtr;
 	int permissionToMoveInCurrentTurn;
+	TplayerStatisticsBoxFrame* playerStatisticsBoxFramePtr;
 
 	public:
 	Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 		   TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis,
-		   Field *_currentFieldPtr);
+		   Field *_currentFieldPtr, TplayerStatisticsBoxFrame* playerStatisticsBoxFramePtr);
 	void setName(UnicodeString _name);
 	UnicodeString getName();
 	int getOwnedMoney();

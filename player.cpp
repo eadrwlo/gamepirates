@@ -1,6 +1,8 @@
 #include "player.h"
 
-Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr, TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis, Field *_currentFieldPtr)
+Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
+				TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis,
+				Field *_currentFieldPtr, TplayerStatisticsBoxFrame* playerStatisticsBoxFramePtr)
 {
 	name = _name;
 	ownedMoney = _ownedMoney;
@@ -9,6 +11,14 @@ Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr, TF
 	playerFlowAnimationY =  _moveInYAxis;
 	currentFieldPtr = _currentFieldPtr;
 	permissionToMoveInCurrentTurn = 1;
+
+	// Inicjalizacja danych na boksie statystyk
+	this->playerStatisticsBoxFramePtr = playerStatisticsBoxFramePtr;
+	this->playerStatisticsBoxFramePtr->nameLabel->Text = name;
+	this->playerStatisticsBoxFramePtr->moneyLabel->Text = ownedMoney;
+	this->playerStatisticsBoxFramePtr->shipLvlLabel->Text = 1;
+	this->playerStatisticsBoxFramePtr->strengthLabel->Text = "100%";
+	this->playerStatisticsBoxFramePtr->Visible = true;
 }
 
 void Player::setName(UnicodeString _name)
