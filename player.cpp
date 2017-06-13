@@ -18,6 +18,7 @@ Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 	this->playerStatisticsBoxFramePtr->moneyLabel->Text = ownedMoney;
 	this->playerStatisticsBoxFramePtr->shipLvlLabel->Text = 1;
 	this->playerStatisticsBoxFramePtr->strengthLabel->Text = "100%";
+    //this->playerStatisticsBoxFramePtr->Position->X = 200;
 	this->playerStatisticsBoxFramePtr->Visible = true;
 }
 

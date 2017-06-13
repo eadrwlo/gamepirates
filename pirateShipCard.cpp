@@ -14,8 +14,8 @@ __fastcall TpirateShipFrame::TpirateShipFrame(TComponent* Owner)
 {
 	this->Parent = static_cast<TFrame*>(Owner);
 	this->Visible = false;
-	this->Position->X = 800;
-	this->Position->Y = 280;
+	this->Position->X = 750;
+	this->Position->Y = 220;
 }
 //---------------------------------------------------------------------------
 void __fastcall TpirateShipFrame::closeButtonClick(TObject *Sender)
