@@ -32,7 +32,7 @@ class Field
 	Field(int fieldNumber, TImage *fieldImagePtr);
 	Field(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr);
 	int getFieldNumber();
-	virtual void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
+	virtual void mainEventWhenPlayerIsOnTheField(Player *playera, TLabel *label, vector<Field*> *fieldsVector);
 };
 
 class Port: public Field

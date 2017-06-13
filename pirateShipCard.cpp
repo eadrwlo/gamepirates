@@ -21,5 +21,7 @@ __fastcall TpirateShipFrame::TpirateShipFrame(TComponent* Owner)
 void __fastcall TpirateShipFrame::closeButtonClick(TObject *Sender)
 {
 	Visible = false;
+	badPirate->Visible = true;
+    goodPirate->Visible = true;
 }
 //---------------------------------------------------------------------------

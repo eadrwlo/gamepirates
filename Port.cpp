@@ -1,6 +1,7 @@
 #include "Port.h"
 #include <windows.h>
 #include "whirlpoolCard.h"
+#include "pirateShipCard.h"
 class Player;
 
 //// ----- F I E L D implementation ------ ////
@@ -166,6 +167,15 @@ void Storm::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vecto
 //// ------ PirateShip implementation ------ ////
 void PirateShip::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
 {
-    cardFramePtr->Visible = true;
+	int randomNumber = RandomRange(0,100);
+	if (randomNumber % 2)
+	{
+		(static_cast<TpirateShipFrame*>(cardFramePtr))->badPirate->Visible = false;
+	}
+	else
+	{
+        (static_cast<TpirateShipFrame*>(cardFramePtr))->goodPirate->Visible = false;
+	}
+	cardFramePtr->Visible = true;
 }
 
