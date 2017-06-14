@@ -22,6 +22,7 @@ void __fastcall TpirateShipFrame::closeButtonClick(TObject *Sender)
 {
 	Visible = false;
 	badPirate->Visible = true;
-    goodPirate->Visible = true;
+	goodPirate->Visible = true;
+    amountOfBonusLabel->Visible = true;
 }
 //---------------------------------------------------------------------------

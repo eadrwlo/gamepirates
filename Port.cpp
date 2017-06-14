@@ -170,11 +170,18 @@ void PirateShip::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, 
 	int randomNumber = RandomRange(0,100);
 	if (randomNumber % 2)
 	{
+		//int randomNumber2 = RandomRange(1,30);
+		//UnicodeString randomNumberString2 =  UnicodeString(RandomRange(1,30))
+		(static_cast<TpirateShipFrame*>(cardFramePtr))->amountOfBonusLabel->Text = RandomRange(1,30);
+		UnicodeString randomNumberString2 = (static_cast<TpirateShipFrame*>(cardFramePtr))->amountOfBonusLabel->Text;
+		randomNumberString2 = randomNumberString2.operator +(UnicodeString('%'));
+		(static_cast<TpirateShipFrame*>(cardFramePtr))->amountOfBonusLabel->Text = randomNumberString2;
 		(static_cast<TpirateShipFrame*>(cardFramePtr))->badPirate->Visible = false;
 	}
 	else
 	{
-        (static_cast<TpirateShipFrame*>(cardFramePtr))->goodPirate->Visible = false;
+		(static_cast<TpirateShipFrame*>(cardFramePtr))->goodPirate->Visible = false;
+		(static_cast<TpirateShipFrame*>(cardFramePtr))->amountOfBonusLabel->Visible = false;
 	}
 	cardFramePtr->Visible = true;
 }
