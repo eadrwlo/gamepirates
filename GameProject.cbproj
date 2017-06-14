@@ -150,7 +150,7 @@
             <BuildOrder>6</BuildOrder>
         </CppCompile>
         <CppCompile Include="pirateShipCard.cpp">
-            <Form>pirateShipFrame</Form>
+            <Form>pirateShipCardFrame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
             <DependentOn>pirateShipCard.h</DependentOn>

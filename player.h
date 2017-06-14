@@ -8,6 +8,7 @@ class Player
 	protected:
 	UnicodeString name;
 	int ownedMoney;
+	int attackStrength;
 	TGlyph *playerImagePtr;
 	TFloatAnimation *playerFlowAnimationX;
 	TFloatAnimation *playerFlowAnimationY;
@@ -22,7 +23,9 @@ class Player
 	void setName(UnicodeString _name);
 	UnicodeString getName();
 	int getOwnedMoney();
-    void setOwnedMoney(int money);
+	void setOwnedMoney(int money);
+	int getAttackStrength();
+	void setAttackStrength(int attackStrength);
 	void movePlayerToNeighbouringFiedl();
 	void movePlayerToSpecificField(int fieldNumber);
 	void updateCurrentField(Field *newFieldPtr);

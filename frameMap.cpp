@@ -80,7 +80,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(5, this->field05));
 	this->fieldsVector.push_back(new Port(6, this->field06, new TportsCardFrame(this, 6), 100, 25, "Maasvlakte Rotterdam", NETHERLANDS));
 	this->fieldsVector.push_back(new Field(7, this->field07));
-	this->fieldsVector.push_back(new PirateShip(8, this->field08, new TpirateShipFrame(this)));
+	this->fieldsVector.push_back(new PirateShip(8, this->field08, new TpirateShipCardFrame(this, 1)));
 	this->fieldsVector.push_back(new LuckyWind(9, this->field09, NULL, &iterator));
 	this->fieldsVector.push_back(new Port(10, this->field10, new TportsCardFrame(this, 10), 100, 25, "Barcelona", SPAIN));
 	this->fieldsVector.push_back(new Field(11, this->field11));
@@ -93,7 +93,7 @@ void Tframe1Map::fillFieldsVectorWithFields()
 	this->fieldsVector.push_back(new Field(18, this->field18));
 	this->fieldsVector.push_back(new Port(19, this->field19, new TportsCardFrame(this, 19), 100, 25, "Brington", GREAT_BRITAIN));
 	this->fieldsVector.push_back(new Port(20, this->field20, new TportsCardFrame(this, 20), 100, 25, "London", GREAT_BRITAIN));
-	this->fieldsVector.push_back(new Field(21, this->field21));
+	this->fieldsVector.push_back(/*new Field(21, this->field21)*/new PirateShip(21, this->field21, new TpirateShipCardFrame(this, 2)));
 	this->fieldsVector.push_back(new Port(22, this->field22, new TportsCardFrame(this, 22), 100, 25, "Southampton", GREAT_BRITAIN));
 	this->fieldsVector.push_back(new Port(23, this->field23, new TportsCardFrame(this, 23), 100, 25, "Belfast", GREAT_BRITAIN));
 	this->fieldsVector.push_back(new Field(24, this->field24));

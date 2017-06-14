@@ -11,7 +11,7 @@
 #include <FMX.Controls.Presentation.hpp>
 #include <FMX.StdCtrls.hpp>
 //---------------------------------------------------------------------------
-class TpirateShipFrame : public TFrame
+class TpirateShipCardFrame : public TFrame
 {
 __published:	// IDE-managed Components
 	TImage *badPirate;
@@ -21,9 +21,9 @@ __published:	// IDE-managed Components
 	void __fastcall closeButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TpirateShipFrame(TComponent* Owner);
+	__fastcall TpirateShipCardFrame(TComponent* Owner, int cardNumber);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TpirateShipFrame *pirateShipFrame;
+//extern PACKAGE TpirateShipCardFrame *pirateShipCardFrame;
 //---------------------------------------------------------------------------
 #endif

@@ -19,6 +19,7 @@ __published:	// IDE-managed Components
 	TLabel *moneyLabel;
 	TLabel *shipLvlLabel;
 	TLabel *strengthLabel;
+	TLabel *percentLabel;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TplayerStatisticsBoxFrame(TComponent* Owner);

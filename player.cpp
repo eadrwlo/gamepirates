@@ -4,6 +4,7 @@ Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 				TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis,
 				Field *_currentFieldPtr, TplayerStatisticsBoxFrame* playerStatisticsBoxFramePtr)
 {
+    attackStrength = 100;
 	name = _name;
 	ownedMoney = _ownedMoney;
 	playerImagePtr = _playerImagePtr;
@@ -17,7 +18,6 @@ Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 	this->playerStatisticsBoxFramePtr->nameLabel->Text = name;
 	this->playerStatisticsBoxFramePtr->moneyLabel->Text = ownedMoney;
 	this->playerStatisticsBoxFramePtr->shipLvlLabel->Text = 1;
-	this->playerStatisticsBoxFramePtr->strengthLabel->Text = "100%";
     //this->playerStatisticsBoxFramePtr->Position->X = 200;
 	//this->playerStatisticsBoxFramePtr->Visible = true;
 }
@@ -33,6 +33,23 @@ UnicodeString Player::getName()
 int Player::getOwnedMoney()
 {
     return ownedMoney;
+}
+
+void Player::setOwnedMoney(int money)
+{
+	ownedMoney = money;
+	playerStatisticsBoxFramePtr->moneyLabel->Text = ownedMoney;
+}
+
+int Player::getAttackStrength()
+{
+    return attackStrength;
+}
+
+void Player::setAttackStrength(int attackStrength)
+{
+	this->attackStrength = attackStrength;
+	this->playerStatisticsBoxFramePtr->strengthLabel->Text = attackStrength;
 }
 
 void Player::movePlayerToNeighbouringFiedl()
