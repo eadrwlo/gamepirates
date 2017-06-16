@@ -33,8 +33,14 @@ __published:	// IDE-managed Components
 	TImageList *flagsImageList;
 	TGlyph *flagImage;
 	TLabel *cityLabel;
+	TImage *payButton2;
+	TImage *conquerButton2;
+	TImage *closeButton;
+	TImage *buildButton;
 	void __fastcall payButtonClick(TObject *Sender);
 	void __fastcall conquerButtonClick(TObject *Sender);
+	void __fastcall payButton2Click(TObject *Sender);
+	void __fastcall conquerButton2Click(TObject *Sender);
 
 private:	// User declarations
 	//Player *currentlyOperatedPlayer;
