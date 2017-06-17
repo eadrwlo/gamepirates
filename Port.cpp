@@ -29,6 +29,10 @@ void Field::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vecto
 {
 }
 
+Field::~Field()
+{
+    delete fieldImagePtr;
+}
 
 //// ------ Whirpool implementation ------ ////
 void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
@@ -70,7 +74,6 @@ Port::Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int con
 	portsCardFramePtr->visitingPaymentLabel->Text = visitingPayment;
 	portsCardFramePtr->cityLabel->Text = name;
 	portsCardFramePtr->extensionLvlLabel->Text = 1;
-
 	switch (nation)
 	{
 	case PORTUGAL:
@@ -137,6 +140,12 @@ void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector
 	label->Text = player->getCurrentFieldPtr()->getFieldNumber();
 	currentPlayerLocatedOnField = player;
 	cardFramePtr->Visible = true;
+}
+
+Port::~Port()
+{
+	TRACE("Port destruktor");
+   delete cardFramePtr;
 }
 
 //// ------ LuckyWind implementation ------ ////

@@ -44,7 +44,26 @@ void __fastcall TingameMenu_frame::goToMainMenu_buttonClick(TObject *Sender)
 	mainMenu_frame->Visible = true;
 	ingameMenu_frame->Visible = false;
 	frame1Map->Visible = false;
-    inGameMenuBackground->Visible = false;
+	inGameMenuBackground->Visible = false;
+	frame1Map->players.erase(frame1Map->players.begin(),frame1Map->players.end());
+	frame1Map->playersWhoAreStillInGame.erase(frame1Map->playersWhoAreStillInGame.begin(),frame1Map->playersWhoAreStillInGame.end());
+	vector<Field*>::iterator i;
+	for (i=frame1Map->fieldsVector.begin();i<frame1Map->fieldsVector.end();i++)
+	{
+		if (dynamic_cast <Port*>(*i) != 0)
+		{
+			delete dynamic_cast <Port*>(*i)->cardFramePtr;
+		}
+		else if (dynamic_cast <PirateShip*>(*i) != 0)
+		{
+			delete dynamic_cast <PirateShip*>(*i)->cardFramePtr;
+		}
+		else if (dynamic_cast <Whirlpool*>(*i) != 0)
+		{
+			delete dynamic_cast <Whirlpool*>(*i)->cardFramePtr;
+        }
+	}
+    frame1Map->fieldsVector.erase(frame1Map->fieldsVector.begin(),frame1Map->fieldsVector.end());
 }
 //---------------------------------------------------------------------------
 
