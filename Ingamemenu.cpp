@@ -61,7 +61,19 @@ void __fastcall TingameMenu_frame::goToMainMenu_buttonClick(TObject *Sender)
 		else if (dynamic_cast <Whirlpool*>(*i) != 0)
 		{
 			delete dynamic_cast <Whirlpool*>(*i)->cardFramePtr;
-        }
+		}
+		else if (dynamic_cast <LuckyWind*>(*i) != 0)
+		{
+			delete dynamic_cast <LuckyWind*>(*i)->cardFramePtr;
+		}
+		else if (dynamic_cast <Shallow*>(*i) != 0)
+		{
+			delete dynamic_cast <Shallow*>(*i)->cardFramePtr;
+		}
+		else if (dynamic_cast <Storm*>(*i) != 0)
+		{
+			delete dynamic_cast <Storm*>(*i)->cardFramePtr;
+		}
 	}
     frame1Map->fieldsVector.erase(frame1Map->fieldsVector.begin(),frame1Map->fieldsVector.end());
 }

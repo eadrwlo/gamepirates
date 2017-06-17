@@ -40,6 +40,8 @@ void __fastcall TstartgameMenu_frame::startgame_buttonClick(TObject *Sender)
 	frame1Map->drawnNumber = 1;
 	frame1Map->fillFieldsVectorWithFields();
 	frame1Map->iterator = frame1Map->numberOfPlayers;
+	frame1Map->player3->Visible = false;
+    frame1Map->player4->Visible = false;
     fillPlayersVectorWithStartingSettings(frame1Map->numberOfPlayers);
 	frame1Map->Visible = Visible;
 	startgameMenu_frame->Visible = false;
