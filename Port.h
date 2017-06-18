@@ -33,7 +33,6 @@ class Field
 	Field(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr);
 	int getFieldNumber();
 	virtual void mainEventWhenPlayerIsOnTheField(Player *playera, TLabel *label, vector<Field*> *fieldsVector);
-    ~Field();
 };
 
 class Port: public Field
@@ -59,7 +58,6 @@ class Port: public Field
 	void setCurrentPlayerLocatedOnField(Player *player);
 	Player *getCurrentPlayerLocatedOnField();
 	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
-    ~Port();
 };
 
 class Whirlpool: public Field

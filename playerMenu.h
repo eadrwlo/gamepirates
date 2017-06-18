@@ -26,7 +26,7 @@ __published:	// IDE-managed Components
 	TMemo *playerNameInput;
 	void __fastcall next_buttonClick(TObject *Sender);
 	void __fastcall previous_buttonClick(TObject *Sender);
-	void __fastcall Text1Click(TObject *Sender);
+	void __fastcall playerNameInputClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall Tplayer_frame(TComponent* Owner);

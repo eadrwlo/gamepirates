@@ -29,11 +29,6 @@ void Field::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vecto
 {
 }
 
-Field::~Field()
-{
-    delete fieldImagePtr;
-}
-
 //// ------ Whirpool implementation ------ ////
 void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector)
 {
@@ -142,11 +137,6 @@ void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector
 	cardFramePtr->Visible = true;
 }
 
-Port::~Port()
-{
-	TRACE("Port destruktor");
-   delete cardFramePtr;
-}
 
 //// ------ LuckyWind implementation ------ ////
 LuckyWind::LuckyWind(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, unsigned int *iterator):Field(fieldNumber, fieldImagePtr, cardFramePtr)

@@ -83,9 +83,11 @@ void __fastcall Tplayer_frame::previous_buttonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall Tplayer_frame::Text1Click(TObject *Sender)
+
+
+void __fastcall Tplayer_frame::playerNameInputClick(TObject *Sender)
 {
-	//Text1->
+	this->playerNameInput->Text = "";
 }
 //---------------------------------------------------------------------------
 
