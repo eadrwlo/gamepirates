@@ -37,6 +37,10 @@ void __fastcall TmainMenu_frame::startgame_buttonClick(TObject *Sender)
 	//frame1Map->Visible = Visible;
     mainMenu_frame->Visible = false;
 	startgameMenu_frame->Visible = true;
+	startgameMenu_frame->player_frame1->playerNameInput->Text = "player1";
+	startgameMenu_frame->player_frame2->playerNameInput->Text = "player2";
+	startgameMenu_frame->player_frame3->playerNameInput->Text = "player3";
+	startgameMenu_frame->player_frame4->playerNameInput->Text = "player4";
 }
 //---------------------------------------------------------------------------
 

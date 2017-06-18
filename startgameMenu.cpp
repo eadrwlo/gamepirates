@@ -26,10 +26,6 @@ __fastcall TstartgameMenu_frame::TstartgameMenu_frame(TComponent* Owner)
 	player_frame1->playerAvatar->ImageIndex = 0;
 	player_frame2->playerAvatar->ImageIndex = 1;
 	it = playerList.begin() + 2;
-	player_frame1->playerNameInput->Text = "player1";
-	player_frame2->playerNameInput->Text = "player2";
-	player_frame3->playerNameInput->Text = "player3";
-	player_frame4->playerNameInput->Text = "player4";
 }
 //---------------------------------------------------------------------------
 
