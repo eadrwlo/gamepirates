@@ -190,7 +190,7 @@ void __fastcall Tframe1Map::playerStatisticsBoxFrame1Click(TObject *Sender)
 	Visible = false;
 }
 //---------------------------------------------------------------------------
-
+/*
 void __fastcall Tframe1Map::playerStatisticsBoxFrame1boxImageMouseEnter(TObject *Sender)
 
 {
@@ -246,4 +246,5 @@ void __fastcall Tframe1Map::playerStatisticsBoxFrame4boxImageMouseLeave(TObject 
     playerStatisticsBoxFrame4->Position->X = -360;
 }
 //---------------------------------------------------------------------------
+*/
 

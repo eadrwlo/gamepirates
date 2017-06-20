@@ -20,6 +20,7 @@ __published:	// IDE-managed Components
 	TLabel *shipLvlLabel;
 	TLabel *strengthLabel;
 	TLabel *percentLabel;
+	TImage *redFrame;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TplayerStatisticsBoxFrame(TComponent* Owner);

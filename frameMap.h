@@ -112,14 +112,14 @@ __published:	// IDE-managed Components
 	void __fastcall CornerButton1Click(TObject *Sender);
 	void __fastcall CornerButton2Click(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame1Click(TObject *Sender);
-	void __fastcall playerStatisticsBoxFrame1boxImageMouseEnter(TObject *Sender);
+	/*void __fastcall playerStatisticsBoxFrame1boxImageMouseEnter(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame1boxImageMouseLeave(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame2boxImageMouseEnter(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame2boxImageMouseLeave(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame3boxImageMouseEnter(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame3boxImageMouseLeave(TObject *Sender);
 	void __fastcall playerStatisticsBoxFrame4boxImageMouseEnter(TObject *Sender);
-	void __fastcall playerStatisticsBoxFrame4boxImageMouseLeave(TObject *Sender);
+	void __fastcall playerStatisticsBoxFrame4boxImageMouseLeave(TObject *Sender); */
 private:	// User declarations
 
 
