@@ -2,8 +2,8 @@
 
 #include <fmx.h>
 #pragma hdrstop
-
 #include "portsCard.h"
+#include "frameMap.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -52,6 +52,10 @@ void __fastcall TportsCardFrame::conquerButtonClick(TObject *Sender)
 
 void __fastcall TportsCardFrame::payButton2Click(TObject *Sender)
 {
+
+	   frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
+	   frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
+
 	Visible = false;
 }
 //---------------------------------------------------------------------------
@@ -66,6 +70,8 @@ void __fastcall TportsCardFrame::conquerButton2Click(TObject *Sender)
 			ownerLabel->Text = portRelatedWithCard->getOwner()->getName();
 		}
 	}
+	frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
+	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
 	Visible = false;
 }
 //---------------------------------------------------------------------------

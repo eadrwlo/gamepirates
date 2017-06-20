@@ -15,6 +15,7 @@
 #include <FMX.Ani.hpp>
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
+
 class Player;
 //---------------------------------------------------------------------------
 class TportsCardFrame : public TFrame

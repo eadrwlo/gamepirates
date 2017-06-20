@@ -75,7 +75,12 @@ void __fastcall TingameMenu_frame::goToMainMenu_buttonClick(TObject *Sender)
 			delete dynamic_cast <Storm*>(*i)->cardFramePtr;
 		}
 	}
-    frame1Map->fieldsVector.erase(frame1Map->fieldsVector.begin(),frame1Map->fieldsVector.end());
+	frame1Map->fieldsVector.erase(frame1Map->fieldsVector.begin(),frame1Map->fieldsVector.end());
+	frame1Map->playerStatisticsBoxFrame3->Visible = false;
+	frame1Map->playerStatisticsBoxFrame4->Visible = false;
+	frame1Map->playerStatisticsBoxFrame2->redFrame->Visible = false;
+	frame1Map->playerStatisticsBoxFrame3->redFrame->Visible = false;
+	frame1Map->playerStatisticsBoxFrame4->redFrame->Visible = false;
 }
 //---------------------------------------------------------------------------
 

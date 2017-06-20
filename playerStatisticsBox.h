@@ -10,6 +10,7 @@
 #include <FMX.Types.hpp>
 #include <FMX.Controls.Presentation.hpp>
 #include <FMX.StdCtrls.hpp>
+#include <FMX.Ani.hpp>
 //---------------------------------------------------------------------------
 class TplayerStatisticsBoxFrame : public TFrame
 {

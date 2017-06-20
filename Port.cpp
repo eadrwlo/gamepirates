@@ -10,6 +10,7 @@ Field::Field(int fieldNumber, TImage *fieldImagePtr)
 {
 	this->fieldNumber = fieldNumber;
 	this->fieldImagePtr = fieldImagePtr;
+	this->cardFramePtr = 0;
 }
 
 Field::Field(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr)

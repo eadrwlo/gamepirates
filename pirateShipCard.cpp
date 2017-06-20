@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "pirateShipCard.h"
+#include "frameMap.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -23,9 +24,11 @@ __fastcall TpirateShipCardFrame::TpirateShipCardFrame(TComponent* Owner, int car
 //---------------------------------------------------------------------------
 void __fastcall TpirateShipCardFrame::closeButtonClick(TObject *Sender)
 {
+    frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
+	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
 	Visible = false;
 	badPirate->Visible = true;
 	goodPirate->Visible = true;
-    amountOfBonusLabel->Visible = true;
+	amountOfBonusLabel->Visible = true;
 }
 //---------------------------------------------------------------------------

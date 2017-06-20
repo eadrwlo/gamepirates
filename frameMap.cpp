@@ -20,19 +20,7 @@ bool buttonThowState = false;
 __fastcall Tframe1Map::Tframe1Map(TComponent* Owner)
 	: TFrame(Owner)
 {
-    //Przeniesione do startgameMenu.cpp - pamietac zeby zawsze wybrac 4 graczy!!!!!!!!
-	/*this->numberOfPlayers = 4;
-	iterator = numberOfPlayers;
-	for(int player = 0; player < this->numberOfPlayers; player++)
-	{
-		this->playersWhoAreStillInGame.push_back(true);
-	}
-	drawnNumber = 1;
-	fillFieldsVectorWithFields();
-	this->players.push_back(new Player("Adrian", 100, player1, moveInXAxisPlayer1, moveInYAxisPlayer1, this->fieldsVector[0]));
-	this->players.push_back(new Player("Mariusz", 100, player2, moveInXAxisPlayer2, moveInYAxisPlayer2, this->fieldsVector[0]));
-	this->players.push_back(new Player("Blady Kris", 100, player3, moveInXAxisPlayer3, moveInYAxisPlayer3, this->fieldsVector[0]));
-	this->players.push_back(new Player("Piech", 100, player4, moveInXAxisPlayer4, moveInYAxisPlayer4, this->fieldsVector[0])); */
+
 }
 //---------------------------------------------------------------------------
 void __fastcall Tframe1Map::startStopThrowingClick(TObject *Sender)
@@ -144,6 +132,11 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 		this->fieldsVector[(players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber())]->mainEventWhenPlayerIsOnTheField(players[indexOfPlayer], Label1, &(this->fieldsVector));
 		timerForPlayerMovementExecute->Enabled = false;
 		isLastLoopIteration = false;
+        if(this->fieldsVector[(players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber())]->cardFramePtr == 0)
+		{
+			frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
+			frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
+		}
 	}
 
 	Label1->Text = players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber();
@@ -247,4 +240,6 @@ void __fastcall Tframe1Map::playerStatisticsBoxFrame4boxImageMouseLeave(TObject 
 }
 //---------------------------------------------------------------------------
 */
+
+
 

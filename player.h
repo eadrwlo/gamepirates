@@ -14,9 +14,9 @@ class Player
 	TFloatAnimation *playerFlowAnimationY;
 	Field *currentFieldPtr;
 	int permissionToMoveInCurrentTurn;
-	TplayerStatisticsBoxFrame* playerStatisticsBoxFramePtr;
 
 	public:
+	TplayerStatisticsBoxFrame* playerStatisticsBoxFramePtr;
 	Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 		   TFloatAnimation *_moveInXAxis, TFloatAnimation *_moveInYAxis,
 		   Field *_currentFieldPtr, TplayerStatisticsBoxFrame* playerStatisticsBoxFramePtr);
