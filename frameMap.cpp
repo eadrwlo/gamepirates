@@ -169,12 +169,21 @@ void __fastcall Tframe1Map::CornerButton2Click(TObject *Sender)
 	indexOfPlayer = (iterator % numberOfPlayers);
 	if(playersWhoAreStillInGame[indexOfPlayer])
 	{
-		if(players[indexOfPlayer]->getPermissionToMove())
-		timerForPlayerMovementExecute->Enabled = true;
+		if((players[indexOfPlayer]->getPermissionToMove()) == 0)
+		{
+			players[indexOfPlayer]->allowPlayerForMoveInNextTurn();
+			iterator++;
+			indexOfPlayer = (iterator % numberOfPlayers);
+			timerForPlayerMovementExecute->Enabled = true;
+			iterator++;
+		}
 		else
-		players[indexOfPlayer]->allowPlayerForMoveInNextTurn();
+		{
+			timerForPlayerMovementExecute->Enabled = true;
+			iterator++;
+		}
 	}
-	iterator++;
+
 }
 //---------------------------------------------------------------------------
 
