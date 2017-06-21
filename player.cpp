@@ -12,7 +12,7 @@ Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 	playerFlowAnimationY =  _moveInYAxis;
 	currentFieldPtr = _currentFieldPtr;
 	permissionToMoveInCurrentTurn = 1;
-
+    shipLevel = 1;
 	// Inicjalizacja danych na boksie statystyk
 	this->playerStatisticsBoxFramePtr = playerStatisticsBoxFramePtr;
 	this->playerStatisticsBoxFramePtr->nameLabel->Text = name;
@@ -142,4 +142,36 @@ void Player::allowPlayerForMoveInNextTurn()
 void Player::forbidPlayerForMoveInNextTurn()
 {
 	permissionToMoveInCurrentTurn = 0;
+}
+
+void Player::rebuildStrenghtAttack()
+{
+	switch (shipLevel)
+	{
+		case 1:
+		{
+			setAttackStrength(attackStrength + 1);
+			break;
+		}
+		case 2:
+		{
+			setAttackStrength(attackStrength + 1.5);
+			break;
+		}
+		case 3:
+		{
+			setAttackStrength(attackStrength + 2);
+			break;
+		}
+		case 4:
+		{
+			setAttackStrength(attackStrength + 2.5);
+			break;
+		}
+		case 5:
+		{
+			setAttackStrength(attackStrength + 3);
+			break;
+		}
+    }
 }

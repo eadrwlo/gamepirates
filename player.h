@@ -14,6 +14,7 @@ class Player
 	TFloatAnimation *playerFlowAnimationY;
 	Field *currentFieldPtr;
 	int permissionToMoveInCurrentTurn;
+    int shipLevel;
 
 	public:
 	TplayerStatisticsBoxFrame* playerStatisticsBoxFramePtr;
@@ -33,6 +34,7 @@ class Player
 	int getPermissionToMove();
 	void allowPlayerForMoveInNextTurn();
 	void forbidPlayerForMoveInNextTurn();
+    void rebuildStrenghtAttack();
 };
 
 #endif

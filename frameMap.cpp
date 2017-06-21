@@ -179,8 +179,9 @@ void __fastcall Tframe1Map::CornerButton2Click(TObject *Sender)
 		}
 		else
 		{
+			players[indexOfPlayer]->rebuildStrenghtAttack();
 			timerForPlayerMovementExecute->Enabled = true;
-			iterator++;
+			iterator++;	
 		}
 	}
 

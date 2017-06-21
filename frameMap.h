@@ -135,7 +135,7 @@ public:		// User declarations
     vector<Field*> fieldsVector;
 	__fastcall Tframe1Map(TComponent* Owner);
 	//friend void throwDice();
-    void fillFieldsVectorWithFields();
+	void fillFieldsVectorWithFields();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE Tframe1Map *frame1Map;
