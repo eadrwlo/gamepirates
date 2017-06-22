@@ -20,6 +20,7 @@ Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 	this->playerStatisticsBoxFramePtr->shipLvlLabel->Text = 1;
     //this->playerStatisticsBoxFramePtr->Position->X = 200;
 	//this->playerStatisticsBoxFramePtr->Visible = true;
+	playerStatisticsBoxFramePtr->playerIcon->ImageIndex = playerImagePtr->ImageIndex;
 }
 
 void Player::setName(UnicodeString _name)
@@ -48,8 +49,11 @@ int Player::getAttackStrength()
 
 void Player::setAttackStrength(int attackStrength)
 {
-	this->attackStrength = attackStrength;
-	this->playerStatisticsBoxFramePtr->strengthLabel->Text = attackStrength;
+	if (this->attackStrength < 100)
+	{
+		this->attackStrength = attackStrength;
+		this->playerStatisticsBoxFramePtr->strengthLabel->Text = attackStrength;
+    }
 }
 
 void Player::movePlayerToNeighbouringFiedl()
