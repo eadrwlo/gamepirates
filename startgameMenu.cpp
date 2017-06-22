@@ -76,21 +76,21 @@ void TstartgameMenu_frame::fillPlayersVectorWithStartingSettings(int numberOfPla
 			frame1Map->player2->Images = player_frame2->playerAvatar->Images;
 			frame1Map->player3->Images = player_frame3->playerAvatar->Images;
 			frame1Map->player4->Images = player_frame4->playerAvatar->Images;
-            frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 200, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame1));
 			frame1Map->playerStatisticsBoxFrame1->redFrame->Visible = true;
-			frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 200, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame2));
-			frame1Map->players.push_back(new Player(player_frame3->playerNameInput->Text, 200, frame1Map->player3, frame1Map->moveInXAxisPlayer3,frame1Map->moveInYAxisPlayer3, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame3));
-			frame1Map->players.push_back(new Player(player_frame4->playerNameInput->Text, 200, frame1Map->player4, frame1Map->moveInXAxisPlayer4,frame1Map->moveInYAxisPlayer4, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame4));
 			frame1Map->player4->ImageIndex = player_frame4->playerAvatar->ImageIndex;
-            frame1Map->player1->ImageIndex = player_frame1->playerAvatar->ImageIndex;
+			frame1Map->player1->ImageIndex = player_frame1->playerAvatar->ImageIndex;
 			frame1Map->player2->ImageIndex = player_frame2->playerAvatar->ImageIndex;
 			frame1Map->player3->ImageIndex = player_frame3->playerAvatar->ImageIndex;
 			frame1Map->player4->Visible = true;
 			frame1Map->player3->Visible = true;
-			frame1Map->playerStatisticsBoxFrame3->Visible = true;
-			frame1Map->playerStatisticsBoxFrame1->Visible = true;
-			frame1Map->playerStatisticsBoxFrame2->Visible = true;
-			frame1Map->playerStatisticsBoxFrame4->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame3->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame1->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame2->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame4->Visible = true;
+            frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 200, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame1));
+            frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 200, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame2));
+			frame1Map->players.push_back(new Player(player_frame3->playerNameInput->Text, 200, frame1Map->player3, frame1Map->moveInXAxisPlayer3,frame1Map->moveInYAxisPlayer3, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame3));
+			frame1Map->players.push_back(new Player(player_frame4->playerNameInput->Text, 200, frame1Map->player4, frame1Map->moveInXAxisPlayer4,frame1Map->moveInYAxisPlayer4, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame4));
 			break;
 		}
         case 3:
@@ -105,17 +105,17 @@ void TstartgameMenu_frame::fillPlayersVectorWithStartingSettings(int numberOfPla
 			frame1Map->player1->Images = player_frame1->playerAvatar->Images;
 			frame1Map->player2->Images = player_frame2->playerAvatar->Images;
 			frame1Map->player3->Images = player_frame3->playerAvatar->Images;
-			frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 200, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame1));
 			frame1Map->playerStatisticsBoxFrame1->redFrame->Visible = true;
-			frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 200, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame2));
-			frame1Map->players.push_back(new Player(player_frame3->playerNameInput->Text, 200, frame1Map->player3, frame1Map->moveInXAxisPlayer3,frame1Map->moveInYAxisPlayer3, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame3));
 			frame1Map->player3->Visible = true;
 			frame1Map->player1->ImageIndex = player_frame1->playerAvatar->ImageIndex;
 			frame1Map->player2->ImageIndex = player_frame2->playerAvatar->ImageIndex;
 			frame1Map->player3->ImageIndex = player_frame3->playerAvatar->ImageIndex;
-			frame1Map->playerStatisticsBoxFrame3->Visible = true;
-			frame1Map->playerStatisticsBoxFrame1->Visible = true;
-			frame1Map->playerStatisticsBoxFrame2->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame3->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame1->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame2->Visible = true;
+            frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 200, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame1));
+            frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 200, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame2));
+			frame1Map->players.push_back(new Player(player_frame3->playerNameInput->Text, 200, frame1Map->player3, frame1Map->moveInXAxisPlayer3,frame1Map->moveInYAxisPlayer3, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame3));
 			break;
 		}
 
@@ -128,13 +128,13 @@ void TstartgameMenu_frame::fillPlayersVectorWithStartingSettings(int numberOfPla
 
 			frame1Map->player1->Images = player_frame1->playerAvatar->Images;
 			frame1Map->player2->Images = player_frame2->playerAvatar->Images;
-			frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 200, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame1));
 			frame1Map->playerStatisticsBoxFrame1->redFrame->Visible = true;
-			frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 200, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame2));
 			frame1Map->player1->ImageIndex = player_frame1->playerAvatar->ImageIndex;
 			frame1Map->player2->ImageIndex = player_frame2->playerAvatar->ImageIndex;
-			frame1Map->playerStatisticsBoxFrame1->Visible = true;
-			frame1Map->playerStatisticsBoxFrame2->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame1->Visible = true;
+			//frame1Map->playerStatisticsBoxFrame2->Visible = true;
+			frame1Map->players.push_back(new Player(player_frame1->playerNameInput->Text, 200, frame1Map->player1, frame1Map->moveInXAxisPlayer1,frame1Map->moveInYAxisPlayer1, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame1));
+			frame1Map->players.push_back(new Player(player_frame2->playerNameInput->Text, 200, frame1Map->player2, frame1Map->moveInXAxisPlayer2,frame1Map->moveInYAxisPlayer2, frame1Map->fieldsVector[0], frame1Map->playerStatisticsBoxFrame2));
 			break;
 		}
 		default:

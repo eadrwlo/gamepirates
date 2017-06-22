@@ -34,7 +34,8 @@ class Player
 	int getPermissionToMove();
 	void allowPlayerForMoveInNextTurn();
 	void forbidPlayerForMoveInNextTurn();
-    void rebuildStrenghtAttack();
+	void rebuildStrenghtAttack();
+    TGlyph* getPlayerImagerPtr();
 };
 
 #endif

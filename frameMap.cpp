@@ -139,7 +139,7 @@ void __fastcall Tframe1Map::timerForPlayerMovementExecuteTimer(TObject *Sender)
 		}
 	}
 
-	Label1->Text = players[indexOfPlayer]->getCurrentFieldPtr()->getFieldNumber();
+	Label1->Text = players[indexOfPlayer]->getPlayerImagerPtr()->ImageIndex;
 	//Label1->Text = RandomRange(0,35);
 }
 //---------------------------------------------------------------------------

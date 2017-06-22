@@ -19,8 +19,9 @@ Player::Player(UnicodeString _name, int _ownedMoney, TGlyph *_playerImagePtr,
 	this->playerStatisticsBoxFramePtr->moneyLabel->Text = ownedMoney;
 	this->playerStatisticsBoxFramePtr->shipLvlLabel->Text = 1;
     //this->playerStatisticsBoxFramePtr->Position->X = 200;
-	//this->playerStatisticsBoxFramePtr->Visible = true;
+	this->playerStatisticsBoxFramePtr->Visible = true;
 	playerStatisticsBoxFramePtr->playerIcon->ImageIndex = playerImagePtr->ImageIndex;
+
 }
 
 void Player::setName(UnicodeString _name)
@@ -178,4 +179,9 @@ void Player::rebuildStrenghtAttack()
 			break;
 		}
     }
+}
+
+TGlyph* Player::getPlayerImagerPtr()
+{
+    return playerImagePtr;
 }
