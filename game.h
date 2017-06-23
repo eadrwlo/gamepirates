@@ -22,6 +22,8 @@
 class TgameForm : public TForm
 {
 __published:	// IDE-managed Components
+	TImage *background;
+	TImage *ingamemenu_background;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall FormKeyDown(TObject *Sender, WORD &Key, System::WideChar &KeyChar,
           TShiftState Shift);

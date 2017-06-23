@@ -199,6 +199,11 @@
             <DependentOn>portsCard.h</DependentOn>
             <BuildOrder>12</BuildOrder>
         </CppCompile>
+        <RcItem Include="sounds\mainmenu_music.mp3">
+            <ContainerId>ResourceItem</ContainerId>
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>MP3_MAINMENU_MUSIC</ResourceId>
+        </RcItem>
         <CppCompile Include="startgameMenu.cpp">
             <Form>startgameMenu_frame</Form>
             <FormType>fmx</FormType>

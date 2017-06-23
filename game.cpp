@@ -30,16 +30,17 @@ __fastcall TgameForm::TgameForm(TComponent* Owner)
 	frame1Map = new Tframe1Map(this);
 	ingameMenu_frame = new TingameMenu_frame(this);
 	startgameMenu_frame = new TstartgameMenu_frame(this);
-	//whirlpoolCardFrame = new TwhirlpoolCardFrame(this);
 }
 //---------------------------------------------------------------------------
 void TgameForm::mainMenuMusic()
 {
+	TResourceStream *rStream = new TResourceStream((unsigned int)HInstance,
+	L"MP3_MAINMENU_MUSIC", RT_RCDATA);
 	musicPlayer->Parent=this;
-	musicPlayer->FileName = "../../sounds/mainmenu_music.mp3";
+
+	rStream->SaveToFile("mainmenu_music.mp3");
+	musicPlayer->FileName = "mainmenu_music.mp3";
 	musicPlayer->Play();
-    //musicPlayer->Volume = ((optionsMenu_frame->volumeButton_button->Position->X -
-						   //	optionsMenu_frame->volumeButton_button->Position->X)/180);
 }
 
 void TgameForm::startgameMenu()
@@ -54,7 +55,7 @@ void TgameForm::mainMenu()
 	mainMenuBackground->Parent = this;
 	mainMenuBackground->Height=1080;
 	mainMenuBackground->Width=1920;
-	mainMenuBackground->Bitmap->LoadFromFile("../../img/background/background.bmp");
+	mainMenuBackground->Bitmap = gameForm->background->Bitmap;
 	mainMenuBackground->Visible = true;
 	mainMenuBackground->Align = 11;
 	mainMenu_frame->Parent=this;
@@ -93,8 +94,6 @@ void TgameForm::formSettings()
 {
 	gameForm->Height=1080;
 	gameForm->Width=1920;
-	//Form1->BorderStyle = 2;
-	//Form1->WindowState = 0;
 }
 //---------------------------------------------------------------------------
 void TgameForm::inGameMenu()
@@ -102,7 +101,7 @@ void TgameForm::inGameMenu()
 	inGameMenuBackground->Parent = this;
 	inGameMenuBackground->Height=1080;
 	inGameMenuBackground->Width=1920;
-	inGameMenuBackground->Bitmap->LoadFromFile("../../img/ingame_menu/ingamemenu_background.bmp");
+	inGameMenuBackground->Bitmap  = gameForm->ingamemenu_background->Bitmap;
 	inGameMenuBackground->Visible = false;
 	inGameMenuBackground->Align = 11;
 	inGameMenuBackground->Opacity = 0.7;
@@ -157,4 +156,6 @@ void __fastcall TgameForm::FormKeyDown(TObject *Sender, WORD &Key, System::WideC
     }
 }
 //---------------------------------------------------------------------------
+
+
 
