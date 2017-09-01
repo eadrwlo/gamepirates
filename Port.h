@@ -51,13 +51,16 @@ class Port: public Field
 	public:
 	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation);
 	void setName();
-	int getConquerCost();
 	UnicodeString getName();
+	int getConquerCost();
+	void setVisitingPayment(int visitingPayment);
+    int getVisitingPayment();
 	void setOwner(Player *owner);
 	Player* getOwner();
 	void setCurrentPlayerLocatedOnField(Player *player);
 	Player *getCurrentPlayerLocatedOnField();
 	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
+
 };
 
 class Whirlpool: public Field

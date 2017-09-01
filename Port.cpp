@@ -112,6 +112,16 @@ int Port::getConquerCost()
     return conquerCost;
 }
 
+void Port::setVisitingPayment(int visitingPayment)
+{
+	this->visitingPayment = visitingPayment;
+}
+
+int Port::getVisitingPayment()
+{
+	return visitingPayment;
+}
+
 void Port::setOwner(Player *owner)
 {
 	this->owner = owner;
@@ -135,6 +145,25 @@ void Port::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector
 {
 	label->Text = player->getCurrentFieldPtr()->getFieldNumber();
 	currentPlayerLocatedOnField = player;
+	if (owner != NULL)  // Port have a owner
+	{
+		if(owner == currentPlayerLocatedOnField) // Current player standing on field is the owner
+		{
+			(static_cast<TportsCardFrame*>(cardFramePtr))->closeButton->Visible = true;
+			(static_cast<TportsCardFrame*>(cardFramePtr))->buildButton->Visible = true;
+		}
+		else // Current player standing on field is NOT the owner
+		{
+			(static_cast<TportsCardFrame*>(cardFramePtr))->payButton->Visible = true;
+			(static_cast<TportsCardFrame*>(cardFramePtr))->conquerButton->Visible = true;
+        }
+
+	}
+	else // Port is free
+	{
+		(static_cast<TportsCardFrame*>(cardFramePtr))->closeButton->Visible = true;
+		(static_cast<TportsCardFrame*>(cardFramePtr))->conquerButton->Visible = true;
+	}
 	cardFramePtr->Visible = true;
 }
 
@@ -174,7 +203,7 @@ void PirateShip::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, 
 		(static_cast<TpirateShipCardFrame*>(cardFramePtr))->amountOfBonusLabel->Text = randomNumber2;
 		UnicodeString randomNumberString2 = (static_cast<TpirateShipCardFrame*>(cardFramePtr))->amountOfBonusLabel->Text;
 		randomNumberString2 = randomNumberString2.operator +(UnicodeString('%'));
-       	player->setAttackStrength(player->getAttackStrength()*((randomNumber2*0.01)+1));
+		player->setAttackStrength(player->getAttackStrength()*((randomNumber2*0.01)+1));
 		(static_cast<TpirateShipCardFrame*>(cardFramePtr))->amountOfBonusLabel->Text = randomNumberString2;
 		(static_cast<TpirateShipCardFrame*>(cardFramePtr))->badPirate->Visible = false;
 	}

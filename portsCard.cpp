@@ -20,13 +20,7 @@ __fastcall TportsCardFrame::TportsCardFrame(TComponent* Owner, int cardNumber)
 	this->Position->X = 750;
 	this->Position->Y = 220;
 }
-//---------------------------------------------------------------------------
-void __fastcall TportsCardFrame::payButtonClick(TObject *Sender)
-{
-	Visible = false;
-}
-
-//Player* TportsCardFrame::getOwnerOfRelatedPort()
+//---------------------------------------------------------------------------//Player* TportsCardFrame::getOwnerOfRelatedPort()
 //{
 //	return ownerOfRelatedPort;
 //}
@@ -38,41 +32,52 @@ void __fastcall TportsCardFrame::payButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TportsCardFrame::conquerButtonClick(TObject *Sender)
 {
-	if (portRelatedWithCard->getCurrentPlayerLocatedOnField() != portRelatedWithCard->getOwner()) // Czy port nie jest gracza ktory na nim stanal?
-	{
+	//if (portRelatedWithCard->getCurrentPlayerLocatedOnField() != portRelatedWithCard->getOwner()) // TO DO Check if port is free
+	//{
 		if (portRelatedWithCard->getCurrentPlayerLocatedOnField()->getOwnedMoney() > portRelatedWithCard->getConquerCost())
 		{
 			portRelatedWithCard->setOwner(portRelatedWithCard->getCurrentPlayerLocatedOnField());
+			portRelatedWithCard->getOwner()->setOwnedMoney(portRelatedWithCard->getOwner()->getOwnedMoney() - portRelatedWithCard->getConquerCost());
 			ownerLabel->Text = portRelatedWithCard->getOwner()->getName();
 		}
-	}
-	Visible = false;
+   //	}
+    frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
+	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
+	shoutDownCard();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TportsCardFrame::payButton2Click(TObject *Sender)
+void __fastcall TportsCardFrame::payButtonClick(TObject *Sender)
 {
-
-	   frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
-	   frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
-
-	Visible = false;
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TportsCardFrame::conquerButton2Click(TObject *Sender)
-{
-	if (portRelatedWithCard->getCurrentPlayerLocatedOnField() != portRelatedWithCard->getOwner()) // Czy port nie jest gracza ktory na nim stanal?
-	{
-		if (portRelatedWithCard->getCurrentPlayerLocatedOnField()->getOwnedMoney() > portRelatedWithCard->getConquerCost())
-		{
-			portRelatedWithCard->setOwner(portRelatedWithCard->getCurrentPlayerLocatedOnField());
-			ownerLabel->Text = portRelatedWithCard->getOwner()->getName();
-		}
-	}
+	portRelatedWithCard->getOwner()->setOwnedMoney(portRelatedWithCard->getOwner()->getOwnedMoney() + portRelatedWithCard->getVisitingPayment());
+	portRelatedWithCard->getCurrentPlayerLocatedOnField()->setOwnedMoney(portRelatedWithCard->getCurrentPlayerLocatedOnField()->getOwnedMoney() - portRelatedWithCard->getVisitingPayment());
 	frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
 	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
+	shoutDownCard();
+}
+//---------------------------------------------------------------------------
+
+ void TportsCardFrame::shoutDownCard()
+ {
+	payButton->Visible = false;
+	conquerButton->Visible = false;
+	buildButton->Visible = false;
+    closeButton->Visible = false;
 	Visible = false;
+ }
+void __fastcall TportsCardFrame::closeButtonClick(TObject *Sender)
+{
+    frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
+	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
+    shoutDownCard();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TportsCardFrame::buildButtonClick(TObject *Sender)
+{
+    frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
+	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
+    shoutDownCard();
 }
 //---------------------------------------------------------------------------
 
