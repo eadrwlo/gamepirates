@@ -57,8 +57,12 @@ void Whirlpool::mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, v
 }
 
 //// ------ Port implementation ------ ////
-Port::Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation):Field(fieldNumber, fieldImagePtr, cardFramePtr)
+Port::Port(int fieldNumber, TImage *portImage1Ptr, TImage *portImage2Ptr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation)
 {
+	this->fieldNumber = fieldNumber;
+	this->moloImagePtr = portImage1Ptr;
+	this->portImagePtr = portImage2Ptr;
+	this->cardFramePtr = cardFramePtr;
 	this->owner = NULL;
 	this->conquerCost = conquerCost;
 	this->visitingPayment = visitingPayment;
@@ -125,12 +129,37 @@ int Port::getVisitingPayment()
 void Port::setOwner(Player *owner)
 {
 	this->owner = owner;
+	setPortImagesPtrByIndex(owner->getPlayerImagerPtr()->ImageIndex);
 }
 
 Player* Port::getOwner()
 {
    return owner;
 }
+
+void Port::setPortImagesPtrByIndex(int index)
+{
+	switch (index)
+	{
+		case 0:
+		{
+			portImagePtr->Bitmap->LoadFromFile("../../img/port holandii/port holandia_black.png");
+			break;
+		}
+		default:
+		{
+            break;
+        }
+
+    }
+
+}
+
+TImage* Port::getPortImagesPtr()
+{
+	return portImagePtr;
+}
+
 void Port::setCurrentPlayerLocatedOnField(Player *player)
 {
 	currentPlayerLocatedOnField = player;

@@ -53,6 +53,7 @@ void __fastcall TportsCardFrame::payButtonClick(TObject *Sender)
 	portRelatedWithCard->getCurrentPlayerLocatedOnField()->setOwnedMoney(portRelatedWithCard->getCurrentPlayerLocatedOnField()->getOwnedMoney() - portRelatedWithCard->getVisitingPayment());
 	frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
 	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
+
 	shoutDownCard();
 }
 //---------------------------------------------------------------------------

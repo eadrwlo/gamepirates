@@ -29,6 +29,7 @@ class Field
 
 	public:
 	TFrame *cardFramePtr;
+    Field(){};
 	Field(int fieldNumber, TImage *fieldImagePtr);
 	Field(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr);
 	int getFieldNumber();
@@ -46,10 +47,12 @@ class Port: public Field
 	Player *owner;
 	Player *currentPlayerLocatedOnField;
 	TImage *portImagePtr;
+	TImage *moloImagePtr;
 	TportsCardFrame *portsCardFramePtr;
 
 	public:
-	Port(int fieldNumber, TImage *fieldImagePtr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation);
+    Port();
+	Port(int fieldNumber, TImage *portImage1Ptr, TImage *portImage2Ptr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation);
 	void setName();
 	UnicodeString getName();
 	int getConquerCost();
@@ -58,6 +61,8 @@ class Port: public Field
 	void setOwner(Player *owner);
 	Player* getOwner();
 	void setCurrentPlayerLocatedOnField(Player *player);
+	void setPortImagesPtrByIndex(int index);
+	TImage* getPortImagesPtr();
 	Player *getCurrentPlayerLocatedOnField();
 	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
 

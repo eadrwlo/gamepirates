@@ -225,10 +225,10 @@
         <FormResources Include="portsCard.fmx"/>
         <FormResources Include="frameMap.fmx"/>
         <FormResources Include="game.fmx"/>
-        <FormResources Include="Optionsmenu.fmx"/>
-        <FormResources Include="pirateShipCard.fmx"/>
         <FormResources Include="Ingamemenu.fmx"/>
+        <FormResources Include="pirateShipCard.fmx"/>
         <FormResources Include="Mainmenu.fmx"/>
+        <FormResources Include="Optionsmenu.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
