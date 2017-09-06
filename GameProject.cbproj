@@ -110,6 +110,7 @@
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <LinkPackageImports>rtl.bpi;fmx.bpi</LinkPackageImports>
         <Icns_MainIcns>GameProject_Icns.icns</Icns_MainIcns>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>img\ico\game.ico</Icon_MainIcon>

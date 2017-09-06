@@ -46,13 +46,13 @@ class Port: public Field
 	int defensivePower;
 	Player *owner;
 	Player *currentPlayerLocatedOnField;
-	TImage *portImagePtr;
+	TGlyph *portImagePtr;
 	TImage *moloImagePtr;
 	TportsCardFrame *portsCardFramePtr;
 
 	public:
     Port();
-	Port(int fieldNumber, TImage *portImage1Ptr, TImage *portImage2Ptr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation);
+	Port(int fieldNumber, TImage *portImage1Ptr, TGlyph *portImage2Ptr, TFrame *cardFramePtr, int conquerCost, int visitingPayment, UnicodeString name, int nation);
 	void setName();
 	UnicodeString getName();
 	int getConquerCost();
@@ -62,7 +62,7 @@ class Port: public Field
 	Player* getOwner();
 	void setCurrentPlayerLocatedOnField(Player *player);
 	void setPortImagesPtrByIndex(int index);
-	TImage* getPortImagesPtr();
+	TGlyph* getPortImagesPtr();
 	Player *getCurrentPlayerLocatedOnField();
 	void mainEventWhenPlayerIsOnTheField(Player *player, TLabel *label, vector<Field*> *fieldsVector);
 
