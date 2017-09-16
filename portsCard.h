@@ -15,6 +15,7 @@
 #include <FMX.Ani.hpp>
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
+#include <conquerPortMiniGame.h>
 
 class Player;
 //---------------------------------------------------------------------------
@@ -36,6 +37,8 @@ __published:	// IDE-managed Components
 	TImage *conquerButton;
 	TImage *closeButton;
 	TImage *buildButton;
+	TImage *questionBox;
+	TImage *notEnoughtsStrenghtStatementImg;
 	void __fastcall conquerButtonClick(TObject *Sender);
 	void __fastcall payButtonClick(TObject *Sender);
 	void __fastcall closeButtonClick(TObject *Sender);

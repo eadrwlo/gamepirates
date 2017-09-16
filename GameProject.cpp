@@ -14,10 +14,11 @@ USEFORM("whirlpoolCard.cpp", whirlpoolCardFrame); /* TFrame: File Type */
 USEFORM("portsCard.cpp", portsCardFrame); /* TFrame: File Type */
 USEFORM("frameMap.cpp", frame1Map); /* TFrame: File Type */
 USEFORM("game.cpp", gameForm);
-USEFORM("Optionsmenu.cpp", optionsMenu_frame); /* TFrame: File Type */
-USEFORM("pirateShipCard.cpp", pirateShipCardFrame); /* TFrame: File Type */
 USEFORM("Ingamemenu.cpp", ingameMenu_frame); /* TFrame: File Type */
+USEFORM("pirateShipCard.cpp", pirateShipCardFrame); /* TFrame: File Type */
 USEFORM("Mainmenu.cpp", mainMenu_frame); /* TFrame: File Type */
+USEFORM("Optionsmenu.cpp", optionsMenu_frame); /* TFrame: File Type */
+USEFORM("conquerPortMiniGame.cpp", conquerPortMiniGameForm);
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {
@@ -25,6 +26,7 @@ extern "C" int FMXmain()
 	{
 		Application->Initialize();
 		Application->CreateForm(__classid(TgameForm), &gameForm);
+		Application->CreateForm(__classid(TconquerPortMiniGameForm), &conquerPortMiniGameForm);
 		Application->Run();
 	}
 	catch (Exception &exception)

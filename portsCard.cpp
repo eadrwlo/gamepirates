@@ -4,6 +4,7 @@
 #pragma hdrstop
 #include "portsCard.h"
 #include "frameMap.h"
+#include "Unit1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -32,18 +33,35 @@ __fastcall TportsCardFrame::TportsCardFrame(TComponent* Owner, int cardNumber)
 //---------------------------------------------------------------------------
 void __fastcall TportsCardFrame::conquerButtonClick(TObject *Sender)
 {
-	//if (portRelatedWithCard->getCurrentPlayerLocatedOnField() != portRelatedWithCard->getOwner()) // TO DO Check if port is free
-	//{
-		if (portRelatedWithCard->getCurrentPlayerLocatedOnField()->getOwnedMoney() > portRelatedWithCard->getConquerCost())
+	if (portRelatedWithCard->getOwner() == NULL) // Czy port jest wolny?
+	{
+		if (portRelatedWithCard->getCurrentPlayerLocatedOnField()->getOwnedMoney() >= portRelatedWithCard->getConquerCost()) // Czy gracza stac na port?
 		{
 			portRelatedWithCard->setOwner(portRelatedWithCard->getCurrentPlayerLocatedOnField());
 			portRelatedWithCard->getOwner()->setOwnedMoney(portRelatedWithCard->getOwner()->getOwnedMoney() - portRelatedWithCard->getConquerCost());
 			ownerLabel->Text = portRelatedWithCard->getOwner()->getName();
+			frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
+			frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
+			shoutDownCard();
 		}
-   //	}
-    frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
-	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
-	shoutDownCard();
+	}
+	else
+	{
+		if (portRelatedWithCard->getCurrentPlayerLocatedOnField()->getAttackStrength() == portRelatedWithCard->getOwner()->getAttackStrength())
+		{
+			conquerPortMiniGameForm->runConquerPortMiniGame(portRelatedWithCard->getOwner(), portRelatedWithCard->getCurrentPlayerLocatedOnField());
+		}
+		else
+		{
+			payButton->Position->X = 150;
+			payButton->Position->Y = 350;
+			payButton->Visible = true;
+			questionBox->Visible = true;
+			payButton->BringToFront();
+			notEnoughtsStrenghtStatementImg->Visible = true;
+        }
+	}
+
 }
 //---------------------------------------------------------------------------
 
@@ -53,7 +71,6 @@ void __fastcall TportsCardFrame::payButtonClick(TObject *Sender)
 	portRelatedWithCard->getCurrentPlayerLocatedOnField()->setOwnedMoney(portRelatedWithCard->getCurrentPlayerLocatedOnField()->getOwnedMoney() - portRelatedWithCard->getVisitingPayment());
 	frame1Map->players[(frame1Map->indexOfPlayer) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=false;
 	frame1Map->players[(frame1Map->indexOfPlayer+1) % frame1Map->numberOfPlayers]->playerStatisticsBoxFramePtr->redFrame->Visible=true;
-
 	shoutDownCard();
 }
 //---------------------------------------------------------------------------
@@ -61,9 +78,12 @@ void __fastcall TportsCardFrame::payButtonClick(TObject *Sender)
  void TportsCardFrame::shoutDownCard()
  {
 	payButton->Visible = false;
+	payButton->Position->X = 48;
+	payButton->Position->Y = 424;
 	conquerButton->Visible = false;
 	buildButton->Visible = false;
-    closeButton->Visible = false;
+	closeButton->Visible = false;
+    notEnoughtsStrenghtStatementImg->Visible = false;
 	Visible = false;
  }
 void __fastcall TportsCardFrame::closeButtonClick(TObject *Sender)

@@ -41,13 +41,13 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <IncludePath>D:\Git_repositories\gamepirates\;$(IncludePath)</IncludePath>
+        <IncludePath>C:\Users\Ja\Documents\Embarcadero\Studio\Projects\;D:\Git_repositories\gamepirates\;$(IncludePath)</IncludePath>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Icns_MainIcns>$(BDS)\bin\cbuilder_PROJECTICNS.icns</Icns_MainIcns>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <ProjectType>FmxGuiApplication</ProjectType>
         <SanitizedProjectName>GameProject</SanitizedProjectName>
-        <ILINK_LibraryPath>D:\Git_repositories\gamepirates\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>C:\Users\Ja\Documents\Embarcadero\Studio\Projects\;D:\Git_repositories\gamepirates\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <AllPackageLibs>rtl.lib;fmx.lib</AllPackageLibs>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <Multithreaded>true</Multithreaded>
@@ -119,6 +119,12 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="conquerPortMiniGame.cpp">
+            <Form>conquerPortMiniGameForm</Form>
+            <FormType>fmx</FormType>
+            <DependentOn>conquerPortMiniGame.h</DependentOn>
+            <BuildOrder>18</BuildOrder>
+        </CppCompile>
         <CppCompile Include="frameMap.cpp">
             <Form>frame1Map</Form>
             <FormType>fmx</FormType>
@@ -230,6 +236,7 @@
         <FormResources Include="pirateShipCard.fmx"/>
         <FormResources Include="Mainmenu.fmx"/>
         <FormResources Include="Optionsmenu.fmx"/>
+        <FormResources Include="conquerPortMiniGame.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
