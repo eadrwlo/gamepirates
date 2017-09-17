@@ -12,7 +12,9 @@
 #include <FMX.StdCtrls.hpp>
 #include <vector>
 #include "player.h"
+#include "portsCard.h"
 class Player;
+class TportsCardFrame;
 
 //---------------------------------------------------------------------------
 class TconquerPortMiniGameForm : public TForm
@@ -52,9 +54,10 @@ private:	// User declarations
 	Player *AttackingPlayer;
 	std::vector <TImage*> bottlesRight;
 	std::vector <TImage*> bottlesLeft;
+	TportsCardFrame *cardOfRelatedPort;
 public:		// User declarations
 	__fastcall TconquerPortMiniGameForm(TComponent* Owner);
-	void runConquerPortMiniGame(Player *DefendingPlayer, Player *AttackingPlayer);
+	void runConquerPortMiniGame(Player *DefendingPlayer, Player *AttackingPlayer, TportsCardFrame *cardOfRelatedPort);
     void handleEndOfTheMiniGame();
 };
 //---------------------------------------------------------------------------

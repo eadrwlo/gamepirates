@@ -49,7 +49,7 @@ void __fastcall TportsCardFrame::conquerButtonClick(TObject *Sender)
 	{
 		if (portRelatedWithCard->getCurrentPlayerLocatedOnField()->getAttackStrength() == portRelatedWithCard->getOwner()->getAttackStrength())
 		{
-			conquerPortMiniGameForm->runConquerPortMiniGame(portRelatedWithCard->getOwner(), portRelatedWithCard->getCurrentPlayerLocatedOnField());
+			conquerPortMiniGameForm->runConquerPortMiniGame(portRelatedWithCard->getOwner(), portRelatedWithCard->getCurrentPlayerLocatedOnField(), this);
 		}
 		else
 		{
